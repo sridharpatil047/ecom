@@ -1,4 +1,4 @@
-package me.sridharpatil.productservice;
+package me.sridharpatil.ecom.productservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

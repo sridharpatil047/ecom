@@ -1,4 +1,4 @@
-package me.sridharpatil.productservice.models;
+package me.sridharpatil.ecom.productservice.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;

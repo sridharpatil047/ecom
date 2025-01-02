@@ -1,4 +1,4 @@
-package me.sridharpatil.productservice.services.dtos;
+package me.sridharpatil.ecom.productservice.services.dtos;
 
 import lombok.Getter;
 import lombok.Setter;

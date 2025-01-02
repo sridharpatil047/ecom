@@ -1,4 +1,4 @@
-package me.sridharpatil.productservice;
+package me.sridharpatil.ecom.productservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
