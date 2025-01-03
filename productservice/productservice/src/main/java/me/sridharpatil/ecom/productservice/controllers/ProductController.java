@@ -28,10 +28,7 @@ public class ProductController {
 
     // 2. GET /products/{id}
     @GetMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> getProductById(
-            @PathVariable("id")
-            Long id
-    ) throws ProductNotFoundException {
+    public ResponseEntity<ControllerProductResDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
         // validate id
         if (id == null) {
@@ -51,9 +48,7 @@ public class ProductController {
     // 3. POST /products
     @PostMapping()
     public ResponseEntity<ControllerProductResDto> createProduct(
-            @Valid
-            @RequestBody
-            ControllerProductReqDto requestDto
+            @RequestBody @Valid ControllerProductReqDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException {
 
 
@@ -78,7 +73,7 @@ public class ProductController {
     @PatchMapping("/{id}")
     public ResponseEntity<ControllerProductResDto> updateProductById(
             @PathVariable("id") Long id,
-            @RequestBody ControllerProductReqDto requestDto
+            @RequestBody @Valid ControllerProductReqDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException {
 
         // Validate request

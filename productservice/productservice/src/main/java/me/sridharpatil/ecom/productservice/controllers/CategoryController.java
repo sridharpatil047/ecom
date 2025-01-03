@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
+import jakarta.validation.Valid;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryReqDto;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
@@ -22,13 +23,8 @@ public class CategoryController {
     // Create a new category
     @PostMapping()
     public ResponseEntity<ControllerCategoryResDto> createCategory(
-            @RequestBody ControllerCategoryReqDto requestDto
+            @RequestBody @Valid ControllerCategoryReqDto requestDto
     ) throws CategoryAlreadyExistsException {
-
-        // Validate request
-        if (requestDto.getTitle() == null || requestDto.getTitle().isEmpty()) {
-            return ResponseEntity.badRequest().build();
-        }
 
         // Map request to service dto
         CategoryRequestDto serviceRequestDto = new CategoryRequestDto();
@@ -63,7 +59,6 @@ public class CategoryController {
         // Return response
         return ResponseEntity.ok(responseDto);
     }
-
 
     // Update category by id
     @PutMapping("/{id}")

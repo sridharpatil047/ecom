@@ -68,13 +68,16 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MethodArgumentTypeMismatchException.class)
     public ResponseEntity<ExceptionDto> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex) {
+        String fieldName = ex.getName();
+        String expectedType = ex.getRequiredType() != null ? ex.getRequiredType().getSimpleName() : "Unknown";
+        String errorMessage = String.format("'%s' should be of type '%s'", fieldName, expectedType);
+
         ExceptionDto exceptionDto = new ExceptionDto(
                 ErrorCode.TYPE_MISMATCH,
-                ex.getMessage()
+                errorMessage
         );
         return ResponseEntity.status(400).body(exceptionDto);
     }
-
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ExceptionDto> handleValidationErrors(MethodArgumentNotValidException ex) {
