@@ -66,7 +66,7 @@ public class CategoryController {
 
 
     // Update category by id
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<ControllerCategoryResDto> updateCategoryById(
             @PathVariable("id") Long id,
             @RequestBody ControllerCategoryReqDto requestDto
@@ -84,7 +84,7 @@ public class CategoryController {
         // Update category by id
         ControllerCategoryResDto responseDto =
                 ControllerCategoryResDto.of(
-                        categoryService.updateCategoryPartial(id, serviceRequestDto)
+                        categoryService.updateCategory(id, serviceRequestDto)
                 );
 
         // Return response

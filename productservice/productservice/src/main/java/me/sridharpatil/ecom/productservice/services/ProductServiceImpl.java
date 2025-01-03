@@ -68,13 +68,16 @@ public class ProductServiceImpl implements ProductService{
     public Product updateProductPartial(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException {
         // Check if product with given id exists, if not throw exception
         Product product = getProductById(productId);
-        Category category = categoryService.getCategoryById(requestDto.getCategoryId());
+
 
         // Since product with given id exists, update the product partially
         if (requestDto.getProductTitle() != null) product.setTitle(requestDto.getProductTitle());
         if (requestDto.getProductDescription() != null) product.setDescription(requestDto.getProductDescription());
         if (requestDto.getPrice() != null) product.setPrice(requestDto.getPrice());
-        if (requestDto.getCategoryId() != null) product.setCategory(category);
+        if (requestDto.getCategoryId() != null){
+            Category category = categoryService.getCategoryById(requestDto.getCategoryId());
+            product.setCategory(category);
+        }
 
         // Save and return the product
         return productRepository.save(product);
