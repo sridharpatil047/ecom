@@ -1,14 +1,22 @@
-package me.sridharpatil.ecom.productservice.exceptionhandlers;
+package me.sridharpatil.ecom.productservice.controllers.exceptionhandlers;
 
-import me.sridharpatil.ecom.productservice.exceptionhandlers.dtos.ExceptionDto;
+import jakarta.validation.ConstraintViolationException;
+import me.sridharpatil.ecom.productservice.controllers.exceptionhandlers.dtos.ExceptionDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -58,6 +66,31 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(405).body(exceptionDto);
     }
 
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<ExceptionDto> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException ex) {
+        ExceptionDto exceptionDto = new ExceptionDto(
+                ErrorCode.TYPE_MISMATCH,
+                ex.getMessage()
+        );
+        return ResponseEntity.status(400).body(exceptionDto);
+    }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<ExceptionDto> handleValidationErrors(MethodArgumentNotValidException ex) {
+        List<String> message = new ArrayList<>();
+        ex.getBindingResult().getFieldErrors().forEach(error -> {
+            message.add(String.format("%s %s", error.getField(), error.getDefaultMessage()));
+        });
+
+        ExceptionDto exceptionDto = new ExceptionDto(
+                ErrorCode.BAD_REQUEST,
+                String.join(", ", message)
+        );
+
+        return ResponseEntity.status(400).body(exceptionDto);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionDto> handleException(Exception ex) {
         ExceptionDto exceptionDto = new ExceptionDto(
@@ -66,4 +99,5 @@ public class GlobalExceptionHandler {
         );
         return ResponseEntity.status(500).body(exceptionDto);
     }
+
 }

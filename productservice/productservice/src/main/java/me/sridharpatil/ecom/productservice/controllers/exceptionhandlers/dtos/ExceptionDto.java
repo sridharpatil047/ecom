@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.productservice.exceptionhandlers.dtos;
+package me.sridharpatil.ecom.productservice.controllers.exceptionhandlers.dtos;
 
 import lombok.Getter;
 import lombok.Setter;

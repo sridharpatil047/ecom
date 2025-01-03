@@ -1,5 +1,8 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReqDto;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
@@ -7,6 +10,7 @@ import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
 import me.sridharpatil.ecom.productservice.services.ProductService;
 import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,7 +28,10 @@ public class ProductController {
 
     // 2. GET /products/{id}
     @GetMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+    public ResponseEntity<ControllerProductResDto> getProductById(
+            @PathVariable("id")
+            Long id
+    ) throws ProductNotFoundException {
 
         // validate id
         if (id == null) {
@@ -44,15 +51,11 @@ public class ProductController {
     // 3. POST /products
     @PostMapping()
     public ResponseEntity<ControllerProductResDto> createProduct(
-            @RequestBody ControllerProductReqDto requestDto
+            @Valid
+            @RequestBody
+            ControllerProductReqDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException {
 
-        // Validate request
-        if (requestDto.getTitle() == null
-                || requestDto.getTitle().isEmpty()
-                || requestDto.getCategoryId() == null) {
-            return ResponseEntity.badRequest().build();
-        }
 
         // Map request to service dto
         ProductRequestDto serviceRequestDto = new ProductRequestDto();
