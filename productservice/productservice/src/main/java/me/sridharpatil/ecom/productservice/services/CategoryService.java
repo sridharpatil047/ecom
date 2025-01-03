@@ -5,12 +5,15 @@ import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequestDto;
 
+import java.util.List;
+
 public interface CategoryService {
     // Create
     Category createCategory(CategoryRequestDto requestDto) throws CategoryAlreadyExistsException;
 
     // Read
     Category getCategoryById(Long categoryId) throws CategoryNotFoundException;
+    List<Category> getAllCategories();
 
     // Update
     Category updateCategory(Long categoryId, CategoryRequestDto requestDto) throws CategoryNotFoundException;

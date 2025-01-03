@@ -7,11 +7,16 @@ import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReq
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
+import me.sridharpatil.ecom.productservice.models.Category;
+import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.services.ProductService;
 import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
@@ -24,6 +29,19 @@ public class ProductController {
     }
 
     // 1. GET /products
+    @GetMapping()
+    public ResponseEntity<List<ControllerProductResDto>> getAllProducts() {
+
+        List<ControllerProductResDto> resDtoList = new ArrayList<>();
+
+        List<Product> productList = productService.getAllProducts();
+        for (Product product : productList) {
+            resDtoList.add(ControllerProductResDto.of(product));
+        }
+
+        // Return response
+        return ResponseEntity.ok(resDtoList);
+    }
 
 
     // 2. GET /products/{id}

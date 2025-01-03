@@ -5,10 +5,14 @@ import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryRe
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
+import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.services.CategoryService;
 import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequestDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/categories")
@@ -58,6 +62,20 @@ public class CategoryController {
 
         // Return response
         return ResponseEntity.ok(responseDto);
+    }
+
+    // Get all categories
+    @GetMapping()
+    public ResponseEntity<List<ControllerCategoryResDto>> getAllCategories() {
+
+        List<ControllerCategoryResDto> resDtoList = new ArrayList<>();
+
+        List<Category> categoryList = categoryService.getAllCategories();
+        for (Category category : categoryList) {
+            resDtoList.add(ControllerCategoryResDto.of(category));
+        }
+
+        return ResponseEntity.ok(resDtoList);
     }
 
     // Update category by id

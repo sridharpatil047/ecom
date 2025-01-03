@@ -8,6 +8,7 @@ import me.sridharpatil.ecom.productservice.repositories.ProductRepository;
 import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -46,6 +47,11 @@ public class ProductServiceImpl implements ProductService{
 
         // Since product with given id exists, return the product
         return optionalProduct.get();
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productRepository.findByDeletedFalse();
     }
 
     @Override

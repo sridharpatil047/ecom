@@ -7,6 +7,7 @@ import me.sridharpatil.ecom.productservice.repositories.CategoryRepository;
 import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequestDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -48,6 +49,11 @@ public class CategoryServiceImpl implements CategoryService{
         if (optionalCategory.isEmpty() || optionalCategory.get().isDeleted()) throw new CategoryNotFoundException("Category with id " + categoryId + " not found");
 
         return optionalCategory.get();
+    }
+
+    @Override
+    public List<Category> getAllCategories() {
+        return categoryRepository.findByDeletedFalse();
     }
 
     @Override
