@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.productservice.controllers.exceptionhandlers;
 
 import jakarta.validation.ConstraintViolationException;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.productservice.controllers.exceptionhandlers.dtos.ExceptionDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
@@ -18,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+@Log4j2
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -27,6 +30,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.PRODUCT_NOT_FOUND,
                 ex.getMessage()
         );
+
+        log.error("Product not found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(404).body(exceptionDto);
     }
 
@@ -36,6 +42,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.CATEGORY_NOT_FOUND,
                 ex.getMessage()
         );
+
+        log.error("Category not found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(404).body(exceptionDto);
     }
 
@@ -45,6 +54,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.CATEGORY_ALREADY_EXISTS,
                 ex.getMessage()
         );
+
+        log.error("Category already exists : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(400).body(exceptionDto);
     }
 
@@ -54,6 +66,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.NO_RESOURCE_FOUND,
                 ex.getMessage()
         );
+
+        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(406).body(exceptionDto);
     }
 
@@ -63,6 +78,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.METHOD_NOT_ALLOWED,
                 ex.getMessage()
         );
+
+        log.error("Method not allowed : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(405).body(exceptionDto);
     }
 
@@ -76,6 +94,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.TYPE_MISMATCH,
                 errorMessage
         );
+
+        log.error("Type mismatch : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(400).body(exceptionDto);
     }
 
@@ -91,6 +112,8 @@ public class GlobalExceptionHandler {
                 String.join(", ", message)
         );
 
+        log.error("Input validation error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(400).body(exceptionDto);
     }
 
@@ -100,6 +123,9 @@ public class GlobalExceptionHandler {
                 ErrorCode.UNKNOWN_ERROR,
                 ex.getMessage()
         );
+
+        log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
         return ResponseEntity.status(500).body(exceptionDto);
     }
 

@@ -1,18 +1,15 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReqDto;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
-import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.services.ProductService;
 import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -20,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products")
+@Log4j2
 public class ProductController {
 
     ProductService productService;
@@ -32,6 +30,7 @@ public class ProductController {
     @GetMapping()
     public ResponseEntity<List<ControllerProductResDto>> getAllProducts() {
 
+        log.debug("Received request to get all products");
         List<ControllerProductResDto> resDtoList = new ArrayList<>();
 
         List<Product> productList = productService.getAllProducts();
@@ -39,19 +38,16 @@ public class ProductController {
             resDtoList.add(ControllerProductResDto.of(product));
         }
 
+        log.info("Returning {} products", resDtoList.size());
         // Return response
         return ResponseEntity.ok(resDtoList);
     }
-
 
     // 2. GET /products/{id}
     @GetMapping("/{id}")
     public ResponseEntity<ControllerProductResDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
-        // validate id
-        if (id == null) {
-            return ResponseEntity.badRequest().build();
-        }
+        log.debug("Received request to get product by id : {}", id);
 
         // Get product by id
         ControllerProductResDto responseDto =
@@ -60,6 +56,7 @@ public class ProductController {
                 );
 
         // Return response
+        log.info("Returning product with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 
@@ -69,6 +66,7 @@ public class ProductController {
             @RequestBody @Valid ControllerProductReqDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException {
 
+        log.debug("Received request to create a new product : {}", requestDto.getTitle());
 
         // Map request to service dto
         ProductRequestDto serviceRequestDto = new ProductRequestDto();
@@ -83,7 +81,9 @@ public class ProductController {
                         productService.createProduct(serviceRequestDto)
                 );
 
+
         // Return response
+        log.info("Product created with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 
@@ -94,10 +94,7 @@ public class ProductController {
             @RequestBody @Valid ControllerProductReqDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException {
 
-        // Validate request
-        if (id == null){
-            return ResponseEntity.badRequest().build();
-        }
+        log.debug("Received request to update product by id : {}", id);
 
         // Map request to service dto
         ProductRequestDto serviceRequestDto = new ProductRequestDto();
@@ -113,6 +110,7 @@ public class ProductController {
                 );
 
         // Return response
+        log.info("Product updated with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 
@@ -120,10 +118,7 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public ResponseEntity<ControllerProductResDto> deleteProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
-        // validate id
-        if (id == null) {
-            return ResponseEntity.badRequest().build();
-        }
+        log.debug("Received request to delete product by id : {}", id);
 
         // Delete product by id
         ControllerProductResDto responseDto =
@@ -132,6 +127,7 @@ public class ProductController {
                 );
 
         // Return response
+        log.info("Product deleted with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 }
