@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
 import jakarta.validation.Valid;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryReqDto;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryResDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log4j2
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
@@ -30,6 +32,7 @@ public class CategoryController {
             @RequestBody @Valid ControllerCategoryReqDto requestDto
     ) throws CategoryAlreadyExistsException {
 
+        log.debug("Received request to create a new category");
         // Map request to service dto
         CategoryRequestDto serviceRequestDto = new CategoryRequestDto();
         serviceRequestDto.setCategoryTitle(requestDto.getTitle());
@@ -41,6 +44,7 @@ public class CategoryController {
                         categoryService.createCategory(serviceRequestDto)
                 );
 
+        log.info("Created category with id : {}", responseDto.getId());
         // Return response
         return ResponseEntity.ok(responseDto);
     }
@@ -49,10 +53,7 @@ public class CategoryController {
     @GetMapping("/{id}")
     public ResponseEntity<ControllerCategoryResDto> getCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
 
-        // validate id
-        if (id == null) {
-            return ResponseEntity.badRequest().build();
-        }
+        log.debug("Received request to get category by id : {}", id);
 
         // Get category by id
         ControllerCategoryResDto responseDto =
@@ -61,12 +62,15 @@ public class CategoryController {
                 );
 
         // Return response
+        log.info("Returning category with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 
     // Get all categories
     @GetMapping()
     public ResponseEntity<List<ControllerCategoryResDto>> getAllCategories() {
+
+        log.debug("Received request to get all categories");
 
         List<ControllerCategoryResDto> resDtoList = new ArrayList<>();
 
@@ -75,6 +79,7 @@ public class CategoryController {
             resDtoList.add(ControllerCategoryResDto.of(category));
         }
 
+        log.info("Returning {} categories", resDtoList.size());
         return ResponseEntity.ok(resDtoList);
     }
 
@@ -85,10 +90,8 @@ public class CategoryController {
             @RequestBody ControllerCategoryReqDto requestDto
     ) throws CategoryNotFoundException {
 
-        // Validate request
-        if (requestDto.getTitle() == null || requestDto.getTitle().isEmpty()) {
-            return ResponseEntity.badRequest().build();
-        }
+
+        log.debug("Received request to update category by id : {}", id);
 
         // Map request to service dto
         CategoryRequestDto serviceRequestDto = new CategoryRequestDto();
@@ -101,6 +104,7 @@ public class CategoryController {
                 );
 
         // Return response
+        log.info("Updated category with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 
@@ -109,10 +113,7 @@ public class CategoryController {
     @DeleteMapping("/{id}")
     public ResponseEntity<ControllerCategoryResDto> deleteCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
 
-        // validate id
-        if (id == null) {
-            return ResponseEntity.badRequest().build();
-        }
+        log.debug("Received request to delete category by id : {}", id);
 
         // Delete category by id
         ControllerCategoryResDto responseDto =
@@ -121,6 +122,7 @@ public class CategoryController {
                 );
 
         // Return response
+        log.info("Deleted category with id : {}", responseDto.getId());
         return ResponseEntity.ok(responseDto);
     }
 

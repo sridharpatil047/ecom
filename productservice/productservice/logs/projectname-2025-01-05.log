@@ -1,0 +1,103 @@
+2025-01-05 12:27:32.884  INFO 93983 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-05 12:27:32.901  INFO 93983 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Starting Productservice using Java 21.0.1 with PID 93983 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice)
+2025-01-05 12:27:32.903 DEBUG 93983 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-05 12:27:32.903  INFO 93983 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-05 12:27:33.152  INFO 93983 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-05 12:27:33.175  INFO 93983 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2025-01-05 12:27:33.354  INFO 93983 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8080 (http)
+2025-01-05 12:27:33.361  INFO 93983 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-05 12:27:33.362  INFO 93983 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-05 12:27:33.362  INFO 93983 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-05 12:27:33.380  INFO 93983 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-05 12:27:33.381  INFO 93983 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 464 ms
+2025-01-05 12:27:33.446  INFO 93983 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-05 12:27:33.467  INFO 93983 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-05 12:27:33.478  INFO 93983 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-05 12:27:33.569  INFO 93983 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-05 12:27:33.582  INFO 93983 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-05 12:27:33.726  INFO 93983 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13374ca6
+2025-01-05 12:27:33.727  INFO 93983 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-05 12:27:33.765  INFO 93983 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-05 12:27:34.109  INFO 93983 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-05 12:27:34.142  INFO 93983 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05 12:27:34.281  WARN 93983 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-05 12:27:34.424  INFO 93983 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8080"]
+2025-01-05 12:27:34.429  INFO 93983 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8080 (http) with context path '/'
+2025-01-05 12:27:34.433  INFO 93983 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarted : Started Productservice in 1.65 seconds (process running for 2.044)
+2025-01-05 12:27:43.184  INFO 93983 --- [nio-8080-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-05 12:27:43.184  INFO 93983 --- [nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-05 12:27:43.185  INFO 93983 --- [nio-8080-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-05 12:27:43.205 DEBUG 93983 --- [nio-8080-exec-1] me.sridharpatil.ecom.productservice.controllers.ProductController.getProductById : Received request to get product by id : 27
+2025-01-05 12:27:43.205 DEBUG 93983 --- [nio-8080-exec-1] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.getProductById : Checking if product with id 27 exists
+2025-01-05 12:27:43.242  INFO 93983 --- [nio-8080-exec-1] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.getProductById : Returning product with id : 27
+2025-01-05 12:27:43.243  INFO 93983 --- [nio-8080-exec-1] me.sridharpatil.ecom.productservice.controllers.ProductController.getProductById : Returning product with id : 27
+2025-01-05 12:28:22.339 DEBUG 93983 --- [nio-8080-exec-3] me.sridharpatil.ecom.productservice.controllers.ProductController.getProductById : Received request to get product by id : 235
+2025-01-05 12:28:22.339 DEBUG 93983 --- [nio-8080-exec-3] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.getProductById : Checking if product with id 235 exists
+2025-01-05 12:28:22.347 ERROR 93983 --- [nio-8080-exec-3] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.getProductById : Product with id 235 not found
+2025-01-05 12:28:22.354 ERROR 93983 --- [nio-8080-exec-3] me.sridharpatil.ecom.productservice.controllers.exceptionhandlers.GlobalExceptionHandler.handleProductNotFoundException : Product not found : PRODUCT_NOT_FOUND - Product with id 235 not found
+2025-01-05 12:29:17.928 DEBUG 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.controllers.ProductController.createProduct : Received request to create a new product : Product29
+2025-01-05 12:29:17.928 DEBUG 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.createProduct : Checking if category with id 2 exists
+2025-01-05 12:29:17.928 DEBUG 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.services.CategoryServiceImpl.getCategoryById : Checking if category with id 2 exists
+2025-01-05 12:29:17.935  INFO 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.services.CategoryServiceImpl.getCategoryById : Returning category with id : 2
+2025-01-05 12:29:17.935  INFO 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.createProduct : Saving product with title : Product29
+2025-01-05 12:29:17.964  INFO 93983 --- [nio-8080-exec-4] me.sridharpatil.ecom.productservice.controllers.ProductController.createProduct : Product created with id : 29
+2025-01-05 12:30:41.443  INFO 93983 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-05 12:30:41.449  INFO 93983 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-05 12:30:41.454  INFO 93983 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05 12:30:41.458  INFO 93983 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-05 12:30:41.462  INFO 93983 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-05 12:30:43.132  INFO 94033 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-05 12:30:43.147  INFO 94033 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Starting Productservice using Java 21.0.1 with PID 94033 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice)
+2025-01-05 12:30:43.148 DEBUG 94033 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-05 12:30:43.148  INFO 94033 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-05 12:30:43.384  INFO 94033 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-05 12:30:43.407  INFO 94033 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2025-01-05 12:30:43.584  INFO 94033 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8080 (http)
+2025-01-05 12:30:43.591  INFO 94033 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-05 12:30:43.591  INFO 94033 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-05 12:30:43.591  INFO 94033 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-05 12:30:43.611  INFO 94033 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-05 12:30:43.611  INFO 94033 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 450 ms
+2025-01-05 12:30:43.674  INFO 94033 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-05 12:30:43.698  INFO 94033 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-05 12:30:43.710  INFO 94033 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-05 12:30:43.806  INFO 94033 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-05 12:30:43.820  INFO 94033 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-05 12:30:43.972  INFO 94033 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50fd739d
+2025-01-05 12:30:43.972  INFO 94033 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-05 12:30:44.011  INFO 94033 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-05 12:30:44.361  INFO 94033 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-05 12:30:44.397  INFO 94033 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05 12:30:44.534  WARN 94033 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-05 12:30:44.678  INFO 94033 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8080"]
+2025-01-05 12:30:44.683  INFO 94033 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8080 (http) with context path '/'
+2025-01-05 12:30:44.687  INFO 94033 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarted : Started Productservice in 1.655 seconds (process running for 2.017)
+2025-01-05 12:31:11.610  INFO 94033 --- [nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-05 12:31:11.611  INFO 94033 --- [nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-05 12:31:11.612  INFO 94033 --- [nio-8080-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 0 ms
+2025-01-05 12:31:11.679 DEBUG 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.controllers.ProductController.createProduct : Received request to create a new product : Product30
+2025-01-05 12:31:11.679 DEBUG 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.createProduct : Checking if category with id 2 exists
+2025-01-05 12:31:11.679 DEBUG 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.services.CategoryServiceImpl.getCategoryById : Checking if category with id 2 exists
+2025-01-05 12:31:11.709  INFO 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.services.CategoryServiceImpl.getCategoryById : Returning category with id : 2
+2025-01-05 12:31:11.709  INFO 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.services.ProductServiceImpl.createProduct : Saving product with title : Product30
+2025-01-05 12:31:11.730  INFO 94033 --- [nio-8080-exec-2] me.sridharpatil.ecom.productservice.controllers.ProductController.createProduct : Product created with id : 30
+2025-01-05 12:31:38.440 ERROR 94033 --- [nio-8080-exec-3] me.sridharpatil.ecom.productservice.controllers.exceptionhandlers.GlobalExceptionHandler.handleValidationErrors : Input validation error : BAD_REQUEST - title must not be blank, title must not be null
+2025-01-05 12:32:31.564  INFO 94033 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-05 12:32:31.569  INFO 94033 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-05 12:32:31.571  INFO 94033 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05 12:32:31.574  INFO 94033 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-05 12:32:31.578  INFO 94033 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
