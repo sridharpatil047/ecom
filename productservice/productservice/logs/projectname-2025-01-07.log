@@ -1,0 +1,31 @@
+2025-01-07 00:43:58.547  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h18m33s465ms).
+2025-01-07 01:35:17.726  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m19s178ms).
+2025-01-07 03:12:26.379  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h37m8s653ms).
+2025-01-07 04:18:53.386  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m27s7ms).
+2025-01-07 05:25:04.907  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m11s522ms).
+2025-01-07 06:36:36.967  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h11m32s59ms).
+2025-01-07 07:20:56.469  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m19s503ms).
+2025-01-07 08:05:31.332  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m34s862ms).
+2025-01-07 08:13:14.515  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m43s183ms).
+2025-01-07 08:37:06.541  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m52s26ms).
+2025-01-07 08:48:00.160  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m53s618ms).
+2025-01-07 09:40:20.552  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m18s692ms).
+2025-01-07 10:30:38.988  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m43s346ms).
+2025-01-07 11:01:44.735  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m5s750ms).
+2025-01-07 11:36:55.662  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m10s927ms).
+2025-01-07 12:09:10.144  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m14s482ms).
+2025-01-07 12:46:20.329  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=37m10s185ms).
+2025-01-07 13:16:27.337  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m7s9ms).
+2025-01-07 13:33:50.780  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m23s442ms).
+2025-01-07 14:16:54.892  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m4s109ms).
+2025-01-07 15:09:35.416  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m40s528ms).
+2025-01-07 16:03:37.108  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m1s691ms).
+2025-01-07 16:36:27.144  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m50s36ms).
+2025-01-07 17:25:26.863  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m59s720ms).
+2025-01-07 18:05:39.791  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=40m12s924ms).
+2025-01-07 18:30:50.503  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m10s716ms).
+2025-01-07 20:00:08.369  INFO 95736 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-07 20:00:08.390  INFO 95736 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-07 20:00:08.408  INFO 95736 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-07 20:00:08.427  INFO 95736 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-07 20:00:08.439  INFO 95736 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.

@@ -1,0 +1,62 @@
+2025-01-06 01:17:24.435  INFO 95736 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-06 01:17:24.452  INFO 95736 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Starting Productservice using Java 21.0.1 with PID 95736 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/productservice/productservice)
+2025-01-06 01:17:24.453 DEBUG 95736 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-06 01:17:24.454  INFO 95736 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-06 01:17:24.712  INFO 95736 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-06 01:17:24.736  INFO 95736 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2025-01-06 01:17:24.930  INFO 95736 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8080 (http)
+2025-01-06 01:17:24.937  INFO 95736 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8080"]
+2025-01-06 01:17:24.938  INFO 95736 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-06 01:17:24.938  INFO 95736 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-06 01:17:24.956  INFO 95736 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-06 01:17:24.956  INFO 95736 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 488 ms
+2025-01-06 01:17:25.024  INFO 95736 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-06 01:17:25.050  INFO 95736 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-06 01:17:25.063  INFO 95736 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-06 01:17:25.165  INFO 95736 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-06 01:17:25.179  INFO 95736 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-06 01:17:25.347  INFO 95736 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a67f8b4
+2025-01-06 01:17:25.347  INFO 95736 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-06 01:17:25.388  INFO 95736 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-06 01:17:25.739  INFO 95736 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-06 01:17:25.775  INFO 95736 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 01:17:25.910  WARN 95736 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-06 01:17:26.056  INFO 95736 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8080"]
+2025-01-06 01:17:26.061  INFO 95736 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8080 (http) with context path '/'
+2025-01-06 01:17:26.064  INFO 95736 --- [           main] me.sridharpatil.ecom.productservice.Productservice.logStarted : Started Productservice in 1.747 seconds (process running for 2.165)
+2025-01-06 01:30:21.235  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m55s854ms).
+2025-01-06 02:01:28.995  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m7s774ms).
+2025-01-06 02:32:59.235  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m30s239ms).
+2025-01-06 03:42:16.062  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h9m16s828ms).
+2025-01-06 04:57:58.959  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m42s897ms).
+2025-01-06 05:15:04.930  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m5s970ms).
+2025-01-06 06:00:05.344  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m414ms).
+2025-01-06 06:28:03.720  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m58s377ms).
+2025-01-06 07:28:29.551  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m55s816ms).
+2025-01-06 08:03:41.498  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m11s948ms).
+2025-01-06 08:36:09.875  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m28s377ms).
+2025-01-06 09:00:34.662  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m24s785ms).
+2025-01-06 10:01:41.252  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m6s592ms).
+2025-01-06 10:17:41.267  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m16ms).
+2025-01-06 10:31:32.979  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m51s712ms).
+2025-01-06 10:32:42.125  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m9s144ms).
+2025-01-06 14:44:42.134  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s318ms).
+2025-01-06 15:04:48.401  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=20m6s267ms).
+2025-01-06 16:26:17.619  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h21m29s219ms).
+2025-01-06 17:12:52.028  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m34s408ms).
+2025-01-06 17:38:41.575  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m49s545ms).
+2025-01-06 19:01:41.554  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m29s562ms).
+2025-01-06 19:18:48.348  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m6s798ms).
+2025-01-06 19:34:12.281  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m23s932ms).
+2025-01-06 20:21:07.290  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m54s823ms).
+2025-01-06 20:30:11.578  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m3s451ms).
+2025-01-06 21:50:35.283  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h20m23s705ms).
+2025-01-06 22:24:43.434  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=34m8s152ms).
+2025-01-06 23:25:25.082  WARN 95736 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool.run : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41s648ms).
