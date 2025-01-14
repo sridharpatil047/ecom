@@ -27,12 +27,16 @@ public class UserController {
             @RequestBody
             SignUpRequestDto signUpRequestDto
     ) throws UserAlreadyExists {
-        User user = userService.signUp(
-                signUpRequestDto.getName(),
-                signUpRequestDto.getEmail(),
-                signUpRequestDto.getPassword()
-        );
 
-        return ResponseEntity.ok(SignUpResponseDto.of(user));
+        try {
+            User user = userService.signUp(
+                    signUpRequestDto.getName(),
+                    signUpRequestDto.getEmail(),
+                    signUpRequestDto.getPassword()
+            );
+            return ResponseEntity.ok(SignUpResponseDto.of(user));
+        }catch (UserAlreadyExists e){
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
