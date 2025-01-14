@@ -1,7 +1,7 @@
 2025-01-12 11:54:36.933  INFO 25750 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
-2025-01-12 11:54:36.949  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.Userservice.logStarting : Starting Userservice using Java 21.0.1 with PID 25750 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice)
-2025-01-12 11:54:36.950 DEBUG 25750 --- [           main] me.sridharpatil.ecom.userservice.Userservice.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-01-12 11:54:36.951  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.Userservice.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-12 11:54:36.949  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Starting Userservice using Java 21.0.1 with PID 25750 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice)
+2025-01-12 11:54:36.950 DEBUG 25750 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-12 11:54:36.951  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
 2025-01-12 11:54:37.200  INFO 25750 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
 2025-01-12 11:54:37.208  INFO 25750 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
 2025-01-12 11:54:37.415  INFO 25750 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8082 (http)
@@ -30,7 +30,7 @@
 2025-01-12 11:54:38.058  WARN 25750 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2025-01-12 11:54:38.761  INFO 25750 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8082"]
 2025-01-12 11:54:38.766  INFO 25750 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8082 (http) with context path '/'
-2025-01-12 11:54:38.771  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.Userservice.logStarted : Started Userservice in 1.953 seconds (process running for 2.338)
+2025-01-12 11:54:38.771  INFO 25750 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarted : Started Userservice in 1.953 seconds (process running for 2.338)
 2025-01-12 11:57:39.495  INFO 25750 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
 2025-01-12 11:57:39.501  INFO 25750 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
 2025-01-12 11:57:39.506  INFO 25750 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
