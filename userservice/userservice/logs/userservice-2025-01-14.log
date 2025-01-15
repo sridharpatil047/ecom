@@ -5399,3 +5399,8 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 2025-01-14 21:53:29.390  INFO 32910 --- [nio-8082-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-01-14 21:53:29.391  INFO 32910 --- [nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
 2025-01-14 21:53:29.392  INFO 32910 --- [nio-8082-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-14 23:11:22.583  INFO 32910 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-14 23:11:22.590  INFO 32910 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-14 23:11:22.597  INFO 32910 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-14 23:11:22.601  INFO 32910 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-14 23:11:22.606  INFO 32910 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.

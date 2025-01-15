@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import  me.sridharpatil.ecom.userservice.models.User;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -72,7 +73,7 @@ public class JpaUserDetails implements UserDetails {
         return enabled;
     }
 
-    private Collection<GrantedAuthority> grantedAuthoritiesFromRoles(List<Role> roles){
+    private Collection<GrantedAuthority> grantedAuthoritiesFromRoles(Set<Role> roles){
         return roles.stream()
                 .map(role -> new JpaGrantedAuthority(role)).collect(Collectors.toList());
     }

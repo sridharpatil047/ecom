@@ -47,7 +47,6 @@ public class SecurityConfig {
                                 .oidc(Customizer.withDefaults())	// Enable OpenID Connect 1.0
                 )
                 .authorizeHttpRequests((authorize) -> authorize
-//                        .requestMatchers("users/sign-up").permitAll()
                         .anyRequest().authenticated()
                 )
                 // Redirect to the login page when not authenticated from the
@@ -67,8 +66,11 @@ public class SecurityConfig {
             throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/users/sign-up").permitAll()
-                        .anyRequest().authenticated()
+//                        .requestMatchers("/users/sign-up").permitAll()
+//                        .requestMatchers("/roles").permitAll()
+//                        .requestMatchers("/users/{id}").permitAll()
+//                        .anyRequest().authenticated()
+                                .anyRequest().permitAll()
                 )
                 .csrf(csrf -> csrf.disable())
                 // Form login handles the redirect to the login page from the

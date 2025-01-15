@@ -4,8 +4,7 @@ import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.services.RoleService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,16 +18,19 @@ public class RoleController {
     }
 
     // 1. POST /roles
-    ResponseEntity<Role> createRole(Role role) {
+    @PostMapping()
+    ResponseEntity<Role> createRole(@RequestBody Role role) {
         return ResponseEntity.ok(roleService.createRole(role.getName(), role.getDescription()));
     }
 
     // 2. GET /roles/{name}
-    ResponseEntity<Role> getRoleByName(String name) throws RoleNotFoundException {
+    @GetMapping("/{name}")
+    ResponseEntity<Role> getRoleByName(@PathVariable String name) throws RoleNotFoundException {
         return ResponseEntity.ok(roleService.getRoleByName(name));
     }
 
     // 3. GET /roles
+    @GetMapping()
     ResponseEntity<List<Role>> getRoles() {
         return ResponseEntity.ok(roleService.getRoles());
     }

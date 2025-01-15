@@ -6,7 +6,7 @@ import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.Set;
 
 @Getter @Setter
 @Entity
@@ -17,5 +17,5 @@ public class User extends BaseModel{
     private boolean emailVerified;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Role> roles;
+    private Set<Role> roles;
 }
