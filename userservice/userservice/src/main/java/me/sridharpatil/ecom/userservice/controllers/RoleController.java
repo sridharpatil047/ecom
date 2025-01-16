@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.userservice.controllers;
 
+import me.sridharpatil.ecom.userservice.exceptions.RoleAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.services.RoleService;
@@ -19,8 +20,10 @@ public class RoleController {
 
     // 1. POST /roles
     @PostMapping()
-    ResponseEntity<Role> createRole(@RequestBody Role role) {
-        return ResponseEntity.ok(roleService.createRole(role.getName(), role.getDescription()));
+    ResponseEntity<String> createRole(@RequestBody Role role) throws RoleAlreadyExistsException {
+        roleService.createRole(role.getName(), role.getDescription());
+
+        return ResponseEntity.ok("Role created successfully");
     }
 
     // 2. GET /roles/{name}

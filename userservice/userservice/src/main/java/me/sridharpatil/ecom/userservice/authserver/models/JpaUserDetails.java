@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @Getter @Setter
 public class JpaUserDetails implements UserDetails {
 
+    private Long id;
     private String username;
     private String password;
     private Collection<GrantedAuthority> authorities;
@@ -29,6 +30,7 @@ public class JpaUserDetails implements UserDetails {
     }
 
     public JpaUserDetails(User user) {
+        this.id = user.getId();
         this.username = user.getEmail();
         this.password = user.getHashedPassword();
         this.authorities = grantedAuthoritiesFromRoles(user.getRoles());
@@ -38,6 +40,9 @@ public class JpaUserDetails implements UserDetails {
         this.enabled = true;
     }
 
+    public Long getId() {
+        return id;
+    }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;

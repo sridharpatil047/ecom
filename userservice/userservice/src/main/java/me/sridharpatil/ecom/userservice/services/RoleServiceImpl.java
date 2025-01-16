@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.userservice.services;
 
+import me.sridharpatil.ecom.userservice.exceptions.RoleAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.repositories.RoleRepository;
@@ -16,11 +17,11 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role createRole(String name, String description) {
+    public void createRole(String name, String description) throws RoleAlreadyExistsException {
 
         // Check if role already exists
         if (roleRepository.findRoleByName(name).isPresent()) {
-            return roleRepository.findRoleByName(name).get();
+            throw new RoleAlreadyExistsException("Role with name " + name + " already exists");
         }
 
         // Since role does not exist, create a new role
@@ -29,7 +30,7 @@ public class RoleServiceImpl implements RoleService {
         role.setDescription(description);
 
         // Save the role
-        return roleRepository.save(role);
+        roleRepository.save(role);
     }
 
     @Override

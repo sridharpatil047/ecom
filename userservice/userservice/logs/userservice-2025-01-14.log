@@ -4647,9 +4647,9 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 2025-01-14 15:13:20.215 TRACE 32366 --- [io-8082-exec-10] org.springframework.security.web.context.SupplierDeferredSecurityContext.init : Created SecurityContextImpl [Null authentication]
 2025-01-14 15:13:20.215 TRACE 32366 --- [io-8082-exec-10] org.springframework.security.web.authentication.AnonymousAuthenticationFilter.defaultWithAnonymous : Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
 2025-01-14 15:13:20.215 TRACE 32366 --- [io-8082-exec-10] org.springframework.security.web.header.writers.HstsHeaderWriter.writeHeaders : Not injecting HSTS header since it did not match request to [Is Secure]
-2025-01-14 15:13:20.216 ERROR 32366 --- [io-8082-exec-10] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExists: User with email user02@gmail.com already exists] with root cause
+2025-01-14 15:13:20.216 ERROR 32366 --- [io-8082-exec-10] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException: User with email user02@gmail.com already exists] with root cause
 
-me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExists: User with email user02@gmail.com already exists
+me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException: User with email user02@gmail.com already exists
 	at me.sridharpatil.ecom.userservice.services.UserServiceImpl.signUp(UserServiceImpl.java:25) ~[classes/:?]
 	at me.sridharpatil.ecom.userservice.controllers.UserController.signUp(UserController.java:30) ~[classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
@@ -4987,9 +4987,9 @@ org.springframework.security.authorization.AuthorizationDeniedException: Access 
 2025-01-14 15:16:07.752 TRACE 32403 --- [nio-8082-exec-3] org.springframework.security.web.context.SupplierDeferredSecurityContext.init : Created SecurityContextImpl [Null authentication]
 2025-01-14 15:16:07.752 TRACE 32403 --- [nio-8082-exec-3] org.springframework.security.web.authentication.AnonymousAuthenticationFilter.defaultWithAnonymous : Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
 2025-01-14 15:16:07.752 TRACE 32403 --- [nio-8082-exec-3] org.springframework.security.web.header.writers.HstsHeaderWriter.writeHeaders : Not injecting HSTS header since it did not match request to [Is Secure]
-2025-01-14 15:16:07.752 ERROR 32403 --- [nio-8082-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExists: User with email user04@gmail.com already exists] with root cause
+2025-01-14 15:16:07.752 ERROR 32403 --- [nio-8082-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException: User with email user04@gmail.com already exists] with root cause
 
-me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExists: User with email user04@gmail.com already exists
+me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException: User with email user04@gmail.com already exists
 	at me.sridharpatil.ecom.userservice.services.UserServiceImpl.signUp(UserServiceImpl.java:25) ~[classes/:?]
 	at me.sridharpatil.ecom.userservice.controllers.UserController.signUp(UserController.java:30) ~[classes/:?]
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]

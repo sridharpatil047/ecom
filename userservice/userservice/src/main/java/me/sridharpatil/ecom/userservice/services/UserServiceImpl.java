@@ -1,7 +1,7 @@
 package me.sridharpatil.ecom.userservice.services;
 
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
-import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExists;
+import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.models.User;
@@ -26,11 +26,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User signUp(String name, String email, String password) throws UserAlreadyExists {
+    public User signUp(String name, String email, String password) throws UserAlreadyExistsException {
 
         // Check if user already exists
         if (userRepository.findUserByEmail(email).isPresent()) {
-            throw new UserAlreadyExists("User with email " + email + " already exists");
+            throw new UserAlreadyExistsException("User with email " + email + " already exists");
         }
 
         // Since user does not exist, create a new user
@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException {
+    public void updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException {
 
         // Check if user exists
         if (userRepository.findById(userId).isEmpty()) {
@@ -70,6 +70,6 @@ public class UserServiceImpl implements UserService{
         }
 
         // Save the user
-        return userRepository.save(user);
+        userRepository.save(user);
     }
 }
