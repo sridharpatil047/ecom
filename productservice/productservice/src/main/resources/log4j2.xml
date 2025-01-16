@@ -1,7 +1,7 @@
-<Configuration status="WARN" name="Project name">
+<Configuration status="WARN" name="productservice">
     <Properties>
         <Property name="log-path">logs</Property>
-        <Property name="logfile-name">projectname</Property>
+        <Property name="logfile-name">productservice</Property>
         <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
         <Property name="LOG_LEVEL_PATTERN">%5p</Property>
     </Properties>
