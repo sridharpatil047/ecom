@@ -1,6 +1,6 @@
 package me.sridharpatil.ecom.userservice.controllers;
 
-import me.sridharpatil.ecom.userservice.authserver.models.JpaUserDetails;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import me.sridharpatil.ecom.userservice.controllers.dtos.*;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
@@ -9,11 +9,7 @@ import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.services.UserService;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,7 +27,7 @@ public class UserController {
     ResponseEntity<SignUpResponseDto> signUp(
             @RequestBody
             SignUpRequestDto signUpRequestDto
-    ) throws UserAlreadyExistsException {
+    ) throws UserAlreadyExistsException, JsonProcessingException {
 
         User user = userService.signUp(
                 signUpRequestDto.getName(),

@@ -1,32 +1,43 @@
 package me.sridharpatil.ecom.userservice.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.repositories.UserRepository;
+import me.sridharpatil.ecom.userservice.services.dtos.SendEmailDto;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Log4j2
 public class UserServiceImpl implements UserService{
 
     UserRepository userRepository;
     RoleService roleService;
     BCryptPasswordEncoder bCryptPasswordEncoder;
+    KafkaTemplate<String, String> kafkaTemplate;
+    ObjectMapper objectMapper;
 
-    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder) {
+
+    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
         this.userRepository = userRepository;
         this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.kafkaTemplate = kafkaTemplate;
+        this.objectMapper = objectMapper;
     }
 
     @Override
-    public User signUp(String name, String email, String password) throws UserAlreadyExistsException {
+    public User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException {
 
         // Check if user already exists
         if (userRepository.findUserByEmail(email).isPresent()) {
@@ -41,7 +52,20 @@ public class UserServiceImpl implements UserService{
         user.setHashedPassword(bCryptPasswordEncoder.encode(password));
 
         // Save the user
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+        log.info("User saved successfully");
+
+        SendEmailDto sendEmailDto = new SendEmailDto();
+        sendEmailDto.setTo(email);
+        sendEmailDto.setSubject("Welcome to Ecom");
+        sendEmailDto.setBody("Welcome to Ecom, " + name + ". You have successfully signed up.");
+
+
+        String message = objectMapper.writeValueAsString(sendEmailDto);
+        kafkaTemplate.send("user-service.send-email", message);
+        log.info("Email sent to user");
+
+        return savedUser;
     }
 
     @Override
