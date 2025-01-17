@@ -3011,3 +3011,4 @@ Caused by: jakarta.mail.internet.AddressException: Local address contains contro
 2025-01-17 11:52:50.333 DEBUG 15558 --- [ntainer#0-0-C-1] me.sridharpatil.ecom.notificationservice.consumers.SendEmailEventConsumer.sendEmailHandler : Creating session object
 2025-01-17 11:52:50.345  INFO 15558 --- [ntainer#0-0-C-1] me.sridharpatil.ecom.notificationservice.consumers.SendEmailEventConsumer.sendEmailHandler : Sending email to: user01@gmail.com
 2025-01-17 11:52:54.391  INFO 15558 --- [ntainer#0-0-C-1] me.sridharpatil.ecom.notificationservice.consumers.SendEmailEventConsumer.sendEmailHandler : Email sent successfully!!
+2025-01-17 12:01:31.480  INFO 15558 --- [ntainer#0-0-C-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Consumer clientId=consumer-notification-service.email-sender-1, groupId=notification-service.email-sender] Node -1 disconnected.

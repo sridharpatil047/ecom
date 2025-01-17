@@ -1277,3 +1277,4 @@
 2025-01-17 11:52:50.295 TRACE 15542 --- [nio-8082-exec-1] org.springframework.security.web.context.SupplierDeferredSecurityContext.init : Created SecurityContextImpl [Null authentication]
 2025-01-17 11:52:50.295 TRACE 15542 --- [nio-8082-exec-1] org.springframework.security.web.context.SupplierDeferredSecurityContext.init : Created SecurityContextImpl [Null authentication]
 2025-01-17 11:52:50.295 TRACE 15542 --- [nio-8082-exec-1] org.springframework.security.web.authentication.AnonymousAuthenticationFilter.defaultWithAnonymous : Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
+2025-01-17 12:01:50.308  INFO 15542 --- [vice-producer-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Producer clientId=userservice-producer-1] Node -1 disconnected.
