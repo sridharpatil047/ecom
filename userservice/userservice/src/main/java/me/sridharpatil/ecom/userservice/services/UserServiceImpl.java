@@ -1,7 +1,6 @@
 package me.sridharpatil.ecom.userservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
@@ -9,9 +8,8 @@ import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.repositories.UserRepository;
-import me.sridharpatil.ecom.userservice.services.dtos.SendEmailDto;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
-import org.springframework.kafka.core.KafkaTemplate;
+import me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,16 +22,13 @@ public class UserServiceImpl implements UserService{
     UserRepository userRepository;
     RoleService roleService;
     BCryptPasswordEncoder bCryptPasswordEncoder;
-    KafkaTemplate<String, String> kafkaTemplate;
-    ObjectMapper objectMapper;
+    NotificationSenderContext notificationSenderContext;
 
-
-    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationSenderContext notificationSenderContext) {
         this.userRepository = userRepository;
         this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.kafkaTemplate = kafkaTemplate;
-        this.objectMapper = objectMapper;
+        this.notificationSenderContext = notificationSenderContext;
     }
 
     @Override
@@ -55,18 +50,15 @@ public class UserServiceImpl implements UserService{
         User savedUser = userRepository.save(user);
         log.info("User saved successfully");
 
-        SendEmailDto sendEmailDto = new SendEmailDto();
-        sendEmailDto.setTo(email);
-        sendEmailDto.setSubject("Welcome to Ecom");
-        sendEmailDto.setBody("Welcome to Ecom, " + name + ". You have successfully signed up.");
+        // Send notification
+        log.info("Sending notification");
+        notificationSenderContext.sendNotification(savedUser, Event.USER_CREATED);
 
 
-        String message = objectMapper.writeValueAsString(sendEmailDto);
-        kafkaTemplate.send("user-service.send-email", message);
-        log.info("Email sent to user");
-
+        log.info("User signed up successfully");
         return savedUser;
     }
+
 
     @Override
     public void updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException {

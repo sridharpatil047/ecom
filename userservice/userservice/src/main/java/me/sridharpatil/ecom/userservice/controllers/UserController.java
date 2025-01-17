@@ -72,28 +72,21 @@ public class UserController {
     }
 
 
-    // 3. POST /users/password-reset/request
-    @PostMapping("/password-reset/request")
-    ResponseEntity<String> requestPasswordReset(
-            @RequestBody
-            RequestPasswordResetReqDto reqDto
-    ) {
+    // 3. POST /users/{id}/password-reset/request
+    @PostMapping("/{id}/password-reset/request")
+    ResponseEntity<String> requestPasswordReset(@PathVariable("id") Long id) {
         // Request password reset
         // TODO : Implement this
-//        userService.requestPasswordReset(reqDto.getEmail());
-        return ResponseEntity.ok("A password reset link sent to your email " + reqDto.getEmail());
+//        userService.requestPasswordReset(Long id);
+        return ResponseEntity.ok("A password reset link sent to your email ");
     }
 
-    // 4. POST /users/password-reset/confirm
-    @PostMapping("/password-reset/confirm")
-    ResponseEntity<String> confirmPasswordReset(
-            @RequestBody
-            ConfirmPasswordResetReqDto reqDto
-    ) {
+    // 4. POST /users/{id}/password-reset/confirm
+    @PostMapping("/{id}/password-reset/confirm")
+    ResponseEntity<String> confirmPasswordReset(@PathVariable("id") Long id) {
         // Confirm password reset
         // TODO : Implement this
 //        userService.confirmPasswordReset(reqDto.getEmail(), reqDto.getOtp(), reqDto.getNewPassword());
         return ResponseEntity.ok("Password reset successfully");
     }
-
 }

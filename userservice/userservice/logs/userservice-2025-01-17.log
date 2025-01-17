@@ -1278,3 +1278,314 @@
 2025-01-17 11:52:50.295 TRACE 15542 --- [nio-8082-exec-1] org.springframework.security.web.context.SupplierDeferredSecurityContext.init : Created SecurityContextImpl [Null authentication]
 2025-01-17 11:52:50.295 TRACE 15542 --- [nio-8082-exec-1] org.springframework.security.web.authentication.AnonymousAuthenticationFilter.defaultWithAnonymous : Set SecurityContextHolder to AnonymousAuthenticationToken [Principal=anonymousUser, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null], Granted Authorities=[ROLE_ANONYMOUS]]
 2025-01-17 12:01:50.308  INFO 15542 --- [vice-producer-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Producer clientId=userservice-producer-1] Node -1 disconnected.
+2025-01-17 12:04:25.360  INFO 15542 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-17 12:04:25.369  INFO 15542 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-17 12:04:25.375  INFO 15542 --- [ionShutdownHook] org.apache.kafka.clients.producer.KafkaProducer.close : [Producer clientId=userservice-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-01-17 12:04:25.392  INFO 15542 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics scheduler closed
+2025-01-17 12:04:25.393  INFO 15542 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-01-17 12:04:25.393  INFO 15542 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-01-17 12:04:25.393  INFO 15542 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics reporters closed
+2025-01-17 12:04:25.394  INFO 15542 --- [ionShutdownHook] org.apache.kafka.common.utils.AppInfoParser.unregisterAppInfo : App info kafka.producer for userservice-producer-1 unregistered
+2025-01-17 12:04:25.408  INFO 15542 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 12:04:25.414  INFO 15542 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-17 12:04:25.443  INFO 15542 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-17 13:21:25.480  INFO 16866 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-17 13:21:25.497  INFO 16866 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Starting UserserviceApplication using Java 21.0.1 with PID 16866 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice)
+2025-01-17 13:21:25.498 DEBUG 16866 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-17 13:21:25.498  INFO 16866 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-17 13:21:25.807  INFO 16866 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-17 13:21:25.835  INFO 16866 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-01-17 13:21:26.116  INFO 16866 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8082 (http)
+2025-01-17 13:21:26.126  INFO 16866 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-17 13:21:26.127  INFO 16866 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-17 13:21:26.128  INFO 16866 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-17 13:21:26.148  INFO 16866 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-17 13:21:26.149  INFO 16866 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 636 ms
+2025-01-17 13:21:26.237  INFO 16866 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-17 13:21:26.263  INFO 16866 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-17 13:21:26.277  INFO 16866 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-17 13:21:26.380  INFO 16866 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-17 13:21:26.394  INFO 16866 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-17 13:21:26.547  INFO 16866 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@351c6341
+2025-01-17 13:21:26.547  INFO 16866 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-17 13:21:26.591  INFO 16866 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-17 13:21:27.027  INFO 16866 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-17 13:21:27.065  INFO 16866 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 13:21:27.211 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 13:21:27.212 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 13:21:27.212 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 13:21:27.212 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 13:21:27.213 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
+2025-01-17 13:21:27.235  INFO 16866 --- [           main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory.<clinit> : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-17 13:21:27.473 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 13:21:27.473 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 13:21:27.473 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 13:21:27.474 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 13:21:27.474 DEBUG 16866 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
+2025-01-17 13:21:27.535  WARN 16866 --- [           main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/controllers/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userServiceImpl' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 4: No qualifying bean of type 'me.sridharpatil.ecom.userservice.services.notifications.NotificationService' available: expected single matching bean but found 2: emailNotificationService,smsNotificationService
+2025-01-17 13:21:27.535  INFO 16866 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 13:21:27.536  INFO 16866 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-17 13:21:27.545  INFO 16866 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-17 13:21:27.546  INFO 16866 --- [           main] org.apache.catalina.core.StandardService.log : Stopping service [Tomcat]
+2025-01-17 13:21:27.551  INFO 16866 --- [           main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-17 13:21:27.559 ERROR 16866 --- [           main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter.report : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 4 of constructor in me.sridharpatil.ecom.userservice.services.UserServiceImpl required a single bean, but 2 were found:
+	- emailNotificationService: defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/email/EmailNotificationService.class]
+	- smsNotificationService: defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/sms/SmsNotificationService.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
+
+
+2025-01-17 20:31:01.745  INFO 18776 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-17 20:31:01.764  INFO 18776 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Starting UserserviceApplication using Java 21.0.1 with PID 18776 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice)
+2025-01-17 20:31:01.766 DEBUG 18776 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-17 20:31:01.766  INFO 18776 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-17 20:31:02.053  INFO 18776 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-17 20:31:02.078  INFO 18776 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2025-01-17 20:31:02.333  INFO 18776 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8082 (http)
+2025-01-17 20:31:02.342  INFO 18776 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-17 20:31:02.343  INFO 18776 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-17 20:31:02.343  INFO 18776 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-17 20:31:02.362  INFO 18776 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-17 20:31:02.363  INFO 18776 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 581 ms
+2025-01-17 20:31:02.443  INFO 18776 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-17 20:31:02.464  INFO 18776 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-17 20:31:02.475  INFO 18776 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-17 20:31:02.570  INFO 18776 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-17 20:31:02.583  INFO 18776 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-17 20:31:02.737  INFO 18776 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b81938d
+2025-01-17 20:31:02.738  INFO 18776 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-17 20:31:02.776  INFO 18776 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-17 20:31:03.187  INFO 18776 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-17 20:31:03.227  INFO 18776 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 20:31:03.365 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 20:31:03.366 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 20:31:03.366 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 20:31:03.366 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 20:31:03.366 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
+2025-01-17 20:31:03.388  INFO 18776 --- [           main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory.<clinit> : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-17 20:31:03.624 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 20:31:03.624 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 20:31:03.624 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 20:31:03.624 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 20:31:03.624 DEBUG 18776 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
+2025-01-17 20:31:03.714  WARN 18776 --- [           main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/controllers/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userServiceImpl' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'notificationSenderContext' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/NotificationSenderContext.class]: Failed to instantiate [me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext]: Constructor threw exception
+2025-01-17 20:31:03.714  INFO 18776 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 20:31:03.716  INFO 18776 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-17 20:31:03.725  INFO 18776 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-17 20:31:03.726  INFO 18776 --- [           main] org.apache.catalina.core.StandardService.log : Stopping service [Tomcat]
+2025-01-17 20:31:03.732  INFO 18776 --- [           main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-17 20:31:03.739 ERROR 18776 --- [           main] org.springframework.boot.SpringApplication.reportFailure : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/controllers/UserController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userServiceImpl' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'notificationSenderContext' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/NotificationSenderContext.class]: Failed to instantiate [me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.1.jar:3.4.1]
+	at me.sridharpatil.ecom.userservice.UserserviceApplication.main(UserserviceApplication.java:10) [classes/:?]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 3: Error creating bean with name 'notificationSenderContext' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/NotificationSenderContext.class]: Failed to instantiate [me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 21 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'notificationSenderContext' defined in file [/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes/me/sridharpatil/ecom/userservice/services/notifications/NotificationSenderContext.class]: Failed to instantiate [me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 21 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:145) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 21 more
+Caused by: java.lang.IllegalArgumentException: Invalid notification type
+	at me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext.<init>(NotificationSenderContext.java:20) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:209) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:145) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:318) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:309) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1573) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1377) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1214) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 21 more
+
+2025-01-17 20:31:58.480  INFO 18793 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-17 20:31:58.503  INFO 18793 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Starting UserserviceApplication using Java 21.0.1 with PID 18793 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/userservice/userservice)
+2025-01-17 20:31:58.505 DEBUG 18793 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-17 20:31:58.505  INFO 18793 --- [           main] me.sridharpatil.ecom.userservice.UserserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-17 20:31:58.781  INFO 18793 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-17 20:31:58.810  INFO 18793 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 25 ms. Found 5 JPA repository interfaces.
+2025-01-17 20:31:59.094  INFO 18793 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8082 (http)
+2025-01-17 20:31:59.100  INFO 18793 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8082"]
+2025-01-17 20:31:59.101  INFO 18793 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-17 20:31:59.101  INFO 18793 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-17 20:31:59.120  INFO 18793 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-17 20:31:59.120  INFO 18793 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 599 ms
+2025-01-17 20:31:59.201  INFO 18793 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-17 20:31:59.221  INFO 18793 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-17 20:31:59.233  INFO 18793 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-17 20:31:59.333  INFO 18793 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-17 20:31:59.347  INFO 18793 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-17 20:31:59.501  INFO 18793 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5ac0bf84
+2025-01-17 20:31:59.501  INFO 18793 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-17 20:31:59.536  INFO 18793 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-17 20:31:59.985  INFO 18793 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-17 20:32:00.023  INFO 18793 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-17 20:32:00.172 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 20:32:00.172 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 20:32:00.173 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 20:32:00.173 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 20:32:00.173 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
+2025-01-17 20:32:00.197  INFO 18793 --- [           main] org.springframework.data.jpa.repository.query.QueryEnhancerFactory.<clinit> : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-17 20:32:00.442 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.jackson2.CoreJackson2Module, now registering
+2025-01-17 20:32:00.442 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebJackson2Module, now registering
+2025-01-17 20:32:00.442 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.server.jackson2.WebServerJackson2Module, now registering
+2025-01-17 20:32:00.442 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module org.springframework.security.web.jackson2.WebServletJackson2Module, now registering
+2025-01-17 20:32:00.443 DEBUG 18793 --- [           main] org.springframework.security.jackson2.SecurityJackson2Modules.loadAndGetInstance : Loaded module com.fasterxml.jackson.datatype.jsr310.JavaTimeModule, now registering
