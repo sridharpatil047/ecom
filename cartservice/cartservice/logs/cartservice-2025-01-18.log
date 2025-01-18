@@ -1,0 +1,435 @@
+2025-01-18 13:12:52.686  INFO 26360 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:12:52.705  INFO 26360 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26360 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:12:52.706 DEBUG 26360 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:12:52.707  INFO 26360 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:12:52.958  INFO 26360 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:12:52.968  INFO 26360 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:12:53.193  INFO 26360 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:12:53.199  INFO 26360 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:12:53.200  INFO 26360 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:12:53.200  INFO 26360 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:12:53.218  INFO 26360 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:12:53.219  INFO 26360 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 497 ms
+2025-01-18 13:12:53.293  INFO 26360 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:12:53.319  INFO 26360 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:12:53.335  INFO 26360 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:12:53.444  INFO 26360 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:12:53.459  INFO 26360 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:12:54.505  WARN 26360 --- [           main] org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions : SQL Error: 0, SQLState: 08S01
+2025-01-18 13:12:54.506 ERROR 26360 --- [           main] org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2025-01-18 13:12:54.507  WARN 26360 --- [           main] org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:320) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) [spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) [spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) [spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) [spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) [spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.1.jar:3.4.1]
+	at me.sridharpatil.ecom.cartservice.CartserviceApplication.main(CartserviceApplication.java:10) [classes/:?]
+Caused by: com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:837) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	... 35 more
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:961) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	... 35 more
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[?:?]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:961) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.1.0.jar:9.1.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:550) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:98) ~[HikariCP-5.1.0.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-5.1.0.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:467) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	... 35 more
+
+2025-01-18 13:12:54.515 ERROR 26360 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Failed to initialize JPA EntityManagerFactory: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-01-18 13:12:54.515  WARN 26360 --- [           main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+2025-01-18 13:12:54.518  INFO 26360 --- [           main] org.apache.catalina.core.StandardService.log : Stopping service [Tomcat]
+2025-01-18 13:12:54.526  INFO 26360 --- [           main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-18 13:12:54.537 ERROR 26360 --- [           main] org.springframework.boot.SpringApplication.reportFailure : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.1.jar:3.4.1]
+	at me.sridharpatil.ecom.cartservice.CartserviceApplication.main(CartserviceApplication.java:10) [classes/:?]
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment] due to: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:276) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 15 more
+Caused by: org.hibernate.HibernateException: Unable to determine Dialect without JDBC metadata (please set 'jakarta.persistence.jdbc.url' for common cases or 'hibernate.dialect' when a custom Dialect implementation must be provided)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.determineDialect(DialectFactoryImpl.java:191) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentWithDefaults(JdbcEnvironmentInitiator.java:181) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:392) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 15 more
+
+2025-01-18 13:14:24.617  INFO 26408 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:14:24.634  INFO 26408 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26408 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:14:24.636 DEBUG 26408 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:14:24.636  INFO 26408 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:14:24.872  INFO 26408 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:14:24.880  INFO 26408 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:14:25.073  INFO 26408 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:14:25.080  INFO 26408 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:14:25.080  INFO 26408 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:14:25.081  INFO 26408 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:14:25.098  INFO 26408 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:14:25.099  INFO 26408 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 450 ms
+2025-01-18 13:14:25.167  INFO 26408 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:14:25.192  INFO 26408 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:14:25.205  INFO 26408 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:14:25.311  INFO 26408 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:14:25.324  INFO 26408 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:14:25.473  INFO 26408 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@474ce6b8
+2025-01-18 13:14:25.474  INFO 26408 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-18 13:14:25.510  INFO 26408 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-18 13:14:25.574 ERROR 26408 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Failed to initialize JPA EntityManagerFactory: Basic collection has element type 'me.sridharpatil.ecom.cartservice.models.CartItem' which is not a known basic type (attribute is not annotated '@ElementCollection', '@OneToMany', or '@ManyToMany')
+2025-01-18 13:14:25.574  WARN 26408 --- [           main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Basic collection has element type 'me.sridharpatil.ecom.cartservice.models.CartItem' which is not a known basic type (attribute is not annotated '@ElementCollection', '@OneToMany', or '@ManyToMany')
+2025-01-18 13:14:25.574  INFO 26408 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-18 13:14:25.577  INFO 26408 --- [           main] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-18 13:14:25.578  INFO 26408 --- [           main] org.apache.catalina.core.StandardService.log : Stopping service [Tomcat]
+2025-01-18 13:14:25.583  INFO 26408 --- [           main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-01-18 13:14:25.591 ERROR 26408 --- [           main] org.springframework.boot.SpringApplication.reportFailure : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Basic collection has element type 'me.sridharpatil.ecom.cartservice.models.CartItem' which is not a known basic type (attribute is not annotated '@ElementCollection', '@OneToMany', or '@ManyToMany')
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.1.jar:6.2.1]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.1.jar:3.4.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.1.jar:3.4.1]
+	at me.sridharpatil.ecom.cartservice.CartserviceApplication.main(CartserviceApplication.java:10) [classes/:?]
+Caused by: org.hibernate.MappingException: Basic collection has element type 'me.sridharpatil.ecom.cartservice.models.CartItem' which is not a known basic type (attribute is not annotated '@ElementCollection', '@OneToMany', or '@ManyToMany')
+	at org.hibernate.type.descriptor.java.spi.BasicCollectionJavaType.getRecommendedJdbcType(BasicCollectionJavaType.java:72) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.process.internal.InferredBasicValueResolver.from(InferredBasicValueResolver.java:195) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.mapping.BasicValue.resolution(BasicValue.java:664) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.mapping.BasicValue.buildResolution(BasicValue.java:461) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:351) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:341) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1765) ~[?:?]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1743) ~[?:?]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.6.4.Final.jar:6.6.4.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855) ~[spring-beans-6.2.1.jar:6.2.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-6.2.1.jar:6.2.1]
+	... 15 more
+
+2025-01-18 13:15:23.885  INFO 26446 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:15:23.902  INFO 26446 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26446 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:15:23.904 DEBUG 26446 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:15:23.904  INFO 26446 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:15:24.142  INFO 26446 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:15:24.151  INFO 26446 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:15:24.355  INFO 26446 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:15:24.361  INFO 26446 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:15:24.362  INFO 26446 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:15:24.362  INFO 26446 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:15:24.380  INFO 26446 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:15:24.381  INFO 26446 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 461 ms
+2025-01-18 13:15:24.449  INFO 26446 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:15:24.473  INFO 26446 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:15:24.485  INFO 26446 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:15:24.584  INFO 26446 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:15:24.598  INFO 26446 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:15:24.749  INFO 26446 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34eaf9c1
+2025-01-18 13:15:24.750  INFO 26446 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-18 13:15:24.785  INFO 26446 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-18 13:15:25.155  INFO 26446 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-18 13:15:25.608  INFO 26446 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:15:25.632  WARN 26446 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-18 13:15:25.836  INFO 26446 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:15:25.841  INFO 26446 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-18 13:15:25.845  INFO 26446 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 2.063 seconds (process running for 2.436)
+2025-01-18 13:31:37.581  INFO 26446 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-18 13:31:37.590  INFO 26446 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-18 13:31:37.596  INFO 26446 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:31:37.601  INFO 26446 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-18 13:31:37.614  INFO 26446 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-18 13:31:39.825  INFO 26820 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:31:39.842  INFO 26820 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26820 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:31:39.843 DEBUG 26820 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:31:39.843  INFO 26820 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:31:40.071  INFO 26820 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:31:40.080  INFO 26820 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:31:40.277  INFO 26820 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:31:40.283  INFO 26820 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:31:40.284  INFO 26820 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:31:40.284  INFO 26820 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:31:40.302  INFO 26820 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:31:40.302  INFO 26820 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 445 ms
+2025-01-18 13:31:40.367  INFO 26820 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:31:40.387  INFO 26820 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:31:40.399  INFO 26820 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:31:40.488  INFO 26820 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:31:40.502  INFO 26820 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:31:40.648  INFO 26820 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1cdd31a4
+2025-01-18 13:31:40.649  INFO 26820 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-18 13:31:40.686  INFO 26820 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-18 13:31:41.021  INFO 26820 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-18 13:31:41.099  INFO 26820 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:31:41.122  WARN 26820 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-18 13:31:41.334  INFO 26820 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:31:41.339  INFO 26820 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-18 13:31:41.343  INFO 26820 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.616 seconds (process running for 1.978)
+2025-01-18 13:33:31.306  INFO 26820 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-18 13:33:31.311  INFO 26820 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-18 13:33:31.316  INFO 26820 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:33:31.318  INFO 26820 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-18 13:33:31.330  INFO 26820 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-18 13:33:32.967  INFO 26892 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:33:32.983  INFO 26892 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26892 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:33:32.984 DEBUG 26892 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:33:32.985  INFO 26892 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:33:33.211  INFO 26892 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:33:33.220  INFO 26892 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:33:33.412  INFO 26892 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:33:33.418  INFO 26892 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:33:33.418  INFO 26892 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:33:33.419  INFO 26892 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:33:33.438  INFO 26892 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:33:33.438  INFO 26892 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 440 ms
+2025-01-18 13:33:33.501  INFO 26892 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:33:33.524  INFO 26892 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:33:33.536  INFO 26892 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:33:33.626  INFO 26892 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:33:33.639  INFO 26892 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:33:33.788  INFO 26892 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7853363c
+2025-01-18 13:33:33.788  INFO 26892 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-18 13:33:33.826  INFO 26892 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-18 13:33:34.170  INFO 26892 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-18 13:33:34.590  INFO 26892 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:33:34.613  WARN 26892 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-18 13:33:34.806  INFO 26892 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:33:34.812  INFO 26892 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-18 13:33:34.816  INFO 26892 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.949 seconds (process running for 2.31)
+2025-01-18 13:36:12.229  INFO 26892 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-18 13:36:12.235  INFO 26892 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-18 13:36:12.242  INFO 26892 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:36:12.248  INFO 26892 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-18 13:36:12.273  INFO 26892 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-18 13:36:13.864  INFO 26991 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-18 13:36:13.880  INFO 26991 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 26991 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-18 13:36:13.881 DEBUG 26991 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-18 13:36:13.882  INFO 26991 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-18 13:36:14.113  INFO 26991 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-18 13:36:14.121  INFO 26991 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2025-01-18 13:36:14.319  INFO 26991 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-18 13:36:14.325  INFO 26991 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:36:14.325  INFO 26991 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-18 13:36:14.325  INFO 26991 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-18 13:36:14.344  INFO 26991 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-18 13:36:14.344  INFO 26991 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 449 ms
+2025-01-18 13:36:14.407  INFO 26991 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-18 13:36:14.429  INFO 26991 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-18 13:36:14.441  INFO 26991 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-18 13:36:14.529  INFO 26991 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-18 13:36:14.543  INFO 26991 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-18 13:36:14.690  INFO 26991 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fe2a366
+2025-01-18 13:36:14.690  INFO 26991 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-18 13:36:14.727  INFO 26991 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-18 13:36:15.077  INFO 26991 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-18 13:36:15.131  INFO 26991 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-18 13:36:15.154  WARN 26991 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-18 13:36:15.354  INFO 26991 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-18 13:36:15.359  INFO 26991 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-18 13:36:15.363  INFO 26991 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.599 seconds (process running for 1.956)
