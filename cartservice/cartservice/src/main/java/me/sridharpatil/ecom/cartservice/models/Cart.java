@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.cartservice.models;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
@@ -12,7 +13,7 @@ import java.util.List;
 public class Cart extends BaseModel{
     private Long userId;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<CartItem> items;
 
     private double totalPrice;
