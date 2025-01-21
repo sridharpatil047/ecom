@@ -8,8 +8,6 @@ import me.sridharpatil.ecom.cartservice.controllers.dtos.UpdateItemQuantityReqDt
 import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.ProductAlreadyExistsException;
-import me.sridharpatil.ecom.cartservice.models.Cart;
-import me.sridharpatil.ecom.cartservice.models.CartItem;
 import me.sridharpatil.ecom.cartservice.services.CartService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
