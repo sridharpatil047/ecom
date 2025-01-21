@@ -4651,3 +4651,8 @@ java.lang.RuntimeException: Product already exists in cart
 2025-01-21 14:56:26.212 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 7
 2025-01-21 14:56:28.931 DEBUG 48489 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
 2025-01-21 14:56:28.939  INFO 48489 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 15:02:19.002  INFO 48489 --- [vice-producer-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Producer clientId=cartservice-producer-1] Node -1 disconnected.
+2025-01-21 15:03:19.372 ERROR 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart already exists for user: 7, skipping cart creation
+2025-01-21 15:03:23.164 ERROR 48489 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart already exists for user: 7, skipping cart creation
+2025-01-21 15:03:36.325 ERROR 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart already exists for user: 7, skipping cart creation
+2025-01-21 15:12:49.029  INFO 48489 --- [vice-producer-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Producer clientId=cartservice-producer-1] Node -1 disconnected.

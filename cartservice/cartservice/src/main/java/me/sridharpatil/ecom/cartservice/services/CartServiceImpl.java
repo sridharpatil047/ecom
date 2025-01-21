@@ -3,6 +3,9 @@ package me.sridharpatil.ecom.cartservice.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
+import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
+import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
+import me.sridharpatil.ecom.cartservice.exceptions.ProductAlreadyExistsException;
 import me.sridharpatil.ecom.cartservice.models.Cart;
 import me.sridharpatil.ecom.cartservice.models.CartItem;
 import me.sridharpatil.ecom.cartservice.repositories.CartItemRepository;
@@ -47,11 +50,11 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public Cart getCart(Long userId) {
+    public Cart getCart(Long userId) throws CartNotFoundException {
         log.debug("Getting cart for user: {}", userId);
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
-            throw new RuntimeException("Cart not found for user: " + userId);
+            throw new CartNotFoundException("Cart not found for user: " + userId);
         }
 
         log.info("Cart found for user: {}", userId);
@@ -59,24 +62,24 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public CartItem addItemToCart(Long userId, Long productId, double price, int quantity) {
+    public CartItem addItemToCart(Long userId, Long productId, double price, int quantity) throws ProductAlreadyExistsException, CartNotFoundException {
 
         // Check if product already exists in cart
         log.debug("Checking if product already exists in cart for user: {}, product: {}", userId, productId);
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
-            throw new RuntimeException("Cart not found for user: " + userId);
+            throw new CartNotFoundException("Cart not found for user: " + userId);
         }
         Cart cart = optionalCart.get();
-        cart.getItems()
+        CartItem cartItem1 = cart.getItems()
                 .stream()
                 .filter(item -> item.getProductId().equals(productId))
                 .findFirst()
-                .ifPresent(item -> {
-                    log.error("Product already exists in cart for user: {}, product: {}", userId, productId);
-                    throw new RuntimeException("Product already exists in cart");
-                });
-
+                .orElse(null);
+        if (cartItem1 != null){
+            log.error("Product already exists in cart for user: {}, product: {}", userId, productId);
+            throw new ProductAlreadyExistsException("Product " + productId + " already exists in cart");
+        }
 
         log.debug("Adding item to cart for user: {}, product: {}, price: {}, quantity: {}", userId, productId, price, quantity);
         CartItem cartItem = new CartItem();
@@ -100,12 +103,12 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public CartItem updateItemQuantity(Long userId, Long itemId, int quantity) {
+    public CartItem updateItemQuantity(Long userId, Long itemId, int quantity) throws CartNotFoundException, CartItemNotFoundException {
 
         log.debug("Updating item quantity for user: {}, item: {}, quantity: {}", userId, itemId, quantity);
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
-            throw new RuntimeException("Cart not found for user: " + userId);
+            throw new CartNotFoundException("Cart not found for user: " + userId);
         }
 
         log.debug("Searching for item in cart for user: {}, item: {}", userId, itemId);
@@ -114,7 +117,7 @@ public class CartServiceImpl implements CartService{
                 .stream()
                 .filter(item -> item.getId().equals(itemId))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Item not found in cart"));
+                .orElseThrow(() -> new CartItemNotFoundException("Item not found in cart"));
 
         log.debug("Update item quantity for user: {}, item: {}, quantity: {}", userId, itemId, quantity);
         cartItem.setQuantity(quantity);
@@ -131,12 +134,12 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public void checkout(Long userId) throws JsonProcessingException {
+    public void checkout(Long userId) throws JsonProcessingException, CartNotFoundException {
 
         log.debug("Checking out cart for user: {}", userId);
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
-            throw new RuntimeException("Cart not found for user: " + userId);
+            throw new CartNotFoundException("Cart not found for user: " + userId);
         }
 
         log.debug("Updating total price for cart for user: {}", userId);
@@ -155,13 +158,13 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public void clearCart(Long userId) {
+    public void clearCart(Long userId) throws CartNotFoundException {
 
         log.debug("Clearing cart for user: {}", userId);
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
             log.error("Cart not found for user: {}", userId);
-            throw new RuntimeException("Cart not found for user: " + userId);
+            throw new CartNotFoundException("Cart not found for user: " + userId);
         }
 
         log.info("Clearing cart for user: {}", userId);

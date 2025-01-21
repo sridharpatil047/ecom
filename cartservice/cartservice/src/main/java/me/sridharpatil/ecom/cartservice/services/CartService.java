@@ -1,16 +1,19 @@
 package me.sridharpatil.ecom.cartservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
+import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
+import me.sridharpatil.ecom.cartservice.exceptions.ProductAlreadyExistsException;
 import me.sridharpatil.ecom.cartservice.models.Cart;
 import me.sridharpatil.ecom.cartservice.models.CartItem;
 
 public interface CartService {
     Cart createCart(Long userId);
-    Cart getCart(Long userId);
-    CartItem addItemToCart(Long userId, Long productId, double price, int quantity);
-    CartItem updateItemQuantity(Long userId, Long itemId, int quantity);
-    void checkout(Long userId) throws JsonProcessingException;
-    void clearCart(Long userId);
+    Cart getCart(Long userId) throws CartNotFoundException;
+    CartItem addItemToCart(Long userId, Long productId, double price, int quantity) throws CartNotFoundException, ProductAlreadyExistsException;
+    CartItem updateItemQuantity(Long userId, Long itemId, int quantity) throws CartNotFoundException, CartItemNotFoundException;
+    void checkout(Long userId) throws JsonProcessingException, CartNotFoundException;
+    void clearCart(Long userId) throws CartNotFoundException;
 
 
 //    void removeItemFromCart(String userId, String productId);
