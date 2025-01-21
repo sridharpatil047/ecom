@@ -60,6 +60,24 @@ public class CartServiceImpl implements CartService{
 
     @Override
     public CartItem addItemToCart(Long userId, Long productId, double price, int quantity) {
+
+        // Check if product already exists in cart
+        log.debug("Checking if product already exists in cart for user: {}, product: {}", userId, productId);
+        Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
+        if (optionalCart.isEmpty()){
+            throw new RuntimeException("Cart not found for user: " + userId);
+        }
+        Cart cart = optionalCart.get();
+        cart.getItems()
+                .stream()
+                .filter(item -> item.getProductId().equals(productId))
+                .findFirst()
+                .ifPresent(item -> {
+                    log.error("Product already exists in cart for user: {}, product: {}", userId, productId);
+                    throw new RuntimeException("Product already exists in cart");
+                });
+
+
         log.debug("Adding item to cart for user: {}, product: {}, price: {}, quantity: {}", userId, productId, price, quantity);
         CartItem cartItem = new CartItem();
         cartItem.setProductId(productId);
@@ -69,14 +87,7 @@ public class CartServiceImpl implements CartService{
 
         cartItemRepository.save(cartItem);
 
-        log.debug("Checking if cart exists for user: {}", userId);
-        Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
-        if (optionalCart.isEmpty()){
-            throw new RuntimeException("Cart not found for user: " + userId);
-        }
-
         log.info("Adding item to cart for user: {}, product: {}", userId, productId);
-        Cart cart = optionalCart.get();
         cart.getItems().add(cartItem);
         double totalPrice = cart.getItems()
                 .stream()
@@ -157,6 +168,7 @@ public class CartServiceImpl implements CartService{
         Cart cart = optionalCart.get();
         cartItemRepository.deleteAll(cart.getItems());
         cart.getItems().clear();
+        cart.setTotalPrice(0.0);
         cartRepository.save(cart);
         log.debug("Cart cleared for user: {}", userId);
     }

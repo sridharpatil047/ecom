@@ -3888,3 +3888,766 @@ org.hibernate.TransientObjectException: persistent instance references an unsave
 2025-01-21 04:53:38.325 DEBUG 41347 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 5
 2025-01-21 04:53:52.526 DEBUG 41347 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 5
 2025-01-21 04:53:52.534  INFO 41347 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 5
+2025-01-21 05:01:53.832  INFO 41347 --- [vice-producer-1] org.apache.kafka.clients.NetworkClient.handleDisconnections : [Producer clientId=cartservice-producer-1] Node -1 disconnected.
+2025-01-21 05:03:42.693  INFO 41347 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-21 05:03:42.698  INFO 41347 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-21 05:03:42.703  INFO 41347 --- [ionShutdownHook] org.apache.kafka.clients.producer.KafkaProducer.close : [Producer clientId=cartservice-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-01-21 05:03:42.709  INFO 41347 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics scheduler closed
+2025-01-21 05:03:42.710  INFO 41347 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-01-21 05:03:42.710  INFO 41347 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-01-21 05:03:42.710  INFO 41347 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics reporters closed
+2025-01-21 05:03:42.712  INFO 41347 --- [ionShutdownHook] org.apache.kafka.common.utils.AppInfoParser.unregisterAppInfo : App info kafka.producer for cartservice-producer-1 unregistered
+2025-01-21 05:03:42.715  INFO 41347 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 05:03:42.718  INFO 41347 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-21 05:03:42.729  INFO 41347 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-21 14:38:50.892  INFO 48137 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-21 14:38:50.911  INFO 48137 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 48137 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-21 14:38:50.912 DEBUG 48137 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-21 14:38:50.912  INFO 48137 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-21 14:38:51.227  INFO 48137 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21 14:38:51.249  INFO 48137 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2025-01-21 14:38:51.466  INFO 48137 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-21 14:38:51.472  INFO 48137 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:38:51.473  INFO 48137 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-21 14:38:51.473  INFO 48137 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-21 14:38:51.501  INFO 48137 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-21 14:38:51.501  INFO 48137 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 574 ms
+2025-01-21 14:38:51.568  INFO 48137 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21 14:38:51.592  INFO 48137 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-21 14:38:51.606  INFO 48137 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-21 14:38:51.708  INFO 48137 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21 14:38:51.722  INFO 48137 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-21 14:38:51.896  INFO 48137 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2047adea
+2025-01-21 14:38:51.896  INFO 48137 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-21 14:38:51.940  INFO 48137 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-21 14:38:52.301  INFO 48137 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21 14:38:52.344  INFO 48137 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:38:52.522  WARN 48137 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21 14:38:52.667  INFO 48137 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:38:52.672  INFO 48137 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-21 14:38:52.676  INFO 48137 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.903 seconds (process running for 2.344)
+2025-01-21 14:39:01.117  INFO 48137 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21 14:39:01.118  INFO 48137 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-21 14:39:01.119  INFO 48137 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-21 14:39:01.210 DEBUG 48137 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 6
+2025-01-21 14:39:01.211  INFO 48137 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 6
+2025-01-21 14:39:01.246 ERROR 48137 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "me.sridharpatil.ecom.cartservice.models.Cart.getItems()" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "java.util.List.stream()" because the return value of "me.sridharpatil.ecom.cartservice.models.Cart.getItems()" is null
+	at me.sridharpatil.ecom.cartservice.controllers.dtos.CartResDto.of(CartResDto.java:25) ~[classes/:?]
+	at me.sridharpatil.ecom.cartservice.controllers.CartController.createCart(CartController.java:28) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2025-01-21 14:40:01.268  INFO 48137 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-21 14:40:01.276  INFO 48137 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-21 14:40:01.283  INFO 48137 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:40:01.285  INFO 48137 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-21 14:40:01.293  INFO 48137 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-21 14:40:02.971  INFO 48179 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-21 14:40:02.987  INFO 48179 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 48179 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-21 14:40:02.988 DEBUG 48179 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-21 14:40:02.988  INFO 48179 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-21 14:40:03.214  INFO 48179 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21 14:40:03.236  INFO 48179 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2025-01-21 14:40:03.430  INFO 48179 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-21 14:40:03.436  INFO 48179 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:40:03.437  INFO 48179 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-21 14:40:03.437  INFO 48179 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-21 14:40:03.453  INFO 48179 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-21 14:40:03.454  INFO 48179 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 452 ms
+2025-01-21 14:40:03.525  INFO 48179 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21 14:40:03.545  INFO 48179 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-21 14:40:03.558  INFO 48179 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-21 14:40:03.648  INFO 48179 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21 14:40:03.660  INFO 48179 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-21 14:40:03.806  INFO 48179 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61d011e
+2025-01-21 14:40:03.806  INFO 48179 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-21 14:40:03.844  INFO 48179 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-21 14:40:04.187  INFO 48179 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21 14:40:04.223  INFO 48179 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:40:04.396  WARN 48179 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21 14:40:04.536  INFO 48179 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:40:04.541  INFO 48179 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-21 14:40:04.545  INFO 48179 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.675 seconds (process running for 2.03)
+2025-01-21 14:40:08.851  INFO 48179 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21 14:40:08.851  INFO 48179 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-21 14:40:08.853  INFO 48179 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 2 ms
+2025-01-21 14:40:08.962 ERROR 48179 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart already exists for user: 6, skipping cart creation
+2025-01-21 14:40:31.724 DEBUG 48179 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:40:31.738  INFO 48179 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:40:51.365 DEBUG 48179 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 1267, price: 12.74, quantity: 3
+2025-01-21 14:40:51.406 DEBUG 48179 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if cart exists for user: 6
+2025-01-21 14:40:51.408  INFO 48179 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 1267
+2025-01-21 14:41:05.285 DEBUG 48179 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278, price: 12.74, quantity: 23
+2025-01-21 14:41:05.298 DEBUG 48179 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if cart exists for user: 6
+2025-01-21 14:41:05.303  INFO 48179 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278
+2025-01-21 14:41:09.385 DEBUG 48179 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:41:09.392  INFO 48179 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:42:54.830  INFO 48179 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-21 14:42:54.834  INFO 48179 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-21 14:42:54.839  INFO 48179 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:42:54.840  INFO 48179 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-21 14:42:54.855  INFO 48179 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-21 14:42:56.664  INFO 48247 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-21 14:42:56.681  INFO 48247 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 48247 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-21 14:42:56.682 DEBUG 48247 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-21 14:42:56.682  INFO 48247 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-21 14:42:56.911  INFO 48247 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21 14:42:56.932  INFO 48247 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2025-01-21 14:42:57.130  INFO 48247 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-21 14:42:57.135  INFO 48247 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:42:57.136  INFO 48247 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-21 14:42:57.136  INFO 48247 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-21 14:42:57.160  INFO 48247 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-21 14:42:57.161  INFO 48247 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 464 ms
+2025-01-21 14:42:57.227  INFO 48247 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21 14:42:57.248  INFO 48247 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-21 14:42:57.260  INFO 48247 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-21 14:42:57.377  INFO 48247 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21 14:42:57.391  INFO 48247 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-21 14:42:57.538  INFO 48247 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43b4ec0c
+2025-01-21 14:42:57.539  INFO 48247 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-21 14:42:57.580  INFO 48247 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-21 14:42:57.940  INFO 48247 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21 14:42:57.978  INFO 48247 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:42:58.143  WARN 48247 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21 14:42:58.285  INFO 48247 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:42:58.290  INFO 48247 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-21 14:42:58.294  INFO 48247 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.742 seconds (process running for 2.104)
+2025-01-21 14:43:00.689  INFO 48247 --- [nio-8084-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21 14:43:00.689  INFO 48247 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-21 14:43:00.690  INFO 48247 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-21 14:43:00.713 DEBUG 48247 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:43:00.779  INFO 48247 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:43:14.154 DEBUG 48247 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Updating item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:14.160 DEBUG 48247 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Searching for item in cart for user: 6, item: 23
+2025-01-21 14:43:14.163 DEBUG 48247 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Update item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:14.202  INFO 48247 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Item quantity updated for user: 6, item: 23
+2025-01-21 14:43:20.747 DEBUG 48247 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:43:20.754  INFO 48247 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:43:37.763 DEBUG 48247 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278, price: 12.74, quantity: 23
+2025-01-21 14:43:37.790 DEBUG 48247 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if cart exists for user: 6
+2025-01-21 14:43:37.792  INFO 48247 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278
+2025-01-21 14:43:42.012 DEBUG 48247 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278, price: 12.74, quantity: 23
+2025-01-21 14:43:42.024 DEBUG 48247 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if cart exists for user: 6
+2025-01-21 14:43:42.031  INFO 48247 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98278
+2025-01-21 14:43:52.797 DEBUG 48247 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Updating item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:52.803 DEBUG 48247 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Searching for item in cart for user: 6, item: 23
+2025-01-21 14:43:52.807 DEBUG 48247 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Update item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:52.815  INFO 48247 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Item quantity updated for user: 6, item: 23
+2025-01-21 14:43:54.366 DEBUG 48247 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Updating item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:54.372 DEBUG 48247 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Searching for item in cart for user: 6, item: 23
+2025-01-21 14:43:54.376 DEBUG 48247 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Update item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:43:54.383  INFO 48247 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Item quantity updated for user: 6, item: 23
+2025-01-21 14:43:56.787 DEBUG 48247 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:43:56.794  INFO 48247 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:50:39.160  INFO 48247 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-21 14:50:39.164  INFO 48247 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-21 14:50:39.166  INFO 48247 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:50:39.167  INFO 48247 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-21 14:50:39.197  INFO 48247 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-21 14:50:41.024  INFO 48440 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-21 14:50:41.041  INFO 48440 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 48440 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-21 14:50:41.042 DEBUG 48440 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-21 14:50:41.042  INFO 48440 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-21 14:50:41.271  INFO 48440 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21 14:50:41.293  INFO 48440 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2025-01-21 14:50:41.486  INFO 48440 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-21 14:50:41.492  INFO 48440 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:50:41.492  INFO 48440 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-21 14:50:41.492  INFO 48440 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-21 14:50:41.513  INFO 48440 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-21 14:50:41.514  INFO 48440 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 458 ms
+2025-01-21 14:50:41.579  INFO 48440 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21 14:50:41.600  INFO 48440 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-21 14:50:41.611  INFO 48440 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-21 14:50:41.702  INFO 48440 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21 14:50:41.714  INFO 48440 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-21 14:50:41.859  INFO 48440 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c82ad22
+2025-01-21 14:50:41.860  INFO 48440 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-21 14:50:41.897  INFO 48440 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-21 14:50:42.247  INFO 48440 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21 14:50:42.286  INFO 48440 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:50:42.467  WARN 48440 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21 14:50:42.611  INFO 48440 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:50:42.616  INFO 48440 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-21 14:50:42.620  INFO 48440 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.701 seconds (process running for 2.047)
+2025-01-21 14:50:49.464  INFO 48440 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21 14:50:49.465  INFO 48440 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-21 14:50:49.466  INFO 48440 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 0 ms
+2025-01-21 14:50:49.517 DEBUG 48440 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 6, product: 98278
+2025-01-21 14:50:49.588 ERROR 48440 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1 : Product already exists in cart for user: 6, product: 98278
+2025-01-21 14:50:49.591 ERROR 48440 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Product already exists in cart] with root cause
+
+java.lang.RuntimeException: Product already exists in cart
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1(CartServiceImpl.java:77) ~[classes/:?]
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart(CartServiceImpl.java:75) ~[classes/:?]
+	at me.sridharpatil.ecom.cartservice.controllers.CartController.addItemToCart(CartController.java:42) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2025-01-21 14:50:59.935 DEBUG 48440 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 6, product: 98279
+2025-01-21 14:50:59.947 DEBUG 48440 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98279, price: 12.74, quantity: 23
+2025-01-21 14:51:00.005  INFO 48440 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98279
+2025-01-21 14:51:02.378 DEBUG 48440 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 6, product: 98279
+2025-01-21 14:51:02.389 ERROR 48440 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1 : Product already exists in cart for user: 6, product: 98279
+2025-01-21 14:51:02.390 ERROR 48440 --- [nio-8084-exec-5] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Product already exists in cart] with root cause
+
+java.lang.RuntimeException: Product already exists in cart
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1(CartServiceImpl.java:77) ~[classes/:?]
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart(CartServiceImpl.java:75) ~[classes/:?]
+	at me.sridharpatil.ecom.cartservice.controllers.CartController.addItemToCart(CartController.java:42) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2025-01-21 14:51:57.131 DEBUG 48440 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 6, product: 98346
+2025-01-21 14:51:57.143 DEBUG 48440 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98346, price: 12.74, quantity: 23
+2025-01-21 14:51:57.153  INFO 48440 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 6, product: 98346
+2025-01-21 14:52:00.586 DEBUG 48440 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:52:00.592  INFO 48440 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:52:09.994 DEBUG 48440 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Updating item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:52:10.001 DEBUG 48440 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Searching for item in cart for user: 6, item: 23
+2025-01-21 14:52:10.006 DEBUG 48440 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Update item quantity for user: 6, item: 23, quantity: 45
+2025-01-21 14:52:10.015  INFO 48440 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.updateItemQuantity : Item quantity updated for user: 6, item: 23
+2025-01-21 14:52:16.078 DEBUG 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Checking out cart for user: 5
+2025-01-21 14:52:16.086 DEBUG 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Updating total price for cart for user: 5
+2025-01-21 14:52:16.092  INFO 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Producing message to kafka topic: cart-service.checkout
+2025-01-21 14:52:16.128  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.clients.producer.ProducerConfig.logAll : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = cartservice-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-01-21 14:52:16.148  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector.init : initializing Kafka metrics collector
+2025-01-21 14:52:16.158  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.clients.producer.KafkaProducer.configureTransactionState : [Producer clientId=cartservice-producer-1] Instantiated an idempotent producer.
+2025-01-21 14:52:16.180  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka version: 3.8.1
+2025-01-21 14:52:16.180  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka commitId: 70d6ff42debf7e17
+2025-01-21 14:52:16.180  INFO 48440 --- [io-8084-exec-10] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka startTimeMs: 1737451336179
+2025-01-21 14:52:16.333  INFO 48440 --- [vice-producer-1] org.apache.kafka.clients.Metadata.update : [Producer clientId=cartservice-producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2025-01-21 14:52:16.334  INFO 48440 --- [vice-producer-1] org.apache.kafka.clients.producer.internals.TransactionManager.setProducerIdAndEpoch : [Producer clientId=cartservice-producer-1] ProducerId set to 3018 with epoch 0
+2025-01-21 14:52:16.340 DEBUG 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Clearing cart for user: 5
+2025-01-21 14:52:16.341 DEBUG 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 5
+2025-01-21 14:52:16.344  INFO 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 5
+2025-01-21 14:52:16.352 DEBUG 48440 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 5
+2025-01-21 14:52:22.034 DEBUG 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Checking out cart for user: 6
+2025-01-21 14:52:22.041 DEBUG 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Updating total price for cart for user: 6
+2025-01-21 14:52:22.051  INFO 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Producing message to kafka topic: cart-service.checkout
+2025-01-21 14:52:22.055 DEBUG 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Clearing cart for user: 6
+2025-01-21 14:52:22.055 DEBUG 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:52:22.062  INFO 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:52:22.082 DEBUG 48440 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 6
+2025-01-21 14:52:25.928 DEBUG 48440 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:52:25.934  INFO 48440 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:53:12.719  INFO 48440 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-21 14:53:12.722  INFO 48440 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-21 14:53:12.726  INFO 48440 --- [ionShutdownHook] org.apache.kafka.clients.producer.KafkaProducer.close : [Producer clientId=cartservice-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-01-21 14:53:12.730  INFO 48440 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics scheduler closed
+2025-01-21 14:53:12.730  INFO 48440 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-01-21 14:53:12.730  INFO 48440 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-01-21 14:53:12.730  INFO 48440 --- [ionShutdownHook] org.apache.kafka.common.metrics.Metrics.close : Metrics reporters closed
+2025-01-21 14:53:12.730  INFO 48440 --- [ionShutdownHook] org.apache.kafka.common.utils.AppInfoParser.unregisterAppInfo : App info kafka.producer for cartservice-producer-1 unregistered
+2025-01-21 14:53:12.732  INFO 48440 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:53:12.735  INFO 48440 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-21 14:53:12.754  INFO 48440 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-21 14:53:14.539  INFO 48489 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-21 14:53:14.555  INFO 48489 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 48489 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-21 14:53:14.556 DEBUG 48489 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-21 14:53:14.557  INFO 48489 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-21 14:53:14.793  INFO 48489 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21 14:53:14.814  INFO 48489 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2025-01-21 14:53:15.011  INFO 48489 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-21 14:53:15.017  INFO 48489 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:53:15.018  INFO 48489 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-21 14:53:15.018  INFO 48489 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-21 14:53:15.035  INFO 48489 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-21 14:53:15.036  INFO 48489 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 464 ms
+2025-01-21 14:53:15.099  INFO 48489 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21 14:53:15.119  INFO 48489 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-21 14:53:15.130  INFO 48489 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-21 14:53:15.220  INFO 48489 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21 14:53:15.233  INFO 48489 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-21 14:53:15.376  INFO 48489 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a6efe33
+2025-01-21 14:53:15.377  INFO 48489 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-21 14:53:15.415  INFO 48489 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-21 14:53:15.760  INFO 48489 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21 14:53:15.800  INFO 48489 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21 14:53:15.984  WARN 48489 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21 14:53:16.129  INFO 48489 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-21 14:53:16.134  INFO 48489 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-21 14:53:16.138  INFO 48489 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.702 seconds (process running for 2.09)
+2025-01-21 14:53:18.683  INFO 48489 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21 14:53:18.683  INFO 48489 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-21 14:53:18.684  INFO 48489 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-21 14:53:18.705 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Checking out cart for user: 6
+2025-01-21 14:53:18.774 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Updating total price for cart for user: 6
+2025-01-21 14:53:18.806  INFO 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Producing message to kafka topic: cart-service.checkout
+2025-01-21 14:53:18.839  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.clients.producer.ProducerConfig.logAll : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = cartservice-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-01-21 14:53:18.856  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.common.telemetry.internals.KafkaMetricsCollector.init : initializing Kafka metrics collector
+2025-01-21 14:53:18.862  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.clients.producer.KafkaProducer.configureTransactionState : [Producer clientId=cartservice-producer-1] Instantiated an idempotent producer.
+2025-01-21 14:53:18.880  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka version: 3.8.1
+2025-01-21 14:53:18.880  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka commitId: 70d6ff42debf7e17
+2025-01-21 14:53:18.880  INFO 48489 --- [nio-8084-exec-2] org.apache.kafka.common.utils.AppInfoParser.<init> : Kafka startTimeMs: 1737451398879
+2025-01-21 14:53:19.021  INFO 48489 --- [vice-producer-1] org.apache.kafka.clients.Metadata.update : [Producer clientId=cartservice-producer-1] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2025-01-21 14:53:19.022  INFO 48489 --- [vice-producer-1] org.apache.kafka.clients.producer.internals.TransactionManager.setProducerIdAndEpoch : [Producer clientId=cartservice-producer-1] ProducerId set to 3019 with epoch 0
+2025-01-21 14:53:19.028 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Clearing cart for user: 6
+2025-01-21 14:53:19.028 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:53:19.031  INFO 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:53:19.036 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 6
+2025-01-21 14:53:21.780 DEBUG 48489 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 6
+2025-01-21 14:53:21.788  INFO 48489 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 6
+2025-01-21 14:53:40.566 DEBUG 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 7
+2025-01-21 14:53:40.566  INFO 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 7
+2025-01-21 14:53:51.730 DEBUG 48489 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:53:51.737  INFO 48489 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 14:54:07.904 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 7, product: 98346
+2025-01-21 14:54:07.910 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 98346, price: 12.74, quantity: 8
+2025-01-21 14:54:07.918  INFO 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 98346
+2025-01-21 14:54:18.471 DEBUG 48489 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 7, product: 774
+2025-01-21 14:54:18.484 DEBUG 48489 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 774, price: 12.74, quantity: 8
+2025-01-21 14:54:18.496  INFO 48489 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 774
+2025-01-21 14:54:25.374 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:54:25.381  INFO 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 14:55:44.835 DEBUG 48489 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:55:44.844  INFO 48489 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 14:55:56.045 DEBUG 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 7, product: 774
+2025-01-21 14:55:56.055 ERROR 48489 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1 : Product already exists in cart for user: 7, product: 774
+2025-01-21 14:55:56.063 ERROR 48489 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Product already exists in cart] with root cause
+
+java.lang.RuntimeException: Product already exists in cart
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.lambda$addItemToCart$1(CartServiceImpl.java:77) ~[classes/:?]
+	at java.base/java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
+	at me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart(CartServiceImpl.java:75) ~[classes/:?]
+	at me.sridharpatil.ecom.cartservice.controllers.CartController.addItemToCart(CartController.java:42) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.1.jar:6.2.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.1.jar:6.2.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2025-01-21 14:56:03.338 DEBUG 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 7, product: 226
+2025-01-21 14:56:03.348 DEBUG 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 226, price: 1.0, quantity: 1
+2025-01-21 14:56:03.363  INFO 48489 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 7, product: 226
+2025-01-21 14:56:06.805 DEBUG 48489 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:56:06.814  INFO 48489 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 14:56:14.198 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Checking out cart for user: 6
+2025-01-21 14:56:14.205 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Updating total price for cart for user: 6
+2025-01-21 14:56:14.213  INFO 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Producing message to kafka topic: cart-service.checkout
+2025-01-21 14:56:14.214 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Clearing cart for user: 6
+2025-01-21 14:56:14.214 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:56:14.219  INFO 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 6
+2025-01-21 14:56:14.227 DEBUG 48489 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 6
+2025-01-21 14:56:16.954 DEBUG 48489 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:56:16.960  INFO 48489 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-21 14:56:26.163 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Checking out cart for user: 7
+2025-01-21 14:56:26.174 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Updating total price for cart for user: 7
+2025-01-21 14:56:26.185  INFO 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Producing message to kafka topic: cart-service.checkout
+2025-01-21 14:56:26.188 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.checkout : Clearing cart for user: 7
+2025-01-21 14:56:26.188 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 7
+2025-01-21 14:56:26.193  INFO 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Clearing cart for user: 7
+2025-01-21 14:56:26.212 DEBUG 48489 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.clearCart : Cart cleared for user: 7
+2025-01-21 14:56:28.931 DEBUG 48489 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-21 14:56:28.939  INFO 48489 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
