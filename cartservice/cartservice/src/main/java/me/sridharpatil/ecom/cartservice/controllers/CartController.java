@@ -1,10 +1,7 @@
 package me.sridharpatil.ecom.cartservice.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import me.sridharpatil.ecom.cartservice.controllers.dtos.AddItemToCartReqDto;
-import me.sridharpatil.ecom.cartservice.controllers.dtos.CartItemResDto;
-import me.sridharpatil.ecom.cartservice.controllers.dtos.CartResDto;
-import me.sridharpatil.ecom.cartservice.controllers.dtos.UpdateItemQuantityReqDto;
+import me.sridharpatil.ecom.cartservice.controllers.dtos.*;
 import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.ProductAlreadyExistsException;
@@ -62,17 +59,17 @@ public class CartController {
     // 5. Checkout cart
     // POST /users/{userId}/cart/checkout
     @PostMapping("/checkout")
-    public ResponseEntity<String> checkout(@PathVariable("userId") Long userId) throws JsonProcessingException, CartNotFoundException {
+    public ResponseEntity<ResponseMessage> checkout(@PathVariable("userId") Long userId) throws JsonProcessingException, CartNotFoundException {
         cartService.checkout(userId);
-        return ResponseEntity.ok("Checkout successful");
+        return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Checkout successful"));
     }
 
     // 6. Clear cart
     // DELETE /users/{userId}/cart
     @DeleteMapping()
-    public ResponseEntity<String> clearCart(@PathVariable("userId") Long userId) throws CartNotFoundException {
+    public ResponseEntity<ResponseMessage> clearCart(@PathVariable("userId") Long userId) throws CartNotFoundException {
         cartService.clearCart(userId);
-        return ResponseEntity.ok("Cart cleared");
+        return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Cart cleared successfully"));
     }
 
 }
