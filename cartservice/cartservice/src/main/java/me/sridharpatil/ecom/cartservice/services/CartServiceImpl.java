@@ -10,6 +10,7 @@ import me.sridharpatil.ecom.cartservice.models.Cart;
 import me.sridharpatil.ecom.cartservice.models.CartItem;
 import me.sridharpatil.ecom.cartservice.repositories.CartItemRepository;
 import me.sridharpatil.ecom.cartservice.repositories.CartRepository;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -23,17 +24,26 @@ public class CartServiceImpl implements CartService{
     CartItemRepository cartItemRepository;
     ObjectMapper objectMapper;
     KafkaTemplate<String, String> kafkaTemplate;
+    RedisTemplate<String, Object> redisTemplate;
 
 
-    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate) {
+    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate, RedisTemplate<String, Object> redisTemplate) {
         this.cartRepository = cartRepository;
         this.cartItemRepository = cartItemRepository;
         this.objectMapper = objectMapper;
         this.kafkaTemplate = kafkaTemplate;
+        this.redisTemplate = redisTemplate;
     }
 
     @Override
     public Cart createCart(Long userId) {
+
+        log.debug("Checking if cart already exists in redis for user: {}", userId);
+        Cart redisCart = (Cart) redisTemplate.opsForHash().get("cart", userId);
+        if (redisCart != null){
+            log.error("Cart already exists in redis for user: {}, skipping cart creation", userId);
+            return redisCart;
+        }
 
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isPresent()){
@@ -45,13 +55,26 @@ public class CartServiceImpl implements CartService{
         Cart cart = new Cart();
         cart.setUserId(userId);
 
-        log.info("Cart created for user: {}", userId);
-        return cartRepository.save(cart);
+        log.info("Cart created for user: {} and saving to database", userId);
+        cart = cartRepository.save(cart);
+
+        log.debug("Saving cart to redis for user: {}", userId);
+        redisTemplate.opsForHash().put("cart", userId, cart);
+
+        return cart;
     }
 
     @Override
     public Cart getCart(Long userId) throws CartNotFoundException {
         log.debug("Getting cart for user: {}", userId);
+
+        log.debug("Checking if cart exists in redis for user: {}", userId);
+        Cart redisCart = (Cart) redisTemplate.opsForHash().get("cart", userId);
+        if (redisCart != null){
+            log.info("Cart found in redis for user: {}", userId);
+            return redisCart;
+        }
+
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
             throw new CartNotFoundException("Cart not found for user: " + userId);
@@ -90,6 +113,9 @@ public class CartServiceImpl implements CartService{
 
         cartItemRepository.save(cartItem);
 
+        log.debug("Saving cart item to redis for user: {}, product: {}", userId, productId);
+        redisTemplate.opsForHash().put("cart-item", cartItem.getId(), cartItem);
+
         log.info("Adding item to cart for user: {}, product: {}", userId, productId);
         cart.getItems().add(cartItem);
         double totalPrice = cart.getItems()
@@ -99,6 +125,10 @@ public class CartServiceImpl implements CartService{
         cart.setTotalPrice(totalPrice);
 
         cartRepository.save(cart);
+
+        log.debug("Saving cart to redis for user: {}", userId);
+        redisTemplate.opsForHash().put("cart", userId, cart);
+
         return cartItem;
     }
 
@@ -106,6 +136,7 @@ public class CartServiceImpl implements CartService{
     public CartItem updateItemQuantity(Long userId, Long itemId, int quantity) throws CartNotFoundException, CartItemNotFoundException {
 
         log.debug("Updating item quantity for user: {}, item: {}, quantity: {}", userId, itemId, quantity);
+
         Optional<Cart> optionalCart = cartRepository.findByUserId(userId);
         if (optionalCart.isEmpty()){
             throw new CartNotFoundException("Cart not found for user: " + userId);

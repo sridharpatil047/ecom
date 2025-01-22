@@ -5,6 +5,7 @@ import me.sridharpatil.ecom.cartservice.controllers.exceptionhandlers.dtos.Excep
 import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.ProductAlreadyExistsException;
+import org.apache.kafka.common.errors.TimeoutException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -146,8 +147,20 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(400).body(exceptionDto);
     }
 
+    // Category 4 : Message queue related exception handlers
+    @ExceptionHandler(TimeoutException.class)
+    public ResponseEntity<ExceptionDto> handleKafkaTimeoutException(TimeoutException ex) {
+        ExceptionDto exceptionDto = new ExceptionDto(
+                ErrorCode.TIMEOUT,
+                ex.getMessage()
+        );
 
-    // Category 4 : Internal server error
+        log.error("Timeout error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
+        return ResponseEntity.status(504).body(exceptionDto);
+    }
+
+    // Category 5 : Internal server error
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ExceptionDto> handleException(Exception ex) {
         ExceptionDto exceptionDto = new ExceptionDto(

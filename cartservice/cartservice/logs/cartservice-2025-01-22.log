@@ -1,0 +1,1052 @@
+2025-01-22 18:37:40.865  INFO 58370 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:37:40.883  INFO 58370 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58370 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:37:40.884 DEBUG 58370 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:37:40.885  INFO 58370 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:37:41.158  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:37:41.159  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:37:41.225  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:37:41.233  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:37:41.233  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:37:41.239  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:37:41.239  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:37:41.239  INFO 58370 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:37:41.474  INFO 58370 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:37:41.481  INFO 58370 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:37:41.482  INFO 58370 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:37:41.482  INFO 58370 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:37:41.500  INFO 58370 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:37:41.500  INFO 58370 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 601 ms
+2025-01-22 18:37:41.562  INFO 58370 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:37:41.586  INFO 58370 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:37:41.599  INFO 58370 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:37:41.709  INFO 58370 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:37:41.722  INFO 58370 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:37:41.875  INFO 58370 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55fe9c2f
+2025-01-22 18:37:41.876  INFO 58370 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:37:41.916  INFO 58370 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:37:42.292  INFO 58370 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:37:42.329  INFO 58370 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:37:42.616  WARN 58370 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:37:42.784  INFO 58370 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:37:42.790  INFO 58370 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:37:42.794  INFO 58370 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 2.034 seconds (process running for 2.43)
+2025-01-22 18:38:12.526  INFO 58370 --- [nio-8084-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 18:38:12.527  INFO 58370 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 18:38:12.528  INFO 58370 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 18:38:12.551 DEBUG 58370 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-22 18:38:12.551 DEBUG 58370 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 7
+2025-01-22 18:38:12.795  INFO 58370 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-22 18:38:20.633 DEBUG 58370 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-22 18:38:20.633 DEBUG 58370 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 7
+2025-01-22 18:38:20.644  INFO 58370 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-22 18:38:21.828 DEBUG 58370 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-22 18:38:21.828 DEBUG 58370 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 7
+2025-01-22 18:38:21.837  INFO 58370 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-22 18:38:23.531 DEBUG 58370 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-22 18:38:23.533 DEBUG 58370 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 7
+2025-01-22 18:38:23.542  INFO 58370 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-22 18:38:24.482 DEBUG 58370 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 7
+2025-01-22 18:38:24.483 DEBUG 58370 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 7
+2025-01-22 18:38:24.490  INFO 58370 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 7
+2025-01-22 18:41:26.988 DEBUG 58370 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 8
+2025-01-22 18:41:26.999 DEBUG 58370 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 8
+2025-01-22 18:41:27.000  INFO 58370 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 8 and saving to database
+2025-01-22 18:41:27.052 DEBUG 58370 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 8
+2025-01-22 18:41:27.054 ERROR 58370 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.controllers.exceptionhandlers.GlobalExceptionHandler.handleException : Unknown error : UNKNOWN_ERROR - Cannot serialize
+2025-01-22 18:42:57.686  INFO 58370 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 18:42:57.688  INFO 58370 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 18:42:57.699  INFO 58370 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:42:57.700  INFO 58370 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 18:42:57.708  INFO 58370 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 18:42:59.813  INFO 58496 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:42:59.828  INFO 58496 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58496 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:42:59.829 DEBUG 58496 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:42:59.830  INFO 58496 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:43:00.086  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:43:00.087  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:43:00.149  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:43:00.158  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:43:00.158  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:43:00.164  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:43:00.165  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:43:00.165  INFO 58496 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:43:00.389  INFO 58496 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:43:00.395  INFO 58496 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:43:00.396  INFO 58496 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:43:00.396  INFO 58496 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:43:00.416  INFO 58496 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:43:00.417  INFO 58496 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 572 ms
+2025-01-22 18:43:00.480  INFO 58496 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:43:00.500  INFO 58496 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:43:00.512  INFO 58496 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:43:00.603  INFO 58496 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:43:00.616  INFO 58496 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:43:00.762  INFO 58496 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3fd9e01c
+2025-01-22 18:43:00.762  INFO 58496 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:43:00.798  INFO 58496 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:43:01.148  INFO 58496 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:43:01.186  INFO 58496 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:43:01.467  WARN 58496 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:43:01.636  INFO 58496 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:43:01.642  INFO 58496 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:43:01.646  INFO 58496 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.934 seconds (process running for 2.294)
+2025-01-22 18:43:06.512  INFO 58496 --- [nio-8084-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 18:43:06.513  INFO 58496 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 18:43:06.514  INFO 58496 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 18:43:06.538 DEBUG 58496 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 8
+2025-01-22 18:43:06.774 ERROR 58496 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart already exists for user: 8, skipping cart creation
+2025-01-22 18:43:21.921  INFO 58496 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 18:43:21.924  INFO 58496 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 18:43:21.935  INFO 58496 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:43:21.936  INFO 58496 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 18:43:21.946  INFO 58496 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 18:43:23.543  INFO 58535 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:43:23.558  INFO 58535 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58535 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:43:23.559 DEBUG 58535 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:43:23.559  INFO 58535 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:43:23.814  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:43:23.815  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:43:23.877  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 58 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:43:23.884  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:43:23.885  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:43:23.890  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:43:23.890  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:43:23.890  INFO 58535 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:43:24.108  INFO 58535 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:43:24.114  INFO 58535 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:43:24.114  INFO 58535 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:43:24.115  INFO 58535 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:43:24.132  INFO 58535 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:43:24.133  INFO 58535 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 559 ms
+2025-01-22 18:43:24.194  INFO 58535 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:43:24.214  INFO 58535 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:43:24.225  INFO 58535 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:43:24.319  INFO 58535 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:43:24.332  INFO 58535 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:43:24.480  INFO 58535 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41f23499
+2025-01-22 18:43:24.481  INFO 58535 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:43:24.518  INFO 58535 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:43:24.873  INFO 58535 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:43:24.911  INFO 58535 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:43:25.223  WARN 58535 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:43:25.426  INFO 58535 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:43:25.432  INFO 58535 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:43:25.437  INFO 58535 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.998 seconds (process running for 2.357)
+2025-01-22 18:43:33.792  INFO 58535 --- [nio-8084-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 18:43:33.792  INFO 58535 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 18:43:33.793  INFO 58535 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 18:43:33.819 DEBUG 58535 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 9
+2025-01-22 18:43:34.055 DEBUG 58535 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 9
+2025-01-22 18:43:34.055  INFO 58535 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 9 and saving to database
+2025-01-22 18:43:34.086 DEBUG 58535 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 9
+2025-01-22 18:43:39.135 DEBUG 58535 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 10
+2025-01-22 18:43:39.152 DEBUG 58535 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 10
+2025-01-22 18:43:39.152  INFO 58535 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 10 and saving to database
+2025-01-22 18:43:39.164 DEBUG 58535 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 10
+2025-01-22 18:46:13.985  INFO 58535 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 18:46:13.990  INFO 58535 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 18:46:14.009  INFO 58535 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:46:14.011  INFO 58535 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 18:46:14.029  INFO 58535 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 18:46:15.837  INFO 58602 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:46:15.853  INFO 58602 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58602 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:46:15.854 DEBUG 58602 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:46:15.855  INFO 58602 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:46:16.110  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:46:16.110  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:46:16.173  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:46:16.180  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:46:16.180  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:46:16.185  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:46:16.186  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:46:16.186  INFO 58602 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:46:16.405  INFO 58602 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:46:16.411  INFO 58602 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:46:16.412  INFO 58602 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:46:16.412  INFO 58602 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:46:16.430  INFO 58602 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:46:16.431  INFO 58602 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 562 ms
+2025-01-22 18:46:16.493  INFO 58602 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:46:16.513  INFO 58602 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:46:16.524  INFO 58602 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:46:16.614  INFO 58602 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:46:16.627  INFO 58602 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:46:16.777  INFO 58602 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@31dbf5bb
+2025-01-22 18:46:16.777  INFO 58602 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:46:16.815  INFO 58602 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:46:17.163  INFO 58602 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:46:17.205  INFO 58602 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:46:17.484  WARN 58602 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:46:17.654  INFO 58602 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:46:17.659  INFO 58602 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:46:17.664  INFO 58602 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.928 seconds (process running for 2.285)
+2025-01-22 18:46:28.642  INFO 58602 --- [nio-8084-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 18:46:28.642  INFO 58602 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 18:46:28.643  INFO 58602 --- [nio-8084-exec-1] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 18:46:28.666 DEBUG 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 11
+2025-01-22 18:46:28.905 DEBUG 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 11
+2025-01-22 18:46:28.905  INFO 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 11 and saving to database
+2025-01-22 18:46:59.081 DEBUG 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 11
+2025-01-22 18:46:59.082 DEBUG 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 11
+2025-01-22 18:46:59.114  INFO 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 11
+2025-01-22 18:47:01.545 DEBUG 58602 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 11
+2025-01-22 18:47:01.545 DEBUG 58602 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 11
+2025-01-22 18:47:01.553  INFO 58602 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 11
+2025-01-22 18:47:02.994 DEBUG 58602 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 11
+2025-01-22 18:47:02.995 DEBUG 58602 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 11
+2025-01-22 18:47:03.002  INFO 58602 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 11
+2025-01-22 18:47:04.913 DEBUG 58602 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 11
+2025-01-22 18:47:04.914 DEBUG 58602 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 11
+2025-01-22 18:47:04.922  INFO 58602 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 11
+2025-01-22 18:47:05.882 DEBUG 58602 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 11
+2025-01-22 18:47:05.882 DEBUG 58602 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 11
+2025-01-22 18:47:05.891  INFO 58602 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 11
+2025-01-22 18:47:14.888 DEBUG 58602 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 12
+2025-01-22 18:47:14.897 DEBUG 58602 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 12
+2025-01-22 18:47:14.897  INFO 58602 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 12 and saving to database
+2025-01-22 18:47:24.160 DEBUG 58602 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 12
+2025-01-22 18:47:24.160 DEBUG 58602 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 12
+2025-01-22 18:47:24.172  INFO 58602 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 12
+2025-01-22 18:55:40.347 DEBUG 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 13
+2025-01-22 18:55:40.356 DEBUG 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 13
+2025-01-22 18:55:40.357  INFO 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 13 and saving to database
+2025-01-22 18:55:40.370 DEBUG 58602 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 13
+2025-01-22 18:56:14.165 DEBUG 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:56:14.166 DEBUG 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:56:14.168  INFO 58602 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:56:32.684  INFO 58602 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 18:56:32.686  INFO 58602 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 18:56:32.716  INFO 58602 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:56:32.718  INFO 58602 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 18:56:32.731  INFO 58602 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 18:56:34.549  INFO 58799 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:56:34.566  INFO 58799 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58799 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:56:34.567 DEBUG 58799 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:56:34.567  INFO 58799 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:56:34.821  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:56:34.822  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:56:34.890  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:56:34.897  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:56:34.898  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:56:34.903  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:56:34.903  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:56:34.903  INFO 58799 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:56:35.124  INFO 58799 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:56:35.130  INFO 58799 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:56:35.131  INFO 58799 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:56:35.131  INFO 58799 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:56:35.150  INFO 58799 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:56:35.150  INFO 58799 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 569 ms
+2025-01-22 18:56:35.214  INFO 58799 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:56:35.235  INFO 58799 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:56:35.247  INFO 58799 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:56:35.336  INFO 58799 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:56:35.349  INFO 58799 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:56:35.500  INFO 58799 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c787389
+2025-01-22 18:56:35.500  INFO 58799 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:56:35.536  INFO 58799 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:56:35.891  INFO 58799 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:56:35.930  INFO 58799 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:56:36.217  WARN 58799 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:56:36.391  INFO 58799 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:56:36.397  INFO 58799 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:56:36.401  INFO 58799 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.957 seconds (process running for 2.317)
+2025-01-22 18:56:40.868  INFO 58799 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 18:56:40.872  INFO 58799 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 18:56:40.888  INFO 58799 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:56:40.890  INFO 58799 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 18:56:40.903  INFO 58799 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 18:56:42.652  INFO 58818 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 18:56:42.669  INFO 58818 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 58818 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 18:56:42.670 DEBUG 58818 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 18:56:42.670  INFO 58818 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 18:56:42.911  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:56:42.911  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 18:56:42.971  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 56 ms. Found 2 JPA repository interfaces.
+2025-01-22 18:56:42.977  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 18:56:42.978  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 18:56:42.983  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:56:42.984  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 18:56:42.984  INFO 58818 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 18:56:43.195  INFO 58818 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 18:56:43.201  INFO 58818 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:56:43.201  INFO 58818 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 18:56:43.201  INFO 58818 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 18:56:43.219  INFO 58818 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 18:56:43.220  INFO 58818 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 535 ms
+2025-01-22 18:56:43.277  INFO 58818 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 18:56:43.296  INFO 58818 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 18:56:43.307  INFO 58818 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 18:56:43.392  INFO 58818 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 18:56:43.407  INFO 58818 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 18:56:43.553  INFO 58818 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67b3960b
+2025-01-22 18:56:43.553  INFO 58818 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 18:56:43.590  INFO 58818 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 18:56:43.930  INFO 58818 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 18:56:43.968  INFO 58818 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 18:56:44.257  WARN 58818 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 18:56:44.438  INFO 58818 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 18:56:44.444  INFO 58818 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 18:56:44.449  INFO 58818 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.896 seconds (process running for 2.235)
+2025-01-22 18:56:51.552  INFO 58818 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 18:56:51.552  INFO 58818 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 18:56:51.553  INFO 58818 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 18:56:51.577 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 14
+2025-01-22 18:56:51.816 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 14
+2025-01-22 18:56:51.816  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 14 and saving to database
+2025-01-22 18:57:02.364 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:02.364 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:02.411  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:11.681 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 12
+2025-01-22 18:57:11.681 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 12
+2025-01-22 18:57:11.691  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 12
+2025-01-22 18:57:18.498 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:18.498 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:18.506  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:26.216 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 12
+2025-01-22 18:57:26.217 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 12
+2025-01-22 18:57:26.228  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 12
+2025-01-22 18:57:32.611 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:32.612 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:32.614  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:38.001 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:38.002 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:38.014  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:42.327 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:42.328 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:42.337  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:43.343 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:43.344 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:43.354  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:44.324 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:44.324 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:44.334  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:45.130 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:45.131 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:45.139  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:45.954 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:57:45.954 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:57:45.962  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:57:51.546 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:51.547 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:51.550  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:52.315 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:52.315 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:52.317  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:53.057 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:53.057 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:53.062  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:53.779 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:53.780 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:53.782  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:54.494 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:54.495 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:54.496  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:55.257 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:55.257 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:55.260  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:56.023 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:56.023 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:56.026  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:56.789 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:56.789 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:56.792  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:57.556 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:57.557 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:57.559  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:58.306 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:58.306 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:58.309  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:59.032 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:59.032 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:59.036  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:57:59.750 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:57:59.751 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:57:59.753  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:00.446 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:00.447 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:00.449  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:01.189 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:01.189 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:01.191  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:02.021 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:02.021 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:02.024  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:02.397 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:02.397 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:02.402  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:02.813 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:02.814 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:02.818  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:03.226 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:03.226 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:03.228  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:03.599 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:03.599 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:03.602  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:04.005 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:04.006 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:04.008  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:04.364 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:04.364 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:04.366  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:04.757 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:04.757 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:04.761  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:05.194 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:05.195 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:05.198  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:05.560 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:05.561 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:05.564  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:05.972 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:05.972 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:05.976  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:06.342 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:06.343 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:06.346  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:06.779 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:06.780 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:06.782  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:07.206 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:07.207 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:07.210  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:07.609 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:07.610 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:07.613  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:08.043 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:08.043 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:08.046  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:08.444 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:08.444 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:08.448  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:08.835 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:08.835 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:08.839  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:09.275 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:09.275 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:09.278  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:09.700 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:09.701 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:09.703  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:10.080 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:10.080 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:10.083  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:10.489 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:10.489 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:10.491  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:10.898 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:10.899 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:10.902  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:11.285 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:11.285 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:11.287  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:11.661 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:11.661 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:11.663  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:12.042 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:12.043 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:12.045  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:12.335 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 18:58:12.335 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 18:58:12.337  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 18:58:20.256 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:20.257 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:20.268  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:22.700 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:22.701 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:22.710  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:23.462 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:23.462 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:23.470  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:24.014 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:24.014 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:24.027  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:24.665 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:24.665 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:24.672  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:25.432 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:25.432 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:25.441  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:26.035 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:26.035 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:26.042  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:26.702 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:26.703 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:26.714  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:27.376 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:27.377 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:27.385  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:27.994 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:27.994 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:28.001  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:28.568 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:28.568 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:28.579  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:29.148 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:29.149 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:29.156  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:29.741 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:29.741 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:29.750  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:30.344 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:30.344 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:30.353  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:30.935 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:30.936 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:30.946  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:31.689 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:31.690 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:31.698  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:32.303 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:32.303 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:32.311  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:32.963 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:32.963 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:32.974  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:33.728 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:33.729 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:33.736  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:34.294 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:34.294 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:34.304  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:35.027 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:35.027 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:35.036  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:35.760 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:35.760 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:35.768  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:36.436 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:36.436 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:36.448  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:37.101 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:37.101 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:37.109  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:37.731 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:37.731 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:37.740  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:38.373 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:38.373 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:38.383  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:38.990 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:38.991 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:39.001  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:39.643 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:39.643 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:39.652  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:40.235 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:40.235 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:40.249  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:40.802 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:40.802 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:40.813  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:41.402 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:41.403 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:41.415  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:42.018 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:42.018 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:42.024  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:42.680 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:42.680 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:42.690  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:43.268 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:43.268 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:43.278  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:43.831 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:43.831 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:43.841  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:44.468 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:44.468 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:44.478  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:45.034 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:45.035 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:45.044  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:45.563 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:45.564 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:45.571  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:46.103 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:46.104 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:46.113  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 18:58:47.012 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 18:58:47.012 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 18:58:47.020  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:04.192 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 15
+2025-01-22 19:02:04.202 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 15
+2025-01-22 19:02:04.202  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 15 and saving to database
+2025-01-22 19:02:04.213 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 15
+2025-01-22 19:02:12.160 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:12.160 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:12.162  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:16.038 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:16.039 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:16.051  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:21.547 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:21.547 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:21.549  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:27.131 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:27.132 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:27.136  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:28.069 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:28.069 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:28.072  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:28.569 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:28.569 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:28.571  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:28.900 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:28.900 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:28.902  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:29.223 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:29.223 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:29.225  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:29.549 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:29.549 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:29.551  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:30.439 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:30.440 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:30.442  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:30.801 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 13
+2025-01-22 19:02:30.801 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 13
+2025-01-22 19:02:30.803  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 13
+2025-01-22 19:02:37.125 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:37.125 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:37.135  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:39.462 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:39.463 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:39.472  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:39.993 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:39.993 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:40.000  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:40.382 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:40.382 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:40.390  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:40.756 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:40.757 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:40.764  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:41.144 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:41.144 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:41.151  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:41.482 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:41.482 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:41.488  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:41.816 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:41.816 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:41.824  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:42.119 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:42.120 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:42.126  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:44.090 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:02:44.090 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:02:44.097  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:02:48.455 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:48.455 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:48.458  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:49.205 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:49.206 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:49.209  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:49.579 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:49.579 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:49.583  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:50.919 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:50.919 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:50.921  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:51.236 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:51.236 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:51.239  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:51.636 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:51.636 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:51.639  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:52.040 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:52.040 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:52.043  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:52.459 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:52.459 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:52.462  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:52.824 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:52.825 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:52.828  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:53.240 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:53.240 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:53.242  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:53.542 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:53.542 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:53.545  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:02:53.867 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:02:53.868 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:02:53.870  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:03:16.284 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 964
+2025-01-22 19:03:16.301 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 964, price: 52.0, quantity: 3
+2025-01-22 19:03:16.314  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 964
+2025-01-22 19:03:23.023 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 34
+2025-01-22 19:03:23.033 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 34, price: 52.0, quantity: 3
+2025-01-22 19:03:23.043  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 34
+2025-01-22 19:03:27.561 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 32
+2025-01-22 19:03:27.566 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 32, price: 52.0, quantity: 3
+2025-01-22 19:03:27.571  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 32
+2025-01-22 19:03:31.252 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 39
+2025-01-22 19:03:31.263 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 39, price: 52.0, quantity: 3
+2025-01-22 19:03:31.274  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 39
+2025-01-22 19:03:34.943 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 29
+2025-01-22 19:03:34.953 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 29, price: 52.0, quantity: 3
+2025-01-22 19:03:34.965  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 29
+2025-01-22 19:03:38.545 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 291
+2025-01-22 19:03:38.553 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 291, price: 52.0, quantity: 3
+2025-01-22 19:03:38.563  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 291
+2025-01-22 19:03:42.823 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 2491
+2025-01-22 19:03:42.834 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 2491, price: 52.0, quantity: 3
+2025-01-22 19:03:42.844  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 2491
+2025-01-22 19:03:47.008 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 22491
+2025-01-22 19:03:47.020 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 22491, price: 52.0, quantity: 3
+2025-01-22 19:03:47.030  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 22491
+2025-01-22 19:03:51.115 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 224491
+2025-01-22 19:03:51.123 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 224491, price: 52.0, quantity: 3
+2025-01-22 19:03:51.135  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 224491
+2025-01-22 19:03:55.215 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 14, product: 2224491
+2025-01-22 19:03:55.226 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 2224491, price: 52.0, quantity: 3
+2025-01-22 19:03:55.237  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 14, product: 2224491
+2025-01-22 19:04:03.248 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:03.249 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:03.258  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:06.389 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:06.389 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:06.396  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:07.286 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:07.287 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:07.297  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:08.057 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:08.057 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:08.065  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:08.721 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:08.722 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:08.732  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:09.461 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:09.461 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:09.467  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:10.205 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:10.205 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:10.213  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:10.913 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:10.913 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:10.921  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:24.096 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:24.096 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:24.104  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:26.805 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:26.805 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:26.812  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:29.562 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:29.563 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:29.569  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:30.357 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:30.357 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:30.365  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:31.781 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:31.782 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:31.789  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:32.595 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:32.596 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:32.606  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:34.009 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:34.009 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:34.016  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:34.831 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:04:34.831 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:04:34.837  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:04:38.517 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:04:38.518 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:04:38.520  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:04:47.722 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 2224491
+2025-01-22 19:04:47.730 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 2224491, price: 52.0, quantity: 3
+2025-01-22 19:04:47.743  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 2224491
+2025-01-22 19:04:51.756 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 23
+2025-01-22 19:04:51.763 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 23, price: 52.0, quantity: 3
+2025-01-22 19:04:51.773  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 23
+2025-01-22 19:04:54.781 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 12
+2025-01-22 19:04:54.787 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 12, price: 52.0, quantity: 3
+2025-01-22 19:04:54.793  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 12
+2025-01-22 19:04:57.745 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 45
+2025-01-22 19:04:57.754 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 45, price: 52.0, quantity: 3
+2025-01-22 19:04:57.764  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 45
+2025-01-22 19:05:00.484 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 4512
+2025-01-22 19:05:00.492 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 4512, price: 52.0, quantity: 3
+2025-01-22 19:05:00.503  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 4512
+2025-01-22 19:05:03.295 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 452312
+2025-01-22 19:05:03.306 DEBUG 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 452312, price: 52.0, quantity: 3
+2025-01-22 19:05:03.317  INFO 58818 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 452312
+2025-01-22 19:05:05.838 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 4532312
+2025-01-22 19:05:05.845 DEBUG 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 4532312, price: 52.0, quantity: 3
+2025-01-22 19:05:05.856  INFO 58818 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 4532312
+2025-01-22 19:05:09.072 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 3456
+2025-01-22 19:05:09.080 DEBUG 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 3456, price: 52.0, quantity: 3
+2025-01-22 19:05:09.089  INFO 58818 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 3456
+2025-01-22 19:05:12.479 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 78
+2025-01-22 19:05:12.486 DEBUG 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 78, price: 52.0, quantity: 3
+2025-01-22 19:05:12.492  INFO 58818 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 78
+2025-01-22 19:05:16.906 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 15, product: 7834
+2025-01-22 19:05:16.914 DEBUG 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 7834, price: 52.0, quantity: 3
+2025-01-22 19:05:16.924  INFO 58818 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 15, product: 7834
+2025-01-22 19:05:20.885 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:05:20.886 DEBUG 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:05:20.888  INFO 58818 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:05:32.940 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:05:32.941 DEBUG 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:05:32.944  INFO 58818 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:05:34.003 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:05:34.003 DEBUG 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:05:34.006  INFO 58818 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:05:35.039 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:05:35.039 DEBUG 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:05:35.041  INFO 58818 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:05:36.232 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 15
+2025-01-22 19:05:36.232 DEBUG 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 15
+2025-01-22 19:05:36.234  INFO 58818 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 15
+2025-01-22 19:18:55.031  INFO 58818 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 19:18:55.035  INFO 58818 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 19:18:55.060  INFO 58818 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 19:18:55.063  INFO 58818 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 19:18:55.080  INFO 58818 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 19:18:56.933  INFO 59206 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 19:18:56.949  INFO 59206 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 59206 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 19:18:56.950 DEBUG 59206 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 19:18:56.950  INFO 59206 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 19:18:57.203  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 19:18:57.203  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 19:18:57.269  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 61 ms. Found 2 JPA repository interfaces.
+2025-01-22 19:18:57.276  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 19:18:57.276  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 19:18:57.282  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 19:18:57.282  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 19:18:57.282  INFO 59206 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 19:18:57.497  INFO 59206 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 19:18:57.502  INFO 59206 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 19:18:57.503  INFO 59206 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 19:18:57.503  INFO 59206 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 19:18:57.521  INFO 59206 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 19:18:57.521  INFO 59206 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 557 ms
+2025-01-22 19:18:57.580  INFO 59206 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 19:18:57.600  INFO 59206 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 19:18:57.611  INFO 59206 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 19:18:57.699  INFO 59206 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 19:18:57.712  INFO 59206 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 19:18:57.857  INFO 59206 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@19c1f6f4
+2025-01-22 19:18:57.858  INFO 59206 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 19:18:57.895  INFO 59206 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 19:18:58.248  INFO 59206 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 19:18:58.291  INFO 59206 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 19:18:58.569  WARN 59206 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 19:18:58.736  INFO 59206 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 19:18:58.741  INFO 59206 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 19:18:58.746  INFO 59206 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.911 seconds (process running for 2.26)
+2025-01-22 19:19:10.211  INFO 59206 --- [nio-8084-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-22 19:19:10.211  INFO 59206 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-01-22 19:19:10.212  INFO 59206 --- [nio-8084-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-01-22 19:19:10.234 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 16
+2025-01-22 19:19:10.471 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 16
+2025-01-22 19:19:10.471  INFO 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 16 and saving to database
+2025-01-22 19:19:21.854 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Checking if cart already exists in redis for user: 17
+2025-01-22 19:19:21.863 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Creating cart for user: 17
+2025-01-22 19:19:21.863  INFO 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Cart created for user: 17 and saving to database
+2025-01-22 19:19:21.875 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.createCart : Saving cart to redis for user: 17
+2025-01-22 19:19:30.808 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 7834
+2025-01-22 19:19:30.823 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 7834, price: 52.0, quantity: 3
+2025-01-22 19:19:30.832 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 7834
+2025-01-22 19:19:30.834  INFO 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 7834
+2025-01-22 19:19:30.847 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:35.688 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 34354
+2025-01-22 19:19:35.700 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 34354, price: 52.0, quantity: 3
+2025-01-22 19:19:35.712 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 34354
+2025-01-22 19:19:35.713  INFO 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 34354
+2025-01-22 19:19:35.727 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:38.531 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 124
+2025-01-22 19:19:38.543 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 124, price: 52.0, quantity: 3
+2025-01-22 19:19:38.554 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 124
+2025-01-22 19:19:38.556  INFO 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 124
+2025-01-22 19:19:38.571 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:41.645 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 5656
+2025-01-22 19:19:41.658 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 5656, price: 52.0, quantity: 3
+2025-01-22 19:19:41.671 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 5656
+2025-01-22 19:19:41.674  INFO 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 5656
+2025-01-22 19:19:41.692 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:44.612 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 7878
+2025-01-22 19:19:44.624 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 7878, price: 52.0, quantity: 3
+2025-01-22 19:19:44.637 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 7878
+2025-01-22 19:19:44.640  INFO 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 7878
+2025-01-22 19:19:44.660 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:47.670 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 126
+2025-01-22 19:19:47.680 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 126, price: 52.0, quantity: 3
+2025-01-22 19:19:47.693 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 126
+2025-01-22 19:19:47.696  INFO 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 126
+2025-01-22 19:19:47.715 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:50.794 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 67843
+2025-01-22 19:19:50.804 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 67843, price: 52.0, quantity: 3
+2025-01-22 19:19:50.815 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 67843
+2025-01-22 19:19:50.818  INFO 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 67843
+2025-01-22 19:19:50.835 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:53.716 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 352
+2025-01-22 19:19:53.729 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 352, price: 52.0, quantity: 3
+2025-01-22 19:19:53.741 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 352
+2025-01-22 19:19:53.744  INFO 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 352
+2025-01-22 19:19:53.766 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:19:54.955 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 352
+2025-01-22 19:19:54.964 ERROR 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Product already exists in cart for user: 17, product: 352
+2025-01-22 19:19:54.966 ERROR 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.controllers.exceptionhandlers.GlobalExceptionHandler.handleProductAlreadyExistsException : Product already exists : PRODUCT_ALREADY_EXISTS - Product 352 already exists in cart
+2025-01-22 19:19:59.601 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Checking if product already exists in cart for user: 17, product: 5875
+2025-01-22 19:19:59.612 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 5875, price: 52.0, quantity: 3
+2025-01-22 19:19:59.624 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart item to redis for user: 17, product: 5875
+2025-01-22 19:19:59.626  INFO 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Adding item to cart for user: 17, product: 5875
+2025-01-22 19:19:59.643 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.addItemToCart : Saving cart to redis for user: 17
+2025-01-22 19:20:09.612 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:09.613 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:09.626  INFO 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:13.701 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:13.702 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:13.710  INFO 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:14.492 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:14.492 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:14.502  INFO 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:15.174 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:15.175 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:15.185  INFO 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:15.775 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:15.775 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:15.784  INFO 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:16.377 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:16.378 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:16.386  INFO 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:16.933 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:16.933 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:16.941  INFO 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:17.576 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:17.577 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:17.585  INFO 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:18.184 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 14
+2025-01-22 19:20:18.184 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 14
+2025-01-22 19:20:18.192  INFO 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found for user: 14
+2025-01-22 19:20:22.396 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:22.396 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:22.400  INFO 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:23.520 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:23.520 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:23.523  INFO 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:24.158 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:24.159 DEBUG 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:24.163  INFO 59206 --- [nio-8084-exec-6] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:24.729 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:24.729 DEBUG 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:24.732  INFO 59206 --- [nio-8084-exec-7] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:25.384 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:25.385 DEBUG 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:25.389  INFO 59206 --- [nio-8084-exec-8] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:25.951 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:25.951 DEBUG 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:25.953  INFO 59206 --- [nio-8084-exec-9] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:26.561 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:26.561 DEBUG 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:26.564  INFO 59206 --- [io-8084-exec-10] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:27.020 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:27.020 DEBUG 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:27.023  INFO 59206 --- [nio-8084-exec-1] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:27.501 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:27.501 DEBUG 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:27.504  INFO 59206 --- [nio-8084-exec-2] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:27.987 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:27.987 DEBUG 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:27.990  INFO 59206 --- [nio-8084-exec-3] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:28.467 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:28.467 DEBUG 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:28.470  INFO 59206 --- [nio-8084-exec-4] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:20:29.043 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Getting cart for user: 17
+2025-01-22 19:20:29.044 DEBUG 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Checking if cart exists in redis for user: 17
+2025-01-22 19:20:29.047  INFO 59206 --- [nio-8084-exec-5] me.sridharpatil.ecom.cartservice.services.CartServiceImpl.getCart : Cart found in redis for user: 17
+2025-01-22 19:23:07.188  INFO 59206 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-01-22 19:23:07.190  INFO 59206 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-01-22 19:23:07.212  INFO 59206 --- [ionShutdownHook] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.destroy : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 19:23:07.215  INFO 59206 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown initiated...
+2025-01-22 19:23:07.227  INFO 59206 --- [ionShutdownHook] com.zaxxer.hikari.HikariDataSource.close : HikariPool-1 - Shutdown completed.
+2025-01-22 19:23:09.076  INFO 59304 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-01-22 19:23:09.092  INFO 59304 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Starting CartserviceApplication using Java 21.0.1 with PID 59304 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/cartservice/cartservice)
+2025-01-22 19:23:09.093 DEBUG 59304 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarting : Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-01-22 19:23:09.093  INFO 59304 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-01-22 19:23:09.343  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 19:23:09.344  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-22 19:23:09.408  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+2025-01-22 19:23:09.415  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-01-22 19:23:09.416  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-01-22 19:23:09.421  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartItemRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 19:23:09.421  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.isStrictRepositoryCandidate : Spring Data Redis - Could not safely identify store assignment for repository candidate interface me.sridharpatil.ecom.cartservice.repositories.CartRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-01-22 19:23:09.421  INFO 59304 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-01-22 19:23:09.639  INFO 59304 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8084 (http)
+2025-01-22 19:23:09.645  INFO 59304 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8084"]
+2025-01-22 19:23:09.646  INFO 59304 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-01-22 19:23:09.646  INFO 59304 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-01-22 19:23:09.663  INFO 59304 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-01-22 19:23:09.664  INFO 59304 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 557 ms
+2025-01-22 19:23:09.724  INFO 59304 --- [           main] org.hibernate.jpa.internal.util.LogHelper.logPersistenceUnitInformation : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-22 19:23:09.744  INFO 59304 --- [           main] org.hibernate.Version.logVersion : HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-22 19:23:09.756  INFO 59304 --- [           main] org.hibernate.cache.internal.RegionFactoryInitiator.initiateService : HHH000026: Second-level cache disabled
+2025-01-22 19:23:09.845  INFO 59304 --- [           main] org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo.addTransformer : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-22 19:23:09.858  INFO 59304 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Starting...
+2025-01-22 19:23:10.007  INFO 59304 --- [           main] com.zaxxer.hikari.pool.HikariPool.checkFailFast : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fefc5ea
+2025-01-22 19:23:10.008  INFO 59304 --- [           main] com.zaxxer.hikari.HikariDataSource.getConnection : HikariPool-1 - Start completed.
+2025-01-22 19:23:10.048  INFO 59304 --- [           main] org.hibernate.orm.connections.pooling.initiateService : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.32
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-22 19:23:10.399  INFO 59304 --- [           main] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator.initiateService : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-22 19:23:10.437  INFO 59304 --- [           main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-22 19:23:10.727  WARN 59304 --- [           main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-22 19:23:10.917  INFO 59304 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8084"]
+2025-01-22 19:23:10.923  INFO 59304 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8084 (http) with context path '/'
+2025-01-22 19:23:10.928  INFO 59304 --- [           main] me.sridharpatil.ecom.cartservice.CartserviceApplication.logStarted : Started CartserviceApplication in 1.95 seconds (process running for 2.299)

@@ -19,6 +19,9 @@ public class ErrorCode {
     final static String METHOD_NOT_ALLOWED = "METHOD_NOT_ALLOWED";
     final static String TYPE_MISMATCH = "TYPE_MISMATCH";
 
-    // Category 4 : Internal server errors
+    // Category 4 : Message broker errors
+    final static String TIMEOUT = "TIMEOUT";
+
+    // Category 5 : Internal server errors
     final static String UNKNOWN_ERROR = "UNKNOWN_ERROR";
 }
