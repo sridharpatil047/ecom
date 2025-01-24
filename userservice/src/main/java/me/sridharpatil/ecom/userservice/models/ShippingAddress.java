@@ -15,6 +15,8 @@ public class ShippingAddress extends BaseModel {
     private String country;
     private String pinCode;
 
+    private boolean active;
+
     @ManyToOne
     private User user;
 
