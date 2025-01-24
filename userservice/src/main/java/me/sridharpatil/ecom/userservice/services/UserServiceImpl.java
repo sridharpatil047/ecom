@@ -3,16 +3,20 @@ package me.sridharpatil.ecom.userservice.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
+import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
 import me.sridharpatil.ecom.userservice.models.Role;
+import me.sridharpatil.ecom.userservice.models.ShippingAddress;
 import me.sridharpatil.ecom.userservice.models.User;
+import me.sridharpatil.ecom.userservice.repositories.ShippingAddressRepository;
 import me.sridharpatil.ecom.userservice.repositories.UserRepository;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -20,6 +24,7 @@ import java.util.Set;
 public class UserServiceImpl implements UserService{
 
     UserRepository userRepository;
+    ShippingAddressRepository shippingAddressRepository;
     RoleService roleService;
     BCryptPasswordEncoder bCryptPasswordEncoder;
     NotificationSenderContext notificationSenderContext;
@@ -87,5 +92,16 @@ public class UserServiceImpl implements UserService{
 
         // Save the user
         userRepository.save(user);
+    }
+
+    @Override
+    public List<ShippingAddress> getShippingAddresses(Long userId) throws ShippingAddressNotFoundException {
+        List<ShippingAddress> shippingAddresses = shippingAddressRepository.findAllByUserId(userId);
+        if (shippingAddresses.isEmpty()) {
+            log.error("No shipping addresses found for user: {}", userId);
+            throw new ShippingAddressNotFoundException("No shipping addresses found for user: " + userId);
+        }
+
+        return shippingAddresses;
     }
 }

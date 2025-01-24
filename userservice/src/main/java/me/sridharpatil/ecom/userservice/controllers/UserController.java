@@ -3,14 +3,20 @@ package me.sridharpatil.ecom.userservice.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import me.sridharpatil.ecom.userservice.controllers.dtos.*;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
+import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
+import me.sridharpatil.ecom.userservice.models.ShippingAddress;
 import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.services.UserService;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/users")
@@ -88,5 +94,18 @@ public class UserController {
         // TODO : Implement this
 //        userService.confirmPasswordReset(reqDto.getEmail(), reqDto.getOtp(), reqDto.getNewPassword());
         return ResponseEntity.ok("Password reset successfully");
+    }
+
+
+    // 5. GET /users/{id}/shipping-addresses
+    @GetMapping("/{id}/shipping-addresses")
+    ResponseEntity<List<GetShippingAddressesResDto>> getShippingAddresses(@PathVariable("id") Long id) throws ShippingAddressNotFoundException {
+
+        return ResponseEntity.ok(
+                userService.getShippingAddresses(id)
+                        .stream()
+                        .map(GetShippingAddressesResDto::of)
+                        .collect(Collectors.toList())
+        );
     }
 }
