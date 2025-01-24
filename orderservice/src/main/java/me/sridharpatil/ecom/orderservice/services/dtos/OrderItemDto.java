@@ -1,9 +1,11 @@
 package me.sridharpatil.ecom.orderservice.services.dtos;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import me.sridharpatil.ecom.orderservice.models.OrderItem;
 
+@Builder
 @Getter @Setter
 public class OrderItemDto {
     private Long productId;

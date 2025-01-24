@@ -1,9 +1,13 @@
 package me.sridharpatil.ecom.orderservice.services;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import me.sridharpatil.ecom.orderservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.orderservice.models.ShippingAddress;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -16,12 +20,18 @@ public class UserService {
         this.objectMapper = objectMapper;
     }
 
-    public ShippingAddress getActiveShippingAddress(Long userId) {
+    public ShippingAddress getActiveShippingAddress(Long userId) throws ShippingAddressNotFoundException {
 
-        ShippingAddress shippingAddress
-                = restTemplate.getForObject(URL.BASE_URL + "/" + URL.ENDPOINT + "/" + userId, ShippingAddress.class);
+        ShippingAddress[] shippingAddresses
+                = restTemplate.getForObject(URL.BASE_URL + "/" + URL.ENDPOINT + "/" + userId, ShippingAddress[].class);
 
-        return shippingAddress;
+        for (ShippingAddress shippingAddress : shippingAddresses) {
+            if (shippingAddress.isActive()) {
+                return shippingAddress;
+            }
+        }
+
+        throw new ShippingAddressNotFoundException("No active shipping address found for user: " + userId);
     }
 
     public static class URL {
