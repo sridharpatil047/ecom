@@ -1,14 +1,16 @@
 package me.sridharpatil.ecom.orderservice.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter @Setter
+@Builder
 @Entity
 @Table(name = "orders")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Order extends BaseModel{
     private Long userId;
     private double totalPrice;
@@ -21,4 +23,5 @@ public class Order extends BaseModel{
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
+
 }
