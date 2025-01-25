@@ -4,8 +4,9 @@ import lombok.Getter;
 
 @Getter
 public enum OrderStatus {
-    PENDING,
-    CONFIRMED,
+    CREATED,
+    CONFIRMED, // Payment confirmed
+    PENDING,   // Payment pending
     PROCESSING,
     SHIPPED,
     DELIVERED,

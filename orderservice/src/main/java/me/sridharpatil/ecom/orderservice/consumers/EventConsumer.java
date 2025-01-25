@@ -33,7 +33,7 @@ public class EventConsumer {
             topics = "cart-service.checkout",
             groupId = "order-service.consumers"
     )
-    public void consumeOrderCreationEvent(@Payload OrderCreationReqDto message) throws JsonProcessingException {
+    public void consumeCartCheckedOutEvent(@Payload OrderCreationReqDto message) throws JsonProcessingException {
 
 
         List<OrderItemDto> orderItemDtoList = new ArrayList<>();
