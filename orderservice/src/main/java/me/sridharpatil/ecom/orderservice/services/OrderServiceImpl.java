@@ -7,6 +7,7 @@ import me.sridharpatil.ecom.orderservice.models.Order;
 import me.sridharpatil.ecom.orderservice.models.OrderStatus;
 import me.sridharpatil.ecom.orderservice.models.ShippingAddress;
 import me.sridharpatil.ecom.orderservice.repositories.OrderRepository;
+import me.sridharpatil.ecom.orderservice.services.dtos.CreateOrderMsgDto;
 import me.sridharpatil.ecom.orderservice.services.dtos.OrderItemDto;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -63,10 +64,13 @@ public class OrderServiceImpl implements OrderService{
 
         order = orderRepository.save(order);
 
+        CreateOrderMsgDto createOrderMsgDto = new CreateOrderMsgDto();
+        createOrderMsgDto.setOrderId(order.getId());
+        createOrderMsgDto.setAmount(order.getTotalPrice());
         kafkaTemplate.send(
                 "order-service.order-created",
-                order.getId(),
-                objectMapper.writeValueAsString(order)
+                createOrderMsgDto.getOrderId(),
+                objectMapper.writeValueAsString(createOrderMsgDto)
         );
 
         return order;
@@ -96,5 +100,11 @@ public class OrderServiceImpl implements OrderService{
         }
 
         return order;
+    }
+
+    @Override
+    public Order getOrderById(Long orderId) {
+        return orderRepository.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
     }
 }
