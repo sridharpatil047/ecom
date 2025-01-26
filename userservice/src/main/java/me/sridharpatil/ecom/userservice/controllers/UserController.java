@@ -108,4 +108,11 @@ public class UserController {
                         .collect(Collectors.toList())
         );
     }
+
+    // 6. GET /users/{id}
+    @GetMapping("/{id}")
+    ResponseEntity<GetUserResDto> getUser(@PathVariable("id") Long id) throws UserNotFoundException {
+        return ResponseEntity.ok(GetUserResDto.of(userService.getUser(id)));
+    }
+
 }

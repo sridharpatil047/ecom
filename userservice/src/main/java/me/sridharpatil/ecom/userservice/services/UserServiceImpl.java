@@ -104,4 +104,10 @@ public class UserServiceImpl implements UserService{
 
         return shippingAddresses;
     }
+
+    @Override
+    public User getUser(Long userId) throws UserNotFoundException {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new UserNotFoundException("User with id " + userId + " not found"));
+    }
 }

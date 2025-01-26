@@ -15,4 +15,5 @@ public interface UserService {
     User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException;
     void updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException;
     List<ShippingAddress> getShippingAddresses(Long userId) throws ShippingAddressNotFoundException;
+    User getUser(Long userId) throws UserNotFoundException;
 }
