@@ -10,9 +10,9 @@ import java.time.LocalDateTime;
 @Getter @Setter
 @Entity
 public class PaymentLink extends BaseModel{
+    private String identifier;
     private String link;
     private LocalDateTime expiry;
-    private String status;
 
     @ManyToOne
     private Payment payment;

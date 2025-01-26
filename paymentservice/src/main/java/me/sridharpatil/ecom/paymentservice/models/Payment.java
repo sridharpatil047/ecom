@@ -13,7 +13,7 @@ import java.util.List;
 public class Payment extends BaseModel{
     private Long orderId;
     private double amount;
-    private String paymentStatus;
+    private PaymentStatus paymentStatus;
     private PaymentMode paymentMode;
 
     @OneToMany(mappedBy = "payment", cascade = CascadeType.PERSIST)
