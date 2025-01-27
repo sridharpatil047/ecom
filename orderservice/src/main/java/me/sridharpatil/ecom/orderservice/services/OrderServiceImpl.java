@@ -7,8 +7,9 @@ import me.sridharpatil.ecom.orderservice.models.Order;
 import me.sridharpatil.ecom.orderservice.models.OrderStatus;
 import me.sridharpatil.ecom.orderservice.models.ShippingAddress;
 import me.sridharpatil.ecom.orderservice.repositories.OrderRepository;
-import me.sridharpatil.ecom.orderservice.services.dtos.CreateOrderMsgDto;
+import me.sridharpatil.ecom.orderservice.services.producers.OrderCreatedEventDto;
 import me.sridharpatil.ecom.orderservice.services.dtos.OrderItemDto;
+import me.sridharpatil.ecom.orderservice.services.producers.OrderProducer;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -22,13 +23,15 @@ public class OrderServiceImpl implements OrderService{
     UserService userService;
     KafkaTemplate<Long, String> kafkaTemplate;
     ObjectMapper objectMapper;
+    OrderProducer orderProducer;
 
 
-    public OrderServiceImpl(OrderRepository orderRepository, UserService userService, KafkaTemplate<Long, String> kafkaTemplate, ObjectMapper objectMapper) {
+    public OrderServiceImpl(OrderRepository orderRepository, UserService userService, KafkaTemplate<Long, String> kafkaTemplate, ObjectMapper objectMapper, OrderProducer orderProducer) {
         this.orderRepository = orderRepository;
         this.userService = userService;
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
+        this.orderProducer = orderProducer;
     }
 
     @Override
@@ -64,14 +67,7 @@ public class OrderServiceImpl implements OrderService{
 
         order = orderRepository.save(order);
 
-        CreateOrderMsgDto createOrderMsgDto = new CreateOrderMsgDto();
-        createOrderMsgDto.setOrderId(order.getId());
-        createOrderMsgDto.setAmount(order.getTotalPrice());
-        kafkaTemplate.send(
-                "order-service.order-created",
-                createOrderMsgDto.getOrderId(),
-                objectMapper.writeValueAsString(createOrderMsgDto)
-        );
+        orderProducer.orderCreatedEvent(order);
 
         return order;
     }

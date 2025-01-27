@@ -3,6 +3,7 @@ package me.sridharpatil.ecom.orderservice.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Getter @Setter
@@ -11,7 +12,7 @@ import java.util.List;
 @Table(name = "orders")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order extends BaseModel{
+public class Order extends BaseModel implements Serializable {
     private Long userId;
     private double totalPrice;
 

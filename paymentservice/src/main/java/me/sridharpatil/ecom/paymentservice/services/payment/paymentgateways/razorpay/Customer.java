@@ -1,6 +1,5 @@
-package me.sridharpatil.ecom.paymentservice.services.stratagy.razorpay;
+package me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways.razorpay;
 
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.json.JSONObject;

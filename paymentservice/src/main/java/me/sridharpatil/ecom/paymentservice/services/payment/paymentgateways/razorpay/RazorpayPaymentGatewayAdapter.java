@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.services.stratagy.razorpay;
+package me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways.razorpay;
 
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
@@ -6,12 +6,12 @@ import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
 import me.sridharpatil.ecom.paymentservice.properties.ConfigProperty;
 import me.sridharpatil.ecom.paymentservice.services.order.OrderService;
-import me.sridharpatil.ecom.paymentservice.services.stratagy.PaymentGateway;
+import me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways.PaymentGateway;
 import me.sridharpatil.ecom.paymentservice.services.user.UserService;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value = "razorpay")
 public class RazorpayPaymentGatewayAdapter implements PaymentGateway {
     RazorpayClient razorpayClient;
     ConfigProperty configProperty;

@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.services.stratagy;
+package me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways;
 
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.models.Payment;

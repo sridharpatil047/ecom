@@ -30,14 +30,18 @@ public class EventConsumer {
     }
 
     @KafkaListener(
-            topics = "cart-service.checkout",
+            topics = "cart-service.checked-out",
             groupId = "order-service.consumers"
     )
-    public void consumeCartCheckedOutEvent(@Payload OrderCreationReqDto message) throws JsonProcessingException {
+    public void consumeCartCheckedOutEvent(@Payload String message) throws JsonProcessingException {
+
+        log.debug("Entered consumeCartCheckedOutEvent");
+
+        OrderCreationReqDto orderCreationReqDto = objectMapper.readValue(message, OrderCreationReqDto.class);
 
 
         List<OrderItemDto> orderItemDtoList = new ArrayList<>();
-        List<OrderCreationReqDto.Item> items = message.getItems();
+        List<OrderCreationReqDto.Item> items = orderCreationReqDto.getItems();
         for (OrderCreationReqDto.Item item : items){
             orderItemDtoList.add(
                     OrderItemDto.builder()
@@ -48,7 +52,7 @@ public class EventConsumer {
             );
         }
 
-        orderService.createOrder(message.getUserId(), orderItemDtoList);
+        orderService.createOrder(orderCreationReqDto.getUserId(), orderItemDtoList);
     }
 
 

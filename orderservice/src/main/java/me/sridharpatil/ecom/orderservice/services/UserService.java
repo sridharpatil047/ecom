@@ -23,7 +23,7 @@ public class UserService {
     public ShippingAddress getActiveShippingAddress(Long userId) throws ShippingAddressNotFoundException {
 
         ShippingAddress[] shippingAddresses
-                = restTemplate.getForObject(URL.BASE_URL + "/" + URL.ENDPOINT + "/" + userId, ShippingAddress[].class);
+                = restTemplate.getForObject("http://localhost:8082/users/"  + userId +"/shipping-addresses", ShippingAddress[].class);
 
         for (ShippingAddress shippingAddress : shippingAddresses) {
             if (shippingAddress.isActive()) {
@@ -35,7 +35,7 @@ public class UserService {
     }
 
     public static class URL {
-        public static final String BASE_URL = "http://localhost:8080";
+        public static final String BASE_URL = "http://localhost:8082";
         public static final String ENDPOINT = "/users";
     }
 }

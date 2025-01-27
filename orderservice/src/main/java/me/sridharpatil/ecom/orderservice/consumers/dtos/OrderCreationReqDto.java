@@ -18,5 +18,4 @@ public class OrderCreationReqDto {
         private double price;
         private double subTotal;
     }
-
 }

@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.services;
+package me.sridharpatil.ecom.paymentservice.services.payment;
 
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
@@ -6,7 +6,7 @@ import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
 import me.sridharpatil.ecom.paymentservice.models.PaymentMode;
 import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
 import me.sridharpatil.ecom.paymentservice.repositories.PaymentRepository;
-import me.sridharpatil.ecom.paymentservice.services.stratagy.PaymentGatewayContext;
+import me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways.PaymentGatewayContext;
 import org.springframework.stereotype.Service;
 
 @Service
