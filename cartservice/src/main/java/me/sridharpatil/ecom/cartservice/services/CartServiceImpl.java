@@ -10,11 +10,11 @@ import me.sridharpatil.ecom.cartservice.models.Cart;
 import me.sridharpatil.ecom.cartservice.models.CartItem;
 import me.sridharpatil.ecom.cartservice.repositories.CartItemRepository;
 import me.sridharpatil.ecom.cartservice.repositories.CartRepository;
+import me.sridharpatil.ecom.cartservice.services.producers.CartProducer;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
 @Log4j2
@@ -25,14 +25,16 @@ public class CartServiceImpl implements CartService{
     ObjectMapper objectMapper;
     KafkaTemplate<String, String> kafkaTemplate;
     RedisTemplate<String, Object> redisTemplate;
+    CartProducer cartProducer;
 
 
-    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate, RedisTemplate<String, Object> redisTemplate) {
+    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate, RedisTemplate<String, Object> redisTemplate, CartProducer cartProducer) {
         this.cartRepository = cartRepository;
         this.cartItemRepository = cartItemRepository;
         this.objectMapper = objectMapper;
         this.kafkaTemplate = kafkaTemplate;
         this.redisTemplate = redisTemplate;
+        this.cartProducer = cartProducer;
     }
 
     @Override
@@ -181,8 +183,7 @@ public class CartServiceImpl implements CartService{
         cartRepository.save(cart);
 
         log.info("Producing message to kafka topic: cart-service.checkout");
-        String message = objectMapper.writeValueAsString(cart);
-        kafkaTemplate.send("cart-service.checkout", message);
+        cartProducer.checkedOutEvent(cart);
 
         log.debug("Clearing cart for user: {}", userId);
         clearCart(userId);

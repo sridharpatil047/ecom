@@ -11,6 +11,7 @@ import java.util.List;
 
 @Getter @Setter
 public class CartResDto {
+    private Long cartId;
     private Long userId;
     private List<CartItemResDto> items;
     private double totalPrice;
@@ -18,6 +19,7 @@ public class CartResDto {
     public static CartResDto of(Cart cart){
         CartResDto cartResDto = new CartResDto();
 
+        cartResDto.setCartId(cart.getId());
         cartResDto.setUserId(cart.getUserId());
         cartResDto.setTotalPrice(cart.getTotalPrice());
         if (cart.getItems() != null) {
