@@ -158,15 +158,15 @@ public class GlobalExceptionHandler {
     }
 
     // Category 5 : Internal server error
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ExceptionDto> handleException(Exception ex) {
-        ExceptionDto exceptionDto = new ExceptionDto(
-                ErrorCode.UNKNOWN_ERROR,
-                ex.getMessage()
-        );
-
-        log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
-
-        return ResponseEntity.status(500).body(exceptionDto);
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<ExceptionDto> handleException(Exception ex) {
+//        ExceptionDto exceptionDto = new ExceptionDto(
+//                ErrorCode.UNKNOWN_ERROR,
+//                ex.getMessage()
+//        );
+//
+//        log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+//
+//        return ResponseEntity.status(500).body(exceptionDto);
+//    }
 }

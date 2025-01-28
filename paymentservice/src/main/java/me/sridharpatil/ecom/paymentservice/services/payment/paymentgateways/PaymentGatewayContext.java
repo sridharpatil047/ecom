@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
@@ -16,7 +17,7 @@ public class PaymentGatewayContext {
     public PaymentGatewayContext(Map<String, PaymentGateway> paymentGateways, ConfigProperty configProperty) {
         this.paymentGateway = paymentGateways.get(configProperty.getPaymentGateway());
     }
-    public PaymentLink createPaymentLink(Payment payment) throws RazorpayException {
+    public PaymentLink createPaymentLink(Payment payment) throws RazorpayException, JsonProcessingException {
         return paymentGateway.createPaymentLink(payment);
     }
 
