@@ -56,7 +56,7 @@ public class OrderServiceImpl implements OrderService{
                                 .mapToDouble(OrderItemDto::getSubTotal)
                                 .sum()
                 )
-                .status(OrderStatus.PENDING)
+                .status(OrderStatus.CREATED)
                 .shippingAddress(shippingAddress)
                 .orderItems(
                         orderItemDtoList.stream()
@@ -102,5 +102,20 @@ public class OrderServiceImpl implements OrderService{
     public Order getOrderById(Long orderId) {
         return orderRepository.findById(orderId)
                 .orElseThrow(() -> new RuntimeException("Order not found"));
+    }
+
+    @Override
+    public List<Order> getOrdersByUserId(Long userId) {
+        return null;
+    }
+
+    @Override
+    public Order getOrderByUserIdAndStatus(Long userId, OrderStatus orderStatus) {
+
+        return orderRepository.findAllByUserIdAndStatus(userId, orderStatus)
+                .stream()
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+
     }
 }

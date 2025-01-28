@@ -8,9 +8,12 @@ import me.sridharpatil.ecom.orderservice.services.dtos.OrderItemDto;
 import java.util.List;
 
 public interface OrderService {
-    public Order createOrder(Long userId, List<OrderItemDto> orderItemDtoList) throws JsonProcessingException;
-    public Order updateOrderStatus(Long orderId, OrderStatus orderStatus) throws JsonProcessingException;
-    public Order getOrderById(Long orderId);
+    Order createOrder(Long userId, List<OrderItemDto> orderItemDtoList) throws JsonProcessingException;
+    Order updateOrderStatus(Long orderId, OrderStatus orderStatus) throws JsonProcessingException;
+    Order getOrderById(Long orderId);
+    List<Order> getOrdersByUserId(Long userId);
+    Order getOrderByUserIdAndStatus(Long userId, OrderStatus orderStatus);
+
 //    public List<Order> getOrdersByUserId(Long userId);
 //    public void deleteOrder(Long orderId);
 //    public List<Order> getAllOrders();
