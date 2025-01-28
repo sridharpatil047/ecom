@@ -74,10 +74,11 @@ public class SecurityConfig {
             throws Exception {
         http
                 .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers("/users/sign-up").permitAll()
-                        .requestMatchers("/roles/**").hasAuthority("ROLE_ADMIN")
-                        .requestMatchers(HttpMethod.PATCH, "/users/{id}/roles").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().authenticated()
+                                .anyRequest().permitAll()
+//                        .requestMatchers("/users/sign-up").permitAll()
+//                        .requestMatchers("/roles/**").hasAuthority("ROLE_ADMIN")
+//                        .requestMatchers(HttpMethod.PATCH, "/users/{id}/roles").hasAuthority("ROLE_ADMIN")
+//                        .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter()))

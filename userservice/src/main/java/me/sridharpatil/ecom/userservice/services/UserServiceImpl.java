@@ -29,8 +29,9 @@ public class UserServiceImpl implements UserService{
     BCryptPasswordEncoder bCryptPasswordEncoder;
     NotificationSenderContext notificationSenderContext;
 
-    public UserServiceImpl(UserRepository userRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationSenderContext notificationSenderContext) {
+    public UserServiceImpl(UserRepository userRepository, ShippingAddressRepository shippingAddressRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationSenderContext notificationSenderContext) {
         this.userRepository = userRepository;
+        this.shippingAddressRepository = shippingAddressRepository;
         this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.notificationSenderContext = notificationSenderContext;
@@ -109,5 +110,12 @@ public class UserServiceImpl implements UserService{
     public User getUser(Long userId) throws UserNotFoundException {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User with id " + userId + " not found"));
+    }
+
+    @Override
+    public void addShippingAddress(Long id, ShippingAddress shippingAddress) {
+        shippingAddress.setUser(userRepository.findById(id).get());
+        shippingAddress.setActive(true);
+        shippingAddressRepository.save(shippingAddress);
     }
 }

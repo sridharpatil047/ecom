@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.userservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import me.sridharpatil.ecom.userservice.controllers.dtos.AddShippingAddressReqDto;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
@@ -16,4 +17,5 @@ public interface UserService {
     void updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException;
     List<ShippingAddress> getShippingAddresses(Long userId) throws ShippingAddressNotFoundException;
     User getUser(Long userId) throws UserNotFoundException;
+    void addShippingAddress(Long id, ShippingAddress shippingAddress);
 }

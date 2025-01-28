@@ -97,6 +97,25 @@ public class UserController {
     }
 
 
+    // POST /users/{id}/shipping-addresses
+    @PostMapping("/{id}/shipping-addresses")
+    ResponseEntity<String> addShippingAddress(
+            @PathVariable("id") Long id,
+            @RequestBody AddShippingAddressReqDto requestDto
+    ) {
+        // Add shipping address
+        // TODO : Implement this
+        ShippingAddress shippingAddress = new ShippingAddress();
+        shippingAddress.setCountry(requestDto.getCountry());
+        shippingAddress.setState(requestDto.getState());
+        shippingAddress.setCity(requestDto.getCity());
+        shippingAddress.setStreet(requestDto.getStreet());
+        shippingAddress.setPinCode(requestDto.getPinCode());
+
+        userService.addShippingAddress(id, shippingAddress);
+        return ResponseEntity.ok("Shipping address added successfully");
+    }
+
     // 5. GET /users/{id}/shipping-addresses
     @GetMapping("/{id}/shipping-addresses")
     ResponseEntity<List<GetShippingAddressesResDto>> getShippingAddresses(@PathVariable("id") Long id) throws ShippingAddressNotFoundException {
@@ -108,6 +127,8 @@ public class UserController {
                         .collect(Collectors.toList())
         );
     }
+
+
 
     // 6. GET /users/{id}
     @GetMapping("/{id}")
