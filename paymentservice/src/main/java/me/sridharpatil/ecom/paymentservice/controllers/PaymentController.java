@@ -6,6 +6,7 @@ import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.consumers.dtos.ConsumeOrderCreatedEventDto;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentMode;
+import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
 import me.sridharpatil.ecom.paymentservice.services.payment.PaymentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class PaymentController {
 //        String message = "{'orderId': 13, 'amount': 100.0}";
 //        ConsumeOrderCreatedEventDto consumeOrderCreatedEventDto = objectMapper.readValue(message, ConsumeOrderCreatedEventDto.class);
         ConsumeOrderCreatedEventDto consumeOrderCreatedEventDto = new ConsumeOrderCreatedEventDto();
-        consumeOrderCreatedEventDto.setOrderId(12L);
+        consumeOrderCreatedEventDto.setOrderId(9L);
         consumeOrderCreatedEventDto.setAmount(0.0);
 
 
@@ -51,6 +52,11 @@ public class PaymentController {
         }
 
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping()
+    public ResponseEntity<Payment> getPaymentStatus(@RequestParam Long paymentId) {
+        return ResponseEntity.ok(paymentService.getPayment(paymentId));
     }
 
 }

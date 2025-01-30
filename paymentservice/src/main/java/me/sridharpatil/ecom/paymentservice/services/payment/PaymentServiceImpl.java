@@ -6,39 +6,48 @@ import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
 import me.sridharpatil.ecom.paymentservice.models.PaymentMode;
 import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
+import me.sridharpatil.ecom.paymentservice.properties.ConfigProperty;
 import me.sridharpatil.ecom.paymentservice.repositories.PaymentLinkRepository;
 import me.sridharpatil.ecom.paymentservice.repositories.PaymentRepository;
-import me.sridharpatil.ecom.paymentservice.services.payment.paymentgateways.PaymentGatewayContext;
+import me.sridharpatil.ecom.paymentservice.paymentgwadapters.PaymentGatewayAdapter;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Map;
 
 @Service
 public class PaymentServiceImpl implements PaymentService{
 
     PaymentRepository paymentRepository;
     PaymentLinkRepository paymentLinkRepository;
-    PaymentGatewayContext paymentGatewayContext;
+    PaymentGatewayAdapter paymentGatewayAdapter;
+    PaymentHelper paymentHelper;
+    ConfigProperty configProperty;
 
-
-    public PaymentServiceImpl(PaymentRepository paymentRepository, PaymentLinkRepository paymentLinkRepository, PaymentGatewayContext paymentGatewayContext) {
+    public PaymentServiceImpl(PaymentRepository paymentRepository,
+                              PaymentLinkRepository paymentLinkRepository,
+                              Map<String, PaymentGatewayAdapter> paymentGateways,
+                              PaymentHelper paymentHelper,
+                              ConfigProperty configProperty
+                              ) {
         this.paymentRepository = paymentRepository;
         this.paymentLinkRepository = paymentLinkRepository;
-        this.paymentGatewayContext = paymentGatewayContext;
+        this.paymentHelper = paymentHelper;
+        this.configProperty = configProperty;
+        this.paymentGatewayAdapter = paymentGateways.get(this.configProperty.getPaymentGateway());
     }
 
     @Override
     public PaymentLink createPaymentLink(Payment payment) throws RazorpayException, JsonProcessingException {
-        PaymentLink paymentLink = paymentGatewayContext.createPaymentLink(payment);
+        PaymentLink paymentLink = paymentGatewayAdapter.createPaymentLink(payment);
 
         paymentLinkRepository.save(paymentLink);
-        return paymentGatewayContext.createPaymentLink(payment);
+        return paymentLink;
     }
 
     @Override
     public PaymentLink getPaymentLinkByOrderId(Long orderId) {
 
-        Payment payment = paymentRepository.findByOrderId(orderId).orElse(null);
+        Payment payment = paymentRepository.findAllByOrderId(orderId).stream().findFirst().orElse(null);
         if (payment == null) {
             return null;
         }
@@ -47,6 +56,23 @@ public class PaymentServiceImpl implements PaymentService{
                 .stream()
                 .filter(pl -> pl.getPayment().getId().equals(payment.getId()))
                 .findFirst().orElse(null);
+    }
+
+    @Override
+    public Payment getPaymentByPaymentLinkId(String paymentLinkId) {
+        return paymentHelper.getPaymentByPaymentLinkId(paymentLinkId);
+    }
+
+    @Override
+    public Payment updatePayment(Payment payment) {
+        return paymentHelper.updatePayment(payment);
+    }
+
+    @Override
+    public void handleCallback(Map<String, String> payload) throws RazorpayException {
+
+        paymentGatewayAdapter.handleCallback(payload);
+
     }
 
     @Override
@@ -63,6 +89,14 @@ public class PaymentServiceImpl implements PaymentService{
 
     @Override
     public Payment getPayment(Long paymentId) {
+        return paymentRepository.findById(paymentId).orElse(null);
+    }
+
+    @Override
+    public PaymentStatus getPaymentStatus(Long paymentId) {
+        if (getPayment(paymentId) != null) {
+            return getPayment(paymentId).getPaymentStatus();
+        }
         return null;
     }
 
