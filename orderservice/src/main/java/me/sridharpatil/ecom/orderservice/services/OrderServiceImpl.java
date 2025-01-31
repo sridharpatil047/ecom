@@ -81,19 +81,11 @@ public class OrderServiceImpl implements OrderService{
         order.setStatus(orderStatus);
         order = orderRepository.save(order);
 
-        if (order.getStatus().equals(OrderStatus.CONFIRMED)){
-            kafkaTemplate.send(
-                    "order-service.order-confirmed",
-                    order.getId(),
-                    objectMapper.writeValueAsString(order)
-            );
-        } else if (order.getStatus().equals(OrderStatus.CANCELLED)){
-            kafkaTemplate.send(
-                    "order-service.order-cancelled",
-                    order.getId(),
-                    objectMapper.writeValueAsString(order)
-            );
-        }
+        if (order.getStatus().equals(OrderStatus.CONFIRMED))
+            orderProducer.orderConfirmedEvent(order);
+        else if (order.getStatus().equals(OrderStatus.CANCELLED))
+            orderProducer.orderCancelledEvent(order);
+
 
         return order;
     }

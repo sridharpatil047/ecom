@@ -26,4 +26,24 @@ public class OrderProducer {
                 message
         );
     }
+
+    public void orderConfirmedEvent(Order order) throws JsonProcessingException {
+        OrderConfirmationReqDto orderConfirmationReqDto = OrderConfirmationReqDto.of(order);
+        String message = objectMapper.writeValueAsString(orderConfirmationReqDto);
+        kafkaTemplate.send(
+                "order-service.order-confirmed",
+                orderConfirmationReqDto.getOrderId().toString(),
+                message
+        );
+    }
+
+    public void orderCancelledEvent(Order order) throws JsonProcessingException {
+        OrderCancellationReqDto orderCancellationReqDto = OrderCancellationReqDto.of(order);
+        String message = objectMapper.writeValueAsString(orderCancellationReqDto);
+        kafkaTemplate.send(
+                "order-service.order-cancelled",
+                orderCancellationReqDto.getOrderId().toString(),
+                message
+        );
+    }
 }

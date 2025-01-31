@@ -3,6 +3,7 @@ package me.sridharpatil.ecom.orderservice.consumers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.log4j.Log4j2;
+import me.sridharpatil.ecom.orderservice.consumers.dtos.OrderCancellationReqDto;
 import me.sridharpatil.ecom.orderservice.consumers.dtos.OrderConfirmationReqDto;
 import me.sridharpatil.ecom.orderservice.consumers.dtos.OrderCreationReqDto;
 import me.sridharpatil.ecom.orderservice.models.OrderStatus;
@@ -60,15 +61,21 @@ public class EventConsumer {
             topics = "payment-service.payment-success",
             groupId = "order-service.consumers"
     )
-    public void consumeOrderConfirmationEvent(@Payload OrderConfirmationReqDto message) throws JsonProcessingException {
-        orderService.updateOrderStatus(message.getOrderId(), OrderStatus.CONFIRMED);
+    public void consumeOrderConfirmationEvent(@Payload String message) throws JsonProcessingException {
+
+        OrderConfirmationReqDto orderConfirmationReqDto =  objectMapper.readValue(message, OrderConfirmationReqDto.class);
+
+        orderService.updateOrderStatus(orderConfirmationReqDto.getOrderId(), OrderStatus.CONFIRMED);
     }
 
     @KafkaListener(
-            topics = "payment-service.payment-failure",
+            topics = "payment-service.payment-failed",
             groupId = "order-service.consumers"
     )
-    public void consumeOrderCancellationEvent(@Payload OrderConfirmationReqDto message) throws JsonProcessingException {
-        orderService.updateOrderStatus(message.getOrderId(), OrderStatus.CANCELLED);
+    public void consumeOrderCancellationEvent(@Payload String message) throws JsonProcessingException {
+
+        OrderCancellationReqDto orderCancellationReqDto =  objectMapper.readValue(message, OrderCancellationReqDto.class);
+
+        orderService.updateOrderStatus(orderCancellationReqDto.getOrderId(), OrderStatus.CANCELLED);
     }
 }
