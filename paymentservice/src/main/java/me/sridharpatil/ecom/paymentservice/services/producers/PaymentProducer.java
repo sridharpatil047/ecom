@@ -25,4 +25,23 @@ public class PaymentProducer {
                 objectMapper.writeValueAsString(paymentLinkCreatedEventDto)
         );
     }
+
+    public void paymentSuccessEvent(Long orderId) throws JsonProcessingException {
+        PaymentSuccessEventDto paymentSuccessEventDto = PaymentSuccessEventDto.of(orderId);
+        kafkaTemplate.send(
+                "payment-service.payment-success",
+                paymentSuccessEventDto.getOrderId().toString(),
+                objectMapper.writeValueAsString(paymentSuccessEventDto)
+        );
+    }
+
+    public void paymentFailedEvent(Long orderId, String reason) throws JsonProcessingException {
+        PaymentFailedEventDto paymentFailedEventDto = PaymentFailedEventDto.of(orderId, reason);
+        kafkaTemplate.send(
+                "payment-service.payment-failed",
+                paymentFailedEventDto.getOrderId().toString(),
+                objectMapper.writeValueAsString(paymentFailedEventDto)
+        );
+    }
+
 }

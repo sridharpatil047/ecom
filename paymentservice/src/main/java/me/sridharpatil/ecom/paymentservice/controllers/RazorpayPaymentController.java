@@ -35,5 +35,4 @@ public class RazorpayPaymentController {
 
         System.out.println("Payment Id : " + razorpayPaymentId);
     }
-
 }
