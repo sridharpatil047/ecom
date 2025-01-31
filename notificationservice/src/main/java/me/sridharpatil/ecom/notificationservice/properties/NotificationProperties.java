@@ -9,5 +9,5 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "me.sridharpatil.ecom.notificationservice")
 public class NotificationProperties {
-    private String selector;
+    private String notifier;
 }

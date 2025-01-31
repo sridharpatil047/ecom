@@ -3,6 +3,7 @@ package me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
 import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
@@ -23,6 +24,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+@Log4j2
 @Component(value = "razorpay")
 public class RazorpayPaymentGatewayAdapter implements PaymentGatewayAdapter {
     RazorpayClient razorpayClient;
@@ -94,7 +96,7 @@ public class RazorpayPaymentGatewayAdapter implements PaymentGatewayAdapter {
     }
 
     @Override
-    public void handleCallback(Map<String, String> payload) throws RazorpayException {
+    public void handleCallback(Map<String, String> payload) throws RazorpayException, JsonProcessingException {
         String razorpayPaymentId = payload.get("razorpay_payment_id");
         String razorpayPaymentLinkId = payload.get("razorpay_payment_link_id");
 
@@ -108,35 +110,14 @@ public class RazorpayPaymentGatewayAdapter implements PaymentGatewayAdapter {
         payment.setIdentifier(razorpayPaymentId);
 
         if (paymentStatus.equals("captured")) {
-            System.out.println("Payment successful");
+            log.info("Payment successful for order: " + payment.getOrderId());
             payment.setPaymentStatus(PaymentStatus.valueOf(paymentStatus.toUpperCase()));
+            paymentProducer.paymentSuccessEvent(payment.getOrderId());
         } else if (paymentStatus.equals("failed")) {
-            System.out.println("Payment failed");
+            log.error("Payment failed for order: " + payment.getOrderId());
             payment.setPaymentStatus(PaymentStatus.valueOf(paymentStatus.toUpperCase()));
+            paymentProducer.paymentFailedEvent(payment.getOrderId(), "Payment failed");
         }
         paymentHelper.updatePayment(payment);
     }
-
-
-//    public String handleCallback(String razorpayPaymentId, String razorpayPaymentLinkId) throws RazorpayException {
-//
-//        System.out.println(razorpayPaymentId);
-//        System.out.println(razorpayPaymentLinkId);
-//
-//        com.razorpay.Payment razorpayPayment = razorpayClient.payments.fetch(razorpayPaymentId);
-//        Payment payment = paymentService.getPaymentByPaymentLinkId(razorpayPaymentLinkId);
-//        payment.setIdentifier(razorpayPaymentId);
-//
-//        String paymentStatus = razorpayPayment.get("status");
-//        if (paymentStatus.equals("captured")) {
-//            System.out.println("Payment successful");
-//            payment.setPaymentStatus(PaymentStatus.valueOf(paymentStatus.toUpperCase()));
-//        } else if (paymentStatus.equals("failed")) {
-//            System.out.println("Payment failed");
-//            payment.setPaymentStatus(PaymentStatus.valueOf(paymentStatus.toUpperCase()));
-//        }
-//        paymentService.updatePayment(payment);
-//
-//        return paymentStatus;
-//    }
 }

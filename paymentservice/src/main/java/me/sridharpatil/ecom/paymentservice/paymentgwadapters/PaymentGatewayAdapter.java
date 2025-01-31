@@ -9,5 +9,5 @@ import java.util.Map;
 
 public interface PaymentGatewayAdapter {
     PaymentLink createPaymentLink(Payment payment) throws RazorpayException, JsonProcessingException;
-    void handleCallback(Map<String, String> payload) throws RazorpayException;
+    void handleCallback(Map<String, String> payload) throws RazorpayException, JsonProcessingException;
 }
