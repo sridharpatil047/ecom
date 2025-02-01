@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="servicediscovery:8761" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="SERVER_PORT" value="8761" />
+    </envs>
+    <module name="servicediscovery" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="me.sridharpatil.ecom.servicediscovery.ServicediscoveryApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
