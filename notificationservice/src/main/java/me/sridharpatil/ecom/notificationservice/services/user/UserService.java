@@ -16,7 +16,7 @@ public class UserService {
     public User getUserById(Long userId) {
 
         String url = URLBuilder.getBuilder()
-                .setBaseUrl("http://localhost:8082")
+                .setBaseUrl("http://userservice")
                 .setPath("/users")
                 .setPathParam(userId.toString())
                 .build();

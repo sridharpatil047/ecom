@@ -19,7 +19,7 @@ public class OrderService {
 
         Map<String, String> queryParams = Map.of("orderId", orderId.toString());
         String url = URLBuilder.getBuilder()
-                .setBaseUrl("http://localhost:8085")
+                .setBaseUrl("http://orderservice")
                 .setPath("/orders")
                 .setQueryParams(queryParams)
                 .build();
