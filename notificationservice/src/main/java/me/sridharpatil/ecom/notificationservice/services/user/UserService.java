@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.notificationservice.services.user;
 
+import me.sridharpatil.ecom.notificationservice.utils.URLBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,12 +15,12 @@ public class UserService {
 
     public User getUserById(Long userId) {
 
-        return restTemplate.getForObject("http://localhost:8082/users/{userId}", User.class, userId);
+        String url = URLBuilder.getBuilder()
+                .setBaseUrl("http://localhost:8082")
+                .setPath("/users")
+                .setPathParam(userId.toString())
+                .build();
 
-//        User user = new User();
-//        user.setUserId(userId);
-//        user.setName("John Doe");
-//        user.setEmail("sridharpatil047@gmail.com");
-//        return user;
+        return restTemplate.getForObject(url, User.class);
     }
 }
