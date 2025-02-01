@@ -9,5 +9,4 @@ import java.util.List;
 public class ConsumeOrderConfirmedEventDto {
     private Long userId;
     private Long orderId;
-    private String status;
 }

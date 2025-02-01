@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.mail.MessagingException;
 import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.notificationservice.consumers.dtos.ConsumeOrderCancelledEventDto;
+import me.sridharpatil.ecom.notificationservice.consumers.dtos.ConsumeOrderConfirmedEventDto;
 import me.sridharpatil.ecom.notificationservice.consumers.dtos.SendEmailNotificationMessage;
 import me.sridharpatil.ecom.notificationservice.consumers.dtos.SendSmsNotificationMessage;
 import me.sridharpatil.ecom.notificationservice.services.NotificationService;
@@ -28,46 +29,50 @@ public class EventConsumer {
         this.notificationService = notificationService;
     }
 
-    @KafkaListener(
-            topics = "user-service.send-notification",
-            groupId = "notification-service.consumers"
-    )
-    public void sendNotificationHandler(
-            @Header(KafkaHeaders.RECEIVED_KEY) String key,
-            @Payload String message
-    ) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
-
-        if (key.equals("email")){
-            SendEmailNotificationMessage sendEmailNotificationMessage
-                    = objectMapper.readValue(message, SendEmailNotificationMessage.class);
-            notificationService.send(
-                    sendEmailNotificationMessage.getRecipient(),
-                    sendEmailNotificationMessage.getEventType()
-            );
-        } else if (key.equals("sms")){
-            SendSmsNotificationMessage sendSmsNotificationMessage
-                    = objectMapper.readValue(message, SendSmsNotificationMessage.class);
-
-            notificationService.send(
-                    sendSmsNotificationMessage.getRecipient(),
-                    sendSmsNotificationMessage.getEventType()
-            );
-        } else {
-            log.error("Invalid notification type");
-        }
-    }
+//    @KafkaListener(
+//            topics = "user-service.send-notification",
+//            groupId = "notification-service.consumers"
+//    )
+//    public void sendNotificationHandler(
+//            @Header(KafkaHeaders.RECEIVED_KEY) String key,
+//            @Payload String message
+//    ) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
+//
+//        if (key.equals("email")){
+//            SendEmailNotificationMessage sendEmailNotificationMessage
+//                    = objectMapper.readValue(message, SendEmailNotificationMessage.class);
+//            notificationService.send(
+//                    sendEmailNotificationMessage.getRecipient(),
+//                    sendEmailNotificationMessage.getEventType()
+//            );
+//        } else if (key.equals("sms")){
+//            SendSmsNotificationMessage sendSmsNotificationMessage
+//                    = objectMapper.readValue(message, SendSmsNotificationMessage.class);
+//
+//            notificationService.send(
+//                    sendSmsNotificationMessage.getRecipient(),
+//                    sendSmsNotificationMessage.getEventType()
+//            );
+//        } else {
+//            log.error("Invalid notification type");
+//        }
+//    }
 
 
     @KafkaListener(
             topics = "order-service.order-confirmed",
             groupId = "notification-service.consumers"
     )
-    public void consumeOrderConfirmedEvent(@Payload String message){
+    public void consumeOrderConfirmedEvent(@Payload String message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
 
         log.info("Order confirmed event received: " + message);
 
+        ConsumeOrderConfirmedEventDto consumeOrderConfirmedEventDto = objectMapper.readValue(message, ConsumeOrderConfirmedEventDto.class);
 
-
+        notificationService.handleOrderConfirmedEvent(
+                consumeOrderConfirmedEventDto.getUserId(),
+                consumeOrderConfirmedEventDto.getOrderId()
+        );
     }
 
     @KafkaListener(
@@ -82,8 +87,7 @@ public class EventConsumer {
 
         notificationService.handleOrderCancelledEvent(
                 consumeOrderCancelledEventDto.getUserId(),
-                consumeOrderCancelledEventDto.getOrderId(),
-                consumeOrderCancelledEventDto.getStatus()
+                consumeOrderCancelledEventDto.getOrderId()
         );
 
     }

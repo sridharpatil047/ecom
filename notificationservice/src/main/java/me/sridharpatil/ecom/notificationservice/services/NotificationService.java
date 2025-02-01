@@ -10,7 +10,7 @@ import java.util.Map;
 public interface NotificationService {
     void send(Recipient recipient, EventType eventType, Map<String, String> variables) throws JsonProcessingException, MessagingException, UnsupportedEncodingException;
 
-    void handleOrderCancelledEvent(Long userId, Long orderId, String orderStatus) throws MessagingException, UnsupportedEncodingException, JsonProcessingException;
+    void handleOrderCancelledEvent(Long userId, Long orderId) throws MessagingException, UnsupportedEncodingException, JsonProcessingException;
 
-    void handleOrderPlacedEvent(Long userId, Long orderId, String orderStatus) throws MessagingException, UnsupportedEncodingException, JsonProcessingException;
+    void handleOrderConfirmedEvent(Long userId, Long orderId) throws MessagingException, UnsupportedEncodingException, JsonProcessingException;
 }

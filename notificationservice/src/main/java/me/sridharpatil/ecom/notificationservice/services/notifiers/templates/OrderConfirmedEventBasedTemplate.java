@@ -18,7 +18,7 @@ public class OrderConfirmedEventBasedTemplate extends EventBasedTemplate {
 
     @Override
     public String getBody() {
-        return "Your order has been confirmed";
+        return "Your order has been confirmed. Thank you for shopping with us.\nOrder ID: " + variables.get("orderId") + "\nTotal Amount: " + variables.get("totalPrice");
     }
 
     @Override

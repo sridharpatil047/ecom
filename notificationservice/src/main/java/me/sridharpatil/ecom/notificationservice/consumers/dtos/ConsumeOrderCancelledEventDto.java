@@ -7,5 +7,4 @@ import lombok.Setter;
 public class ConsumeOrderCancelledEventDto {
     private Long userId;
     private Long orderId;
-    private String status;
 }
