@@ -2,6 +2,7 @@ package me.sridharpatil.ecom.orderservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.orderservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.orderservice.models.Order;
 import me.sridharpatil.ecom.orderservice.models.OrderStatus;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Log4j2
 @Service
 public class OrderServiceImpl implements OrderService{
 
@@ -74,6 +76,8 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public Order updateOrderStatus(Long orderId, OrderStatus orderStatus) throws JsonProcessingException {
+
+        log.debug("Updating order status for order: " + orderId + " to: " + orderStatus);
 
         Order order = orderRepository.findById(orderId).orElse(null);
         if (order == null){return null;}

@@ -2,10 +2,12 @@ package me.sridharpatil.ecom.orderservice.services.producers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.orderservice.models.Order;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
+@Log4j2
 @Component
 public class OrderProducer {
     KafkaTemplate<String, String> kafkaTemplate;
@@ -28,6 +30,8 @@ public class OrderProducer {
     }
 
     public void orderConfirmedEvent(Order order) throws JsonProcessingException {
+        log.debug("Entered orderConfirmedEvent");
+
         OrderConfirmationReqDto orderConfirmationReqDto = OrderConfirmationReqDto.of(order);
         String message = objectMapper.writeValueAsString(orderConfirmationReqDto);
         kafkaTemplate.send(

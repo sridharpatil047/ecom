@@ -63,6 +63,8 @@ public class EventConsumer {
     )
     public void consumeOrderConfirmationEvent(@Payload String message) throws JsonProcessingException {
 
+        log.debug("Entered consumeOrderConfirmationEvent");
+
         OrderConfirmationReqDto orderConfirmationReqDto =  objectMapper.readValue(message, OrderConfirmationReqDto.class);
 
         orderService.updateOrderStatus(orderConfirmationReqDto.getOrderId(), OrderStatus.CONFIRMED);
@@ -73,6 +75,8 @@ public class EventConsumer {
             groupId = "order-service.consumers"
     )
     public void consumeOrderCancellationEvent(@Payload String message) throws JsonProcessingException {
+
+        log.debug("Entered consumeOrderCancellationEvent");
 
         OrderCancellationReqDto orderCancellationReqDto =  objectMapper.readValue(message, OrderCancellationReqDto.class);
 
