@@ -69,7 +69,7 @@ public class PaymentServiceImpl implements PaymentService{
     }
 
     @Override
-    public void handleCallback(Map<String, String> payload) throws RazorpayException {
+    public void handleCallback(Map<String, String> payload) throws RazorpayException, JsonProcessingException {
 
         paymentGatewayAdapter.handleCallback(payload);
 

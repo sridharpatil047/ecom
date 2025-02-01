@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.paymentservice.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.services.payment.PaymentService;
 import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.RazorpayPaymentGatewayAdapter;
@@ -24,7 +25,7 @@ public class RazorpayPaymentController {
     public void handleCallback(
             @RequestParam("razorpay_payment_id") String razorpayPaymentId,
             @RequestParam("razorpay_payment_link_id")String razorpayPaymentLinkId
-    ) throws RazorpayException {
+    ) throws RazorpayException, JsonProcessingException {
         // handle callback
 //        razorpayPaymentGatewayAdapter.handleCallback(razorpayPaymentId, razorpayPaymentLinkId);
         Map<String, String> payload = Map.of(

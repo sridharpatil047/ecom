@@ -14,7 +14,7 @@ public interface PaymentService {
     PaymentLink getPaymentLinkByOrderId(Long orderId);
     Payment getPaymentByPaymentLinkId(String paymentLinkId);
     Payment updatePayment(Payment payment);
-    void handleCallback(Map<String, String> payload) throws RazorpayException;
+    void handleCallback(Map<String, String> payload) throws RazorpayException, JsonProcessingException;
     Payment createPayment(Long orderId, Double amount, PaymentMode paymentMode);
     Payment getPayment(Long paymentId);
     PaymentStatus getPaymentStatus(Long paymentId);

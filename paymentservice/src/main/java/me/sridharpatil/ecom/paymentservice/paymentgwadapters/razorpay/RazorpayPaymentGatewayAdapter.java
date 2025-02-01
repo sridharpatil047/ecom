@@ -68,7 +68,7 @@ public class RazorpayPaymentGatewayAdapter implements PaymentGatewayAdapter {
 
         // create payment link request object
         JSONObject request = PaymentLinkRequest.getJSONObjectBuilder()
-                .amount(payment.getAmount() * 100)
+                .amount(payment.getAmount() * 100) // amount in the smallest currency unit
                 .currency("INR")
                 .expire_by(System.currentTimeMillis()/1000 + configProperty.getPaymentLinkExpiryInMinutes() * 60)
 //                .reference_id(payment.getOrderId().toString())
@@ -119,5 +119,8 @@ public class RazorpayPaymentGatewayAdapter implements PaymentGatewayAdapter {
             paymentProducer.paymentFailedEvent(payment.getOrderId(), "Payment failed");
         }
         paymentHelper.updatePayment(payment);
+
+
+
     }
 }
