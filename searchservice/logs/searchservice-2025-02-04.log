@@ -1,0 +1,739 @@
+2025-02-04 16:05:43.211  INFO 10899 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 16:05:43.230  INFO 10899 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 10899 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 16:05:43.232  INFO 10899 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 16:05:43.501  INFO 10899 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:05:43.513  INFO 10899 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 8 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-04 16:05:43.515  INFO 10899 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:05:43.516  INFO 10899 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 16:05:43.612  INFO 10899 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=576013a8-0639-3aca-83af-30e6ac48f351
+2025-02-04 16:05:43.742  INFO 10899 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8086 (http)
+2025-02-04 16:05:43.751  INFO 10899 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8086"]
+2025-02-04 16:05:43.752  INFO 10899 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 16:05:43.752  INFO 10899 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 16:05:43.777  INFO 10899 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 16:05:43.778  INFO 10899 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 530 ms
+2025-02-04 16:05:44.233  INFO 10899 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 16:05:44.247  WARN 10899 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 16:05:44.267  INFO 10899 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 16:05:44.277  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 16:05:44.279  INFO 10899 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 16:05:44.283  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 16:05:44.399  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 16:05:44.399  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 16:05:44.400  INFO 10899 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 16:05:44.401  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738665344401 with initial instances count: 7
+2025-02-04 16:05:44.402  INFO 10899 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 16:05:44.402  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738665344402, current=UP, previous=STARTING]
+2025-02-04 16:05:44.403  INFO 10899 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8086: registering service...
+2025-02-04 16:05:44.403  INFO 10899 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8086"]
+2025-02-04 16:05:44.405  INFO 10899 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 16:05:44.405  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738665344405, current=DOWN, previous=UP]
+2025-02-04 16:05:44.406  WARN 10899 --- [           main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-02-04 16:05:44.408  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 16:05:44.421  INFO 10899 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8086 - registration status: 204
+2025-02-04 16:05:44.421  INFO 10899 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8086: registering service...
+2025-02-04 16:05:44.422  INFO 10899 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8086 - registration status: 204
+2025-02-04 16:05:44.422  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 16:05:44.424  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8086 - deregister  status: 200
+2025-02-04 16:05:44.424  INFO 10899 --- [           main] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 16:05:44.432  INFO 10899 --- [           main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger.logMessage : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-04 16:05:44.440 ERROR 10899 --- [           main] org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter.report : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8086 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8086 or configure this application to listen on another port.
+
+2025-02-04 16:07:24.120  INFO 11026 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 16:07:24.139  INFO 11026 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 11026 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 16:07:24.141  INFO 11026 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 16:07:24.388  INFO 11026 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:07:24.395  INFO 11026 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 4 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-04 16:07:24.398  INFO 11026 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:07:24.399  INFO 11026 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 16:07:24.495  INFO 11026 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=576013a8-0639-3aca-83af-30e6ac48f351
+2025-02-04 16:07:24.612  INFO 11026 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 16:07:24.618  INFO 11026 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:07:24.619  INFO 11026 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 16:07:24.619  INFO 11026 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 16:07:24.646  INFO 11026 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 16:07:24.646  INFO 11026 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 490 ms
+2025-02-04 16:07:25.092  INFO 11026 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 16:07:25.107  WARN 11026 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 16:07:25.125  INFO 11026 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 16:07:25.135  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 16:07:25.136  INFO 11026 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:07:25.139  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 16:07:25.139  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 16:07:25.140  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 16:07:25.140  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 16:07:25.140  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 16:07:25.140  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 16:07:25.140  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 16:07:25.257  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 16:07:25.258  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 16:07:25.259  INFO 11026 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 16:07:25.259  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738665445259 with initial instances count: 7
+2025-02-04 16:07:25.261  INFO 11026 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 16:07:25.261  INFO 11026 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738665445261, current=UP, previous=STARTING]
+2025-02-04 16:07:25.261  INFO 11026 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:07:25.262  INFO 11026 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:07:25.269  INFO 11026 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 16:07:25.269  INFO 11026 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 16:07:25.276  INFO 11026 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.285 seconds (process running for 1.741)
+2025-02-04 16:07:25.284  INFO 11026 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:12:25.147  INFO 11026 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:17:25.156  INFO 11026 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:22:25.189  INFO 11026 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:27:25.206  INFO 11026 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:27:47.311  INFO 11026 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 16:27:47.313  INFO 11026 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738666667313, current=DOWN, previous=UP]
+2025-02-04 16:27:47.314  INFO 11026 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:27:47.321  INFO 11026 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 16:27:47.326  INFO 11026 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 16:27:47.330  INFO 11026 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:27:47.334  INFO 11026 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 16:27:50.340  INFO 11026 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 16:27:50.352  INFO 11026 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 16:27:50.352  INFO 11026 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 16:27:52.128  INFO 11617 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 16:27:52.149  INFO 11617 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 11617 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 16:27:52.150  INFO 11617 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 16:27:52.490  INFO 11617 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:27:52.514  INFO 11617 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 21 ms. Found 0 Elasticsearch repository interfaces.
+2025-02-04 16:27:52.521  INFO 11617 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:27:52.525  INFO 11617 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 1 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 16:27:52.674  INFO 11617 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=576013a8-0639-3aca-83af-30e6ac48f351
+2025-02-04 16:27:52.820  INFO 11617 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 16:27:52.829  INFO 11617 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:27:52.830  INFO 11617 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 16:27:52.831  INFO 11617 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 16:27:52.856  INFO 11617 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 16:27:52.856  INFO 11617 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 687 ms
+2025-02-04 16:27:53.328  INFO 11617 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 16:27:53.343  WARN 11617 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 16:27:53.363  INFO 11617 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 16:27:53.374  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 16:27:53.375  INFO 11617 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 16:27:53.379  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 16:27:53.509  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 16:27:53.510  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 16:27:53.510  INFO 11617 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 16:27:53.511  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738666673511 with initial instances count: 8
+2025-02-04 16:27:53.512  INFO 11617 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 16:27:53.513  INFO 11617 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738666673512, current=UP, previous=STARTING]
+2025-02-04 16:27:53.513  INFO 11617 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:27:53.513  INFO 11617 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:27:53.517  INFO 11617 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 16:27:53.518  INFO 11617 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 16:27:53.525  INFO 11617 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.537 seconds (process running for 2.224)
+2025-02-04 16:27:53.528  INFO 11617 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:32:53.389  INFO 11617 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:37:53.415  INFO 11617 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:42:53.426  INFO 11617 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:44:54.329  INFO 11617 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 16:44:54.331  INFO 11617 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738667694330, current=DOWN, previous=UP]
+2025-02-04 16:44:54.331  INFO 11617 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:44:54.353  INFO 11617 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 16:44:54.357  INFO 11617 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:44:54.361  INFO 11617 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 16:44:54.377  INFO 11617 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 16:44:57.381  INFO 11617 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 16:44:57.391  INFO 11617 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 16:44:57.392  INFO 11617 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 16:44:59.647  INFO 12123 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 16:44:59.670  INFO 12123 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12123 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 16:44:59.672  INFO 12123 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 16:44:59.953  INFO 12123 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:45:00.026  INFO 12123 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 69 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 16:45:00.029  INFO 12123 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:45:00.030  INFO 12123 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 16:45:00.192  INFO 12123 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 16:45:00.401  INFO 12123 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 16:45:00.409  INFO 12123 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:45:00.409  INFO 12123 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 16:45:00.410  INFO 12123 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 16:45:00.434  INFO 12123 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 16:45:00.435  INFO 12123 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 745 ms
+2025-02-04 16:45:00.974  INFO 12123 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 16:45:00.990  WARN 12123 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 16:45:01.009  INFO 12123 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 16:45:01.020  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 16:45:01.021  INFO 12123 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 16:45:01.025  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 16:45:01.147  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 16:45:01.148  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 16:45:01.149  INFO 12123 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 16:45:01.150  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738667701149 with initial instances count: 8
+2025-02-04 16:45:01.151  INFO 12123 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 16:45:01.151  INFO 12123 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738667701151, current=UP, previous=STARTING]
+2025-02-04 16:45:01.152  INFO 12123 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:45:01.152  INFO 12123 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:45:01.155  INFO 12123 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 16:45:01.155  INFO 12123 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 16:45:01.163  INFO 12123 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.675 seconds (process running for 2.134)
+2025-02-04 16:45:01.171  INFO 12123 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:50:01.043  INFO 12123 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:52:46.968  INFO 12123 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 16:52:46.969  INFO 12123 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 16:52:46.979  INFO 12123 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 10 ms
+2025-02-04 16:53:30.378  INFO 12123 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 16:53:30.382  INFO 12123 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668210382, current=DOWN, previous=UP]
+2025-02-04 16:53:30.382  INFO 12123 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:53:30.387  INFO 12123 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 16:53:30.400  INFO 12123 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 16:53:30.408  INFO 12123 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 16:53:30.411  INFO 12123 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:53:30.411  INFO 12123 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 16:53:30.416  INFO 12123 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 16:53:30.417  INFO 12123 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 16:53:32.462  INFO 12350 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 16:53:32.484  INFO 12350 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12350 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 16:53:32.486  INFO 12350 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 16:53:32.761  INFO 12350 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:53:32.831  INFO 12350 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 66 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 16:53:32.833  INFO 12350 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 16:53:32.835  INFO 12350 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 16:53:32.928  INFO 12350 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 16:53:33.061  INFO 12350 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 16:53:33.067  INFO 12350 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:53:33.068  INFO 12350 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 16:53:33.068  INFO 12350 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 16:53:33.089  INFO 12350 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 16:53:33.089  INFO 12350 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 585 ms
+2025-02-04 16:53:33.532  INFO 12350 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 16:53:33.547  WARN 12350 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 16:53:33.567  INFO 12350 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 16:53:33.577  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 16:53:33.579  INFO 12350 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 16:53:33.582  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 16:53:33.705  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 16:53:33.706  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 16:53:33.707  INFO 12350 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 16:53:33.707  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738668213707 with initial instances count: 8
+2025-02-04 16:53:33.709  INFO 12350 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 16:53:33.709  INFO 12350 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668213709, current=UP, previous=STARTING]
+2025-02-04 16:53:33.710  INFO 12350 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 16:53:33.710  INFO 12350 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 16:53:33.714  INFO 12350 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 16:53:33.714  INFO 12350 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 16:53:33.721  INFO 12350 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.437 seconds (process running for 1.943)
+2025-02-04 16:53:33.724  INFO 12350 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 16:53:51.520  INFO 12350 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 16:53:51.520  INFO 12350 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 16:53:51.522  INFO 12350 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 2 ms
+2025-02-04 16:58:33.591  INFO 12350 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:02:17.430  INFO 12350 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:02:17.432  INFO 12350 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668737432, current=DOWN, previous=UP]
+2025-02-04 17:02:17.433  INFO 12350 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:02:17.453  INFO 12350 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:02:17.458  INFO 12350 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:02:17.459  INFO 12350 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:02:17.473  INFO 12350 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:02:20.485  INFO 12350 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:02:20.497  INFO 12350 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:02:20.497  INFO 12350 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:02:22.557  INFO 12595 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:02:22.578  INFO 12595 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12595 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:02:22.580  INFO 12595 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:02:22.844  INFO 12595 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:02:22.904  INFO 12595 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 56 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:02:22.906  INFO 12595 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:02:22.908  INFO 12595 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:02:23.108  INFO 12595 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:02:23.259  INFO 12595 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:02:23.265  INFO 12595 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:02:23.266  INFO 12595 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:02:23.266  INFO 12595 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:02:23.289  INFO 12595 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:02:23.289  INFO 12595 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 693 ms
+2025-02-04 17:02:23.785  INFO 12595 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:02:23.800  WARN 12595 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:02:23.824  INFO 12595 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:02:23.834  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:02:23.836  INFO 12595 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:02:23.839  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:02:23.839  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:02:23.840  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:02:23.840  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:02:23.840  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:02:23.840  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:02:23.840  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:02:23.954  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:02:23.954  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:02:23.955  INFO 12595 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:02:23.956  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738668743956 with initial instances count: 8
+2025-02-04 17:02:23.958  INFO 12595 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:02:23.958  INFO 12595 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668743958, current=UP, previous=STARTING]
+2025-02-04 17:02:23.958  INFO 12595 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:02:23.958  INFO 12595 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:02:23.962  INFO 12595 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:02:23.962  INFO 12595 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:02:23.970  INFO 12595 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.553 seconds (process running for 2.02)
+2025-02-04 17:02:23.974  INFO 12595 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:03:21.785  INFO 12595 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:03:21.786  INFO 12595 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:03:21.788  INFO 12595 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 2 ms
+2025-02-04 17:05:46.773  INFO 12595 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:05:46.775  INFO 12595 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668946774, current=DOWN, previous=UP]
+2025-02-04 17:05:46.775  INFO 12595 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:05:46.789  INFO 12595 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:05:46.795  INFO 12595 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:05:46.797  INFO 12595 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:05:46.808  INFO 12595 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:05:49.815  INFO 12595 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:05:49.827  INFO 12595 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:05:49.828  INFO 12595 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:05:51.821  INFO 12688 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:05:51.841  INFO 12688 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12688 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:05:51.843  INFO 12688 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:05:52.105  INFO 12688 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:05:52.164  INFO 12688 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 56 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:05:52.166  INFO 12688 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:05:52.167  INFO 12688 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:05:52.261  INFO 12688 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:05:52.387  INFO 12688 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:05:52.393  INFO 12688 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:05:52.393  INFO 12688 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:05:52.394  INFO 12688 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:05:52.416  INFO 12688 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:05:52.416  INFO 12688 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 556 ms
+2025-02-04 17:05:52.866  INFO 12688 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:05:52.881  WARN 12688 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:05:52.900  INFO 12688 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:05:52.910  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:05:52.912  INFO 12688 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:05:52.915  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:05:53.031  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:05:53.032  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:05:53.033  INFO 12688 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:05:53.034  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738668953033 with initial instances count: 8
+2025-02-04 17:05:53.035  INFO 12688 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:05:53.035  INFO 12688 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738668953035, current=UP, previous=STARTING]
+2025-02-04 17:05:53.036  INFO 12688 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:05:53.036  INFO 12688 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:05:53.040  INFO 12688 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:05:53.040  INFO 12688 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:05:53.047  INFO 12688 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.352 seconds (process running for 1.793)
+2025-02-04 17:05:53.050  INFO 12688 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:06:10.226  INFO 12688 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:06:10.227  INFO 12688 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:06:10.229  INFO 12688 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 2 ms
+2025-02-04 17:08:05.917  INFO 12688 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:08:05.920  INFO 12688 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669085920, current=DOWN, previous=UP]
+2025-02-04 17:08:05.920  INFO 12688 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:08:05.927  INFO 12688 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:08:05.930  INFO 12688 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:08:05.932  INFO 12688 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:08:05.940  INFO 12688 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:08:08.943  INFO 12688 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:08:08.960  INFO 12688 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:08:08.961  INFO 12688 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:08:11.032  INFO 12756 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:08:11.054  INFO 12756 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12756 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:08:11.056  INFO 12756 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:08:11.352  INFO 12756 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:08:11.414  INFO 12756 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 58 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:08:11.417  INFO 12756 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:08:11.419  INFO 12756 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 1 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:08:11.527  INFO 12756 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:08:11.660  INFO 12756 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:08:11.666  INFO 12756 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:08:11.666  INFO 12756 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:08:11.666  INFO 12756 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:08:11.688  INFO 12756 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:08:11.689  INFO 12756 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 616 ms
+2025-02-04 17:08:12.156  INFO 12756 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:08:12.172  WARN 12756 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:08:12.193  INFO 12756 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:08:12.204  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:08:12.211  INFO 12756 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:08:12.215  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:08:12.334  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:08:12.335  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:08:12.336  INFO 12756 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:08:12.337  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738669092337 with initial instances count: 8
+2025-02-04 17:08:12.338  INFO 12756 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:08:12.339  INFO 12756 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669092338, current=UP, previous=STARTING]
+2025-02-04 17:08:12.339  INFO 12756 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:08:12.339  INFO 12756 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:08:12.343  INFO 12756 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:08:12.343  INFO 12756 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:08:12.350  INFO 12756 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.45 seconds (process running for 1.893)
+2025-02-04 17:08:12.354  INFO 12756 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:08:26.409  INFO 12756 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:08:26.409  INFO 12756 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:08:26.417  INFO 12756 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 8 ms
+2025-02-04 17:10:11.309  INFO 12756 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:10:11.311  INFO 12756 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669211310, current=DOWN, previous=UP]
+2025-02-04 17:10:11.311  INFO 12756 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:10:11.324  INFO 12756 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:10:11.328  INFO 12756 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:10:11.330  INFO 12756 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:10:11.337  INFO 12756 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:10:14.340  INFO 12756 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:10:14.340  WARN 12756 --- [coveryClient-%d] com.netflix.discovery.TimedSupervisorTask.run : task supervisor shutting down, can't accept the task
+2025-02-04 17:10:14.345  INFO 12756 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:10:14.346  INFO 12756 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:10:16.502  INFO 12853 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:10:16.523  INFO 12853 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12853 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:10:16.525  INFO 12853 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:10:16.799  INFO 12853 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:10:16.864  INFO 12853 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 61 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:10:16.870  INFO 12853 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:10:16.871  INFO 12853 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 1 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:10:17.035  INFO 12853 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:10:17.162  INFO 12853 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:10:17.168  INFO 12853 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:10:17.169  INFO 12853 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:10:17.169  INFO 12853 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:10:17.190  INFO 12853 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:10:17.190  INFO 12853 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 648 ms
+2025-02-04 17:10:17.638  INFO 12853 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:10:17.653  WARN 12853 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:10:17.673  INFO 12853 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:10:17.683  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:10:17.684  INFO 12853 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:10:17.687  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:10:17.688  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:10:17.799  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:10:17.800  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:10:17.800  INFO 12853 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:10:17.801  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738669217801 with initial instances count: 8
+2025-02-04 17:10:17.802  INFO 12853 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:10:17.802  INFO 12853 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669217802, current=UP, previous=STARTING]
+2025-02-04 17:10:17.803  INFO 12853 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:10:17.803  INFO 12853 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:10:17.807  INFO 12853 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:10:17.807  INFO 12853 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:10:17.814  INFO 12853 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.436 seconds (process running for 1.891)
+2025-02-04 17:10:17.818  INFO 12853 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:10:25.594  INFO 12853 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:10:25.595  INFO 12853 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:10:25.596  INFO 12853 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-02-04 17:11:45.908  INFO 12853 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:11:45.910  INFO 12853 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669305910, current=DOWN, previous=UP]
+2025-02-04 17:11:45.911  INFO 12853 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:11:45.924  INFO 12853 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:11:45.929  INFO 12853 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:11:45.929  INFO 12853 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:11:45.935  INFO 12853 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:11:48.942  INFO 12853 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:11:48.942  WARN 12853 --- [coveryClient-%d] com.netflix.discovery.TimedSupervisorTask.run : task supervisor shutting down, can't accept the task
+2025-02-04 17:11:48.951  INFO 12853 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:11:48.951  INFO 12853 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:11:51.029  INFO 12902 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:11:51.049  INFO 12902 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 12902 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:11:51.050  INFO 12902 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:11:51.313  INFO 12902 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:11:51.372  INFO 12902 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 56 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:11:51.374  INFO 12902 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:11:51.375  INFO 12902 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:11:51.469  INFO 12902 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:11:51.620  INFO 12902 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:11:51.626  INFO 12902 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:11:51.626  INFO 12902 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:11:51.627  INFO 12902 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:11:51.648  INFO 12902 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:11:51.648  INFO 12902 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 582 ms
+2025-02-04 17:11:52.095  INFO 12902 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:11:52.110  WARN 12902 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:11:52.130  INFO 12902 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:11:52.140  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:11:52.142  INFO 12902 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:11:52.145  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:11:52.263  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:11:52.264  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:11:52.265  INFO 12902 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:11:52.266  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738669312266 with initial instances count: 8
+2025-02-04 17:11:52.267  INFO 12902 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:11:52.268  INFO 12902 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738669312267, current=UP, previous=STARTING]
+2025-02-04 17:11:52.268  INFO 12902 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:11:52.268  INFO 12902 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:11:52.272  INFO 12902 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:11:52.273  INFO 12902 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:11:52.279  INFO 12902 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.371 seconds (process running for 1.811)
+2025-02-04 17:11:52.283  INFO 12902 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:12:04.155  INFO 12902 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:12:04.156  INFO 12902 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:12:04.158  INFO 12902 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-02-04 17:16:52.152  INFO 12902 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:21:52.167  INFO 12902 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:26:52.159  INFO 12902 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:31:52.168  INFO 12902 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:36:52.183  INFO 12902 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:39:19.792  INFO 12902 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:39:19.794  INFO 12902 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738670959794, current=DOWN, previous=UP]
+2025-02-04 17:39:19.795  INFO 12902 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:39:19.802  INFO 12902 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:39:19.807  INFO 12902 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:39:19.819  INFO 12902 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:39:19.826  INFO 12902 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:39:22.829  INFO 12902 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:39:22.841  INFO 12902 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:39:22.842  INFO 12902 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:39:25.443  INFO 13597 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:39:25.462  INFO 13597 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 13597 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:39:25.463  INFO 13597 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:39:25.740  INFO 13597 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:39:25.805  INFO 13597 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 62 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:39:25.807  INFO 13597 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:39:25.809  INFO 13597 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:39:25.906  INFO 13597 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:39:26.045  INFO 13597 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:39:26.051  INFO 13597 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:39:26.052  INFO 13597 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:39:26.052  INFO 13597 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:39:26.072  INFO 13597 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:39:26.072  INFO 13597 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 594 ms
+2025-02-04 17:39:26.540  INFO 13597 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:39:26.555  WARN 13597 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:39:26.575  INFO 13597 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:39:26.585  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:39:26.587  INFO 13597 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:39:26.590  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:39:26.713  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:39:26.714  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:39:26.715  INFO 13597 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:39:26.715  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738670966715 with initial instances count: 8
+2025-02-04 17:39:26.717  INFO 13597 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:39:26.717  INFO 13597 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738670966717, current=UP, previous=STARTING]
+2025-02-04 17:39:26.718  INFO 13597 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:39:26.718  INFO 13597 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:39:26.722  INFO 13597 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:39:26.722  INFO 13597 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:39:26.729  INFO 13597 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.412 seconds (process running for 1.896)
+2025-02-04 17:39:26.733  INFO 13597 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:40:36.575  INFO 13597 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:40:36.579  INFO 13597 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738671036579, current=DOWN, previous=UP]
+2025-02-04 17:40:36.580  INFO 13597 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:40:36.593  INFO 13597 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:40:36.596  INFO 13597 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:40:36.604  INFO 13597 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:40:36.606  INFO 13597 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:40:36.606  INFO 13597 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:40:36.609  INFO 13597 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:40:36.609  INFO 13597 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:40:38.419  INFO 13642 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:40:38.438  INFO 13642 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 13642 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:40:38.440  INFO 13642 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:40:38.699  INFO 13642 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:40:38.758  INFO 13642 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 56 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:40:38.761  INFO 13642 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:40:38.762  INFO 13642 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:40:38.854  INFO 13642 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:40:38.991  INFO 13642 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:40:38.997  INFO 13642 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:40:38.998  INFO 13642 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:40:38.998  INFO 13642 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:40:39.019  INFO 13642 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:40:39.019  INFO 13642 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 563 ms
+2025-02-04 17:40:39.486  INFO 13642 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:40:39.501  WARN 13642 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:40:39.520  INFO 13642 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:40:39.531  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:40:39.532  INFO 13642 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:40:39.536  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:40:39.651  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:40:39.652  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:40:39.653  INFO 13642 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:40:39.654  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738671039653 with initial instances count: 8
+2025-02-04 17:40:39.655  INFO 13642 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:40:39.655  INFO 13642 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738671039655, current=UP, previous=STARTING]
+2025-02-04 17:40:39.656  INFO 13642 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:40:39.656  INFO 13642 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:40:39.660  INFO 13642 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:40:39.660  INFO 13642 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:40:39.667  INFO 13642 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.376 seconds (process running for 1.818)
+2025-02-04 17:40:39.670  INFO 13642 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:41:00.201  INFO 13642 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:41:00.202  INFO 13642 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:41:00.204  INFO 13642 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 2 ms
+2025-02-04 17:41:40.264  INFO 13642 --- [ionShutdownHook] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.deregister : Unregistering application SEARCHSERVICE with eureka with status DOWN
+2025-02-04 17:41:40.267  INFO 13642 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738671100266, current=DOWN, previous=UP]
+2025-02-04 17:41:40.267  INFO 13642 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:41:40.276  INFO 13642 --- [ionShutdownHook] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.shutDownGracefully : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-04 17:41:40.282  INFO 13642 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:41:40.283  INFO 13642 --- [tomcat-shutdown] org.springframework.boot.web.embedded.tomcat.GracefulShutdown.doShutdown : Graceful shutdown complete
+2025-02-04 17:41:40.292  INFO 13642 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Shutting down DiscoveryClient ...
+2025-02-04 17:41:43.294  INFO 13642 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : Unregistering ...
+2025-02-04 17:41:43.307  INFO 13642 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.unregister : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - deregister  status: 200
+2025-02-04 17:41:43.307  INFO 13642 --- [ionShutdownHook] com.netflix.discovery.DiscoveryClient.shutdown : Completed shut down of DiscoveryClient
+2025-02-04 17:41:45.261  INFO 13681 --- [kground-preinit] org.hibernate.validator.internal.util.Version.<clinit> : HV000001: Hibernate Validator 8.0.2.Final
+2025-02-04 17:41:45.280  INFO 13681 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarting : Starting SearchserviceApplication using Java 21.0.1 with PID 13681 (/Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice/target/classes started by sridharpatil in /Users/sridharpatil/Documents/Learning/ProjectModule/ecom/searchservice)
+2025-02-04 17:41:45.281  INFO 13681 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStartupProfileInfo : No active profile set, falling back to 1 default profile: "default"
+2025-02-04 17:41:45.536  INFO 13681 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:41:45.601  INFO 13681 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 58 ms. Found 1 Elasticsearch repository interface.
+2025-02-04 17:41:45.604  INFO 13681 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Bootstrapping Spring Data Reactive Elasticsearch repositories in DEFAULT mode.
+2025-02-04 17:41:45.605  INFO 13681 --- [           main] org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn : Finished Spring Data repository scanning in 0 ms. Found 0 Reactive Elasticsearch repository interfaces.
+2025-02-04 17:41:45.697  INFO 13681 --- [           main] org.springframework.cloud.context.scope.GenericScope.setSerializationId : BeanFactory id=fc89d05c-0c98-38d3-8eb4-4b3043d90beb
+2025-02-04 17:41:45.831  INFO 13681 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize : Tomcat initialized with port 8087 (http)
+2025-02-04 17:41:45.837  INFO 13681 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Initializing ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:41:45.838  INFO 13681 --- [           main] org.apache.catalina.core.StandardService.log : Starting service [Tomcat]
+2025-02-04 17:41:45.838  INFO 13681 --- [           main] org.apache.catalina.core.StandardEngine.log : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-04 17:41:45.861  INFO 13681 --- [           main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring embedded WebApplicationContext
+2025-02-04 17:41:45.861  INFO 13681 --- [           main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.prepareWebApplicationContext : Root WebApplicationContext: initialization completed in 565 ms
+2025-02-04 17:41:46.318  INFO 13681 --- [           main] org.springframework.cloud.netflix.eureka.config.DiscoveryClientOptionalArgsConfiguration.restTemplateDiscoveryClientOptionalArgs : Eureka HTTP Client uses RestTemplate.
+2025-02-04 17:41:46.333  WARN 13681 --- [           main] org.springframework.cloud.loadbalancer.config.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger.afterPropertiesSet : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-02-04 17:41:46.353  INFO 13681 --- [           main] org.springframework.cloud.netflix.eureka.InstanceInfoFactory.create : Setting initial instance status as: STARTING
+2025-02-04 17:41:46.363  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Initializing Eureka in region us-east-1
+2025-02-04 17:41:46.364  INFO 13681 --- [           main] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:41:46.367  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Disable delta property : false
+2025-02-04 17:41:46.367  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Single vip registry refresh property : null
+2025-02-04 17:41:46.367  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Force full registry fetch : false
+2025-02-04 17:41:46.368  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application is null : false
+2025-02-04 17:41:46.368  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Registered Applications size is zero : true
+2025-02-04 17:41:46.368  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.fetchRegistry : Application version is -1: true
+2025-02-04 17:41:46.368  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : Getting all instance registry info from the eureka server
+2025-02-04 17:41:46.480  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry : The response status is 200
+2025-02-04 17:41:46.481  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.initScheduledTasks : Starting heartbeat executor: renew interval is: 30
+2025-02-04 17:41:46.482  INFO 13681 --- [           main] com.netflix.discovery.InstanceInfoReplicator.<init> : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-02-04 17:41:46.482  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.<init> : Discovery Client initialized at timestamp 1738671106482 with initial instances count: 8
+2025-02-04 17:41:46.484  INFO 13681 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register : Registering application SEARCHSERVICE with eureka with status UP
+2025-02-04 17:41:46.484  INFO 13681 --- [           main] com.netflix.discovery.DiscoveryClient.notify : Saw local status change event StatusChangeEvent [timestamp=1738671106484, current=UP, previous=STARTING]
+2025-02-04 17:41:46.484  INFO 13681 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087: registering service...
+2025-02-04 17:41:46.484  INFO 13681 --- [           main] org.apache.coyote.http11.Http11NioProtocol.log : Starting ProtocolHandler ["http-nio-8087"]
+2025-02-04 17:41:46.488  INFO 13681 --- [           main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start : Tomcat started on port 8087 (http) with context path '/'
+2025-02-04 17:41:46.489  INFO 13681 --- [           main] org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.onApplicationEvent : Updating port to 8087
+2025-02-04 17:41:46.495  INFO 13681 --- [           main] me.sridharpatil.ecom.searchservice.SearchserviceApplication.logStarted : Started SearchserviceApplication in 1.353 seconds (process running for 1.826)
+2025-02-04 17:41:46.498  INFO 13681 --- [foReplicator-%d] com.netflix.discovery.DiscoveryClient.register : DiscoveryClient_SEARCHSERVICE/192.168.1.3:searchservice:8087 - registration status: 204
+2025-02-04 17:41:54.852  INFO 13681 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-04 17:41:54.853  INFO 13681 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Initializing Servlet 'dispatcherServlet'
+2025-02-04 17:41:54.854  INFO 13681 --- [nio-8087-exec-2] org.springframework.web.servlet.DispatcherServlet.initServletBean : Completed initialization in 1 ms
+2025-02-04 17:41:55.020 ERROR 13681 --- [nio-8087-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet].log : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "me.sridharpatil.ecom.searchservice.documents.Product.getCategory()" because "product" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "me.sridharpatil.ecom.searchservice.documents.Product.getCategory()" because "product" is null
+	at me.sridharpatil.ecom.searchservice.controllers.ProductController.getProduct(ProductController.java:26) ~[classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.2.jar:6.2.2]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.34.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.2.jar:6.2.2]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.34.jar:10.1.34]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+
+2025-02-04 17:46:46.377  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 17:51:46.396  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 18:56:50.154  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:01:50.177  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:06:50.204  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:11:50.215  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:16:50.233  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:21:50.241  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:26:50.254  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:31:50.274  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 19:36:50.288  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:05:33.578  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:37:34.946  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:42:34.956  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:47:34.966  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:52:34.975  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration

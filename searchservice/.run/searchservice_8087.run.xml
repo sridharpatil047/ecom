@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="searchservice:8087" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="ELASTICSEARCH_PASSWORD" value="elasticpassword" />
+      <env name="ELASTICSEARCH_URL" value="http://localhost:9200" />
+      <env name="ELASTICSEARCH_USERNAME" value="elasticusername" />
+      <env name="EUREKA_SERVER_URL" value="http://localhost:8761/eureka" />
+      <env name="KAFKA_BOOTSTRAP_SERVERS" value="localhost:9092" />
+      <env name="SERVER_PORT" value="8087" />
+    </envs>
+    <module name="searchservice" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="me.sridharpatil.ecom.searchservice.SearchserviceApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
