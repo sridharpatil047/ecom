@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReqDto;
@@ -64,7 +65,7 @@ public class ProductController {
     @PostMapping()
     public ResponseEntity<ControllerProductResDto> createProduct(
             @RequestBody @Valid ControllerProductReqDto requestDto
-    ) throws ProductNotFoundException, CategoryNotFoundException {
+    ) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
 
         log.debug("Received request to create a new product : {}", requestDto.getTitle());
 
@@ -92,7 +93,7 @@ public class ProductController {
     public ResponseEntity<ControllerProductResDto> updateProductById(
             @PathVariable("id") Long id,
             @RequestBody @Valid ControllerProductReqDto requestDto
-    ) throws ProductNotFoundException, CategoryNotFoundException {
+    ) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
 
         log.debug("Received request to update product by id : {}", id);
 

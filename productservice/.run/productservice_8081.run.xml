@@ -1,0 +1,23 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="productservice:8081" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="DB_PASSWORD" value="ecompassword" />
+      <env name="DB_URL" value="jdbc:mysql://localhost:3306/ecom" />
+      <env name="DB_USERNAME" value="ecomuser" />
+      <env name="EUREKA_SERVER_URL" value="http://localhost:8761/eureka" />
+      <env name="SERVER_PORT" value="8081" />
+      <env name="KAFKA_BOOTSTRAP_SERVERS" value="localhost:9092" />
+    </envs>
+    <module name="productservice" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="me.sridharpatil.ecom.productservice.Productservice" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="me.sridharpatil.productservice.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

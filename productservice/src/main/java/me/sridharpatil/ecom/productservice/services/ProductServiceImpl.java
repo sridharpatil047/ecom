@@ -1,10 +1,13 @@
 package me.sridharpatil.ecom.productservice.services;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.models.Product;
+import me.sridharpatil.ecom.productservice.producers.ProductProducer;
+import me.sridharpatil.ecom.productservice.producers.dtos.ProductProducerDto;
 import me.sridharpatil.ecom.productservice.repositories.ProductRepository;
 import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
 import org.springframework.stereotype.Service;
@@ -17,15 +20,16 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService{
     ProductRepository productRepository;
     CategoryService categoryService;
+    ProductProducer productProducer;
 
-    public ProductServiceImpl(ProductRepository productRepository,
-                              CategoryService categoryService) {
+    public ProductServiceImpl(ProductRepository productRepository, CategoryService categoryService, ProductProducer productProducer) {
         this.productRepository = productRepository;
         this.categoryService = categoryService;
+        this.productProducer = productProducer;
     }
 
     @Override
-    public Product createProduct(ProductRequestDto requestDto) throws CategoryNotFoundException {
+    public Product createProduct(ProductRequestDto requestDto) throws CategoryNotFoundException, JsonProcessingException {
         // Check if category for the product exists
         log.debug("Checking if category with id {} exists", requestDto.getCategoryId());
         Category category = categoryService.getCategoryById(requestDto.getCategoryId());
@@ -39,7 +43,13 @@ public class ProductServiceImpl implements ProductService{
 
         // Save and return the product
         log.info("Saving product with title : {}", product.getTitle());
-        return productRepository.save(product);
+        Product product1 = productRepository.save(product);
+
+        // Produce message to Kafka
+        log.info("Producing message to Kafka");
+        productProducer.productCreated(ProductProducerDto.of(product1));
+
+        return product1;
     }
 
     @Override
@@ -55,6 +65,7 @@ public class ProductServiceImpl implements ProductService{
 
         // Since product with given id exists, return the product
         log.info("Returning product with id : {}", productId);
+
         return optionalProduct.get();
     }
 
@@ -65,7 +76,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product updateProduct(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException {
+    public Product updateProduct(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
         log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
@@ -80,11 +91,17 @@ public class ProductServiceImpl implements ProductService{
 
         // Save and return the product
         log.info("Saving product with id : {}", productId);
-        return productRepository.save(product);
+        Product product1 = productRepository.save(product);
+
+        // Produce message to Kafka
+        log.info("Producing message to Kafka");
+        productProducer.productUpdated(ProductProducerDto.of(product1));
+
+        return product1;
     }
 
     @Override
-    public Product updateProductPartial(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException {
+    public Product updateProductPartial(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
         log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
@@ -102,7 +119,13 @@ public class ProductServiceImpl implements ProductService{
 
         // Save and return the product
         log.info("Saving product with id : {}", productId);
-        return productRepository.save(product);
+        Product product1 = productRepository.save(product);
+
+        // Produce message to Kafka
+        log.info("Producing message to Kafka");
+        productProducer.productUpdated(ProductProducerDto.of(product1));
+
+        return product1;
     }
 
     @Override
