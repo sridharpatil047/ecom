@@ -31,7 +31,7 @@
             <AppenderRef ref="RollingFile"/>
         </Logger>
 
-        <Logger name="org.springframework.data.elasticsearch" level="debug" additivity="false">
+        <Logger name="me.sridharpatil.ecom.searchservice" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="RollingFile"/>
         </Logger>

@@ -1,13 +1,17 @@
 package me.sridharpatil.ecom.searchservice.documents;
 
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Document(indexName = "products")
 public class Product {
     @Id
@@ -26,6 +30,9 @@ public class Product {
     private Category category;
 
     @Getter @Setter
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
     public static class Category {
         private Long id;
 

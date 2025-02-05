@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.searchservice.services;
 
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.searchservice.search.filters.Filter;
 import me.sridharpatil.ecom.searchservice.search.pagination.Pagination;
 import me.sridharpatil.ecom.searchservice.search.searches.AdvancedSearch;
@@ -10,8 +11,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
+@Log4j2
 @Service
 public class ProductServiceImpl implements ProductService{
 
@@ -23,21 +26,28 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product createProduct(Product product) {
+        log.debug("Saving product with id : {}", product.getId());
         return productRepository.save(product);
     }
 
     @Override
     public Product updateProduct(Product product) {
+        log.debug("Updating product with id : {}", product.getId());
         return createProduct(product);
     }
 
     @Override
-    public Page<Product> basicProductSearch(String query, Pagination pagination) {
-        return productRepository.findAllByTitleContainingOrDescriptionContaining(query, query, PageRequest.of(pagination.getPageNumber(), pagination.getPageSize()));
-    }
-
-    @Override
-    public Page<Product> advancedProductSearch(String query, List<Filter> filters, List<SortBy> sortBys, Pagination pagination) {
-        return null;
+    public List<Product> advancedProductSearch(String query, List<Filter> filters, List<SortBy> sortBys, Pagination pagination) throws IOException {
+        log.debug("Performing advanced search with query : {}, filters : {}, sortBys : {}, pagination : {}", query, filters, sortBys, pagination);
+        AdvancedSearch advancedSearch = new AdvancedSearch();
+        if (query == null && filters == null){
+            throw new IllegalArgumentException("Invalid search parameters");
+        }
+        advancedSearch.setQuery(query);
+        advancedSearch.setFilters(filters);
+        advancedSearch.setSortBys(sortBys);
+        advancedSearch.setPagination(pagination);
+        
+        return productRepository.advancedSearch(advancedSearch);
     }
 }

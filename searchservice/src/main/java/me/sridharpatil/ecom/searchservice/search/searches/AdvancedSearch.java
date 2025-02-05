@@ -10,5 +10,5 @@ import java.util.List;
 @Getter @Setter
 public class AdvancedSearch extends Search {
     private List<Filter> filters; // Filters
-    private List<SortBy> sort; // Sorting
+    private List<SortBy> sortBys; // Sorting
 }
