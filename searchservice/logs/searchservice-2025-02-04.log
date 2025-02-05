@@ -737,3 +737,8 @@ java.lang.NullPointerException: Cannot invoke "me.sridharpatil.ecom.searchservic
 2025-02-04 20:42:34.956  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
 2025-02-04 20:47:34.966  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
 2025-02-04 20:52:34.975  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 20:57:34.986  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 21:02:34.993  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 21:07:35.004  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 21:12:35.014  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
+2025-02-04 21:17:35.027  INFO 13681 --- [rap-executor-%d] com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver.getClusterEndpoints : Resolving eureka endpoints via configuration
