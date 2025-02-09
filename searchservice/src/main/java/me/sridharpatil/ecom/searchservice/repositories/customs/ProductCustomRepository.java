@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.searchservice.repositories;
+package me.sridharpatil.ecom.searchservice.repositories.customs;
 
 import me.sridharpatil.ecom.searchservice.documents.Product;
 import me.sridharpatil.ecom.searchservice.search.searches.AdvancedSearch;

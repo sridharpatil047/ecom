@@ -1,7 +1,6 @@
-package me.sridharpatil.ecom.searchservice.repositories;
+package me.sridharpatil.ecom.searchservice.repositories.customs;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
-import co.elastic.clients.elasticsearch._types.FieldValue;
 import co.elastic.clients.elasticsearch._types.SortOptions;
 import co.elastic.clients.elasticsearch._types.SortOrder;
 import co.elastic.clients.elasticsearch._types.query_dsl.*;

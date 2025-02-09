@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.notificationservice.services;
+package me.sridharpatil.ecom.notificationservice.models;
 
 import lombok.Getter;
 
