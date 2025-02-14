@@ -14,7 +14,7 @@ import java.util.List;
 public class Cart extends BaseModel implements Serializable {
     private Long userId;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cart")
     private List<CartItem> items;
 
     private double totalPrice;

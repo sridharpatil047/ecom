@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.cartservice.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +14,7 @@ public class CartItem extends BaseModel implements Serializable {
     private int quantity;
     private double price;
     private double subTotal;
+
+    @ManyToOne
+    private Cart cart;
 }

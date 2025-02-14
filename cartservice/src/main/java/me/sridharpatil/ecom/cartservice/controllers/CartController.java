@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users/{userId}/cart")
+@RequestMapping("/cart")
 public class CartController {
 
     CartService cartService;
@@ -20,23 +20,23 @@ public class CartController {
     }
 
     // 1. Create a new cart
-    // POST /users/{userId}/cart
+    // POST /cart?userId={userId}
     @PostMapping()
-    public ResponseEntity<CartResDto> createCart(@PathVariable("userId") Long userId) {
+    public ResponseEntity<CartResDto> createCart(@RequestParam(value = "userId") Long userId) {
         return ResponseEntity.ok(CartResDto.of(cartService.createCart(userId)));
     }
 
     // 2. Get cart details
-    // GET /users/{userId}/cart
+    // GET /cart?userId={userId}
     @GetMapping()
-    public ResponseEntity<CartResDto> getCart(@PathVariable("userId") Long userId) throws CartNotFoundException {
+    public ResponseEntity<CartResDto> getCart(@RequestParam(value = "userId") Long userId) throws CartNotFoundException {
         return ResponseEntity.ok(CartResDto.of(cartService.getCart(userId)));
     }
 
     // 3. Add item to cart
-    // POST /users/{userId}/cart/items
+    // POST /cart/items?userId={userId}
     @PostMapping("/items")
-    public ResponseEntity<CartItemResDto> addItemToCart(@PathVariable("userId") Long userId, @RequestBody AddItemToCartReqDto reqDto) throws ProductAlreadyExistsException, CartNotFoundException {
+    public ResponseEntity<CartItemResDto> addItemToCart(@RequestParam(value = "userId") Long userId, @RequestBody AddItemToCartReqDto reqDto) throws ProductAlreadyExistsException, CartNotFoundException {
         return ResponseEntity.ok(CartItemResDto.of(cartService.addItemToCart(
                 userId,
                 reqDto.getProductId(),
@@ -46,9 +46,9 @@ public class CartController {
     }
 
     // 4. Update cart item
-    // PUT /users/{userId}/cart/items
+    // PUT /cart/items?userId={userId}
     @PutMapping("/items")
-    public ResponseEntity<CartItemResDto> updateItemQuantity(@PathVariable("userId") Long userId, @RequestBody UpdateItemQuantityReqDto reqDto) throws CartItemNotFoundException, CartNotFoundException {
+    public ResponseEntity<CartItemResDto> updateItemQuantity(@RequestParam(value = "userId") Long userId, @RequestBody UpdateItemQuantityReqDto reqDto) throws CartItemNotFoundException, CartNotFoundException {
         return ResponseEntity.ok(CartItemResDto.of(cartService.updateItemQuantity(
                 userId,
                 reqDto.getItemId(),
@@ -57,17 +57,17 @@ public class CartController {
     }
 
     // 5. Checkout cart
-    // POST /users/{userId}/cart/checkout
+    // POST /cart/checkout?userId={userId}
     @PostMapping("/checkout")
-    public ResponseEntity<ResponseMessage> checkout(@PathVariable("userId") Long userId) throws JsonProcessingException, CartNotFoundException {
+    public ResponseEntity<ResponseMessage> checkout(@RequestParam(value = "userId") Long userId) throws JsonProcessingException, CartNotFoundException {
         cartService.checkout(userId);
         return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Checkout successful"));
     }
 
     // 6. Clear cart
-    // DELETE /users/{userId}/cart
+    // DELETE /cart?userId={userId}
     @DeleteMapping()
-    public ResponseEntity<ResponseMessage> clearCart(@PathVariable("userId") Long userId) throws CartNotFoundException {
+    public ResponseEntity<ResponseMessage> clearCart(@RequestParam(value = "userId") Long userId) throws CartNotFoundException {
         cartService.clearCart(userId);
         return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Cart cleared successfully"));
     }
