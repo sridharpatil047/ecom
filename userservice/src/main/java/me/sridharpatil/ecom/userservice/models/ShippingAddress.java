@@ -19,5 +19,4 @@ public class ShippingAddress extends BaseModel {
 
     @ManyToOne
     private User user;
-
 }

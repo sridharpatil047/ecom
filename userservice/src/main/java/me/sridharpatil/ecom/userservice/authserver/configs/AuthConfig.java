@@ -32,6 +32,8 @@ import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Set;
 import java.util.UUID;
@@ -107,14 +109,17 @@ public class AuthConfig {
             if (OAuth2TokenType.ACCESS_TOKEN.equals(context.getTokenType())) {
                 context.getClaims().claims((claims) -> {
 
-                    Set<String> roles = AuthorityUtils.authorityListToSet(context.getPrincipal().getAuthorities())
-                            .stream()
-                            .map(c -> c.replaceFirst("^ROLE_", ""))
-                            .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
+                    Set<String> roles = AuthorityUtils.authorityListToSet(context.getPrincipal().getAuthorities());
+//                            .stream()
+//                            .map(c -> c.replaceFirst("^ROLE_", ""))
+//                            .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
                     claims.put("roles", roles);
 
                     JpaUserDetails userDetails = (JpaUserDetails) context.getPrincipal().getPrincipal();
                     claims.put("user_id", userDetails.getId());
+
+                    claims.put("exp", Instant.now().plusSeconds(3600));
+
                 });
             }
         };

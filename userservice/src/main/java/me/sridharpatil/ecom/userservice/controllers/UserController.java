@@ -12,9 +12,12 @@ import me.sridharpatil.ecom.userservice.services.UserService;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,29 +31,21 @@ public class UserController {
         this.userService = userService;
     }
 
-    // 1. POST /signup
-    @PostMapping("/sign-up")
-    ResponseEntity<SignUpResponseDto> signUp(
-            @RequestBody
-            SignUpRequestDto signUpRequestDto
-    ) throws UserAlreadyExistsException, JsonProcessingException {
-
+    // 1. POST /
+    @PostMapping()
+    ResponseEntity<CreateUserResponseDto> createUser(@RequestBody CreateUserRequestDto createUserRequestDto) throws UserAlreadyExistsException, JsonProcessingException {
         User user = userService.signUp(
-                signUpRequestDto.getName(),
-                signUpRequestDto.getEmail(),
-                signUpRequestDto.getPassword()
+                createUserRequestDto.getName(),
+                createUserRequestDto.getEmail(),
+                createUserRequestDto.getPassword()
         );
-        return ResponseEntity.ok(SignUpResponseDto.of(user));
+        return ResponseEntity.ok(CreateUserResponseDto.of(user));
     }
 
     // 2. PATCH /users/{id}
     @PatchMapping("/{id}")
     @PreAuthorize("#id == authentication.principal.claims.get('user_id') or hasRole('ROLE_ADMIN')")
-    ResponseEntity<String> updateUser(
-            @PathVariable("id") Long id,
-            @RequestBody UpdateUserReqDto requestDto
-            ) throws RoleNotFoundException, UserNotFoundException {
-
+    ResponseEntity<String> updateUser(@PathVariable("id") Long id, @RequestBody UpdateUserReqDto requestDto) throws RoleNotFoundException, UserNotFoundException {
         // Create UserDto from requestDto
         UserDto userDto = new UserDto();
         userDto.setNewPassword(requestDto.getPassword());
@@ -63,11 +58,7 @@ public class UserController {
 
     // 3. PATCH /users/{id}/roles
     @PatchMapping("/{id}/roles")
-    ResponseEntity<String> updateUserRoles(
-            @PathVariable("id") Long id,
-            @RequestBody UpdateUserRolesRequestDto requestDto
-    ) throws UserNotFoundException, RoleNotFoundException {
-
+    ResponseEntity<String> updateUserRoles(@PathVariable("id") Long id, @RequestBody UpdateUserRolesRequestDto requestDto) throws UserNotFoundException, RoleNotFoundException {
         // Create UserDto from requestDto
         UserDto userDto = new UserDto();
         userDto.setRoles(requestDto.getRoles());
@@ -76,7 +67,6 @@ public class UserController {
         userService.updateUser(id, userDto);
         return ResponseEntity.ok("User roles updated successfully");
     }
-
 
     // 3. POST /users/{id}/password-reset/request
     @PostMapping("/{id}/password-reset/request")
@@ -99,12 +89,8 @@ public class UserController {
 
     // POST /users/{id}/shipping-addresses
     @PostMapping("/{id}/shipping-addresses")
-    ResponseEntity<String> addShippingAddress(
-            @PathVariable("id") Long id,
-            @RequestBody AddShippingAddressReqDto requestDto
-    ) {
+    ResponseEntity<String> addShippingAddress(@PathVariable("id") Long id, @RequestBody AddShippingAddressReqDto requestDto) {
         // Add shipping address
-        // TODO : Implement this
         ShippingAddress shippingAddress = new ShippingAddress();
         shippingAddress.setCountry(requestDto.getCountry());
         shippingAddress.setState(requestDto.getState());
@@ -119,7 +105,6 @@ public class UserController {
     // 5. GET /users/{id}/shipping-addresses
     @GetMapping("/{id}/shipping-addresses")
     ResponseEntity<List<GetShippingAddressesResDto>> getShippingAddresses(@PathVariable("id") Long id) throws ShippingAddressNotFoundException {
-
         return ResponseEntity.ok(
                 userService.getShippingAddresses(id)
                         .stream()
@@ -129,11 +114,9 @@ public class UserController {
     }
 
 
-
     // 6. GET /users/{id}
     @GetMapping("/{id}")
     ResponseEntity<GetUserResDto> getUser(@PathVariable("id") Long id) throws UserNotFoundException {
         return ResponseEntity.ok(GetUserResDto.of(userService.getUser(id)));
     }
-
 }
