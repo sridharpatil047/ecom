@@ -1,6 +1,6 @@
 package me.sridharpatil.ecom.notificationservice.services.notifiers.templates;
 
-import me.sridharpatil.ecom.notificationservice.services.EventType;
+import me.sridharpatil.ecom.notificationservice.models.EventType;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;

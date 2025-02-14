@@ -9,7 +9,7 @@ import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.notificationservice.dtos.EmailRecipient;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
 import me.sridharpatil.ecom.notificationservice.properties.EmailProperties;
-import me.sridharpatil.ecom.notificationservice.services.EventType;
+import me.sridharpatil.ecom.notificationservice.models.EventType;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.*;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.EventBasedTemplate;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.EventBasedTemplateFactory;

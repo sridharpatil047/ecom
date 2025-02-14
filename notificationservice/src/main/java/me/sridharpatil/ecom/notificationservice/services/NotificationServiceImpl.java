@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.mail.MessagingException;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
 import me.sridharpatil.ecom.notificationservice.factories.RecipientFactory;
+import me.sridharpatil.ecom.notificationservice.models.EventType;
 import me.sridharpatil.ecom.notificationservice.properties.NotificationProperties;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.Notifier;
 import me.sridharpatil.ecom.notificationservice.services.order.Order;

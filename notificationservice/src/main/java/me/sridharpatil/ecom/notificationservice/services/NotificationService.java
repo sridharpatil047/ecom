@@ -3,6 +3,7 @@ package me.sridharpatil.ecom.notificationservice.services;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.mail.MessagingException;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
+import me.sridharpatil.ecom.notificationservice.models.EventType;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Map;

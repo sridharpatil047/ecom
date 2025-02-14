@@ -2,7 +2,7 @@ package me.sridharpatil.ecom.notificationservice.services.notifiers;
 
 import jakarta.mail.MessagingException;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
-import me.sridharpatil.ecom.notificationservice.services.EventType;
+import me.sridharpatil.ecom.notificationservice.models.EventType;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
