@@ -56,7 +56,6 @@ public class EventConsumer {
         orderService.createOrder(orderCreationReqDto.getUserId(), orderItemDtoList);
     }
 
-
     @KafkaListener(
             topics = "payment-service.payment-success",
             groupId = "order-service.consumers"
@@ -81,5 +80,13 @@ public class EventConsumer {
         OrderCancellationReqDto orderCancellationReqDto =  objectMapper.readValue(message, OrderCancellationReqDto.class);
 
         orderService.updateOrderStatus(orderCancellationReqDto.getOrderId(), OrderStatus.CANCELLED);
+    }
+
+    @KafkaListener(
+            topics = "product-service.product-created",
+            groupId = "order-service.consumers"
+    )
+    public void consumeProductCreatedEvent(@Payload String message){
+        log.debug("Product created event consumed: {}", message);
     }
 }
