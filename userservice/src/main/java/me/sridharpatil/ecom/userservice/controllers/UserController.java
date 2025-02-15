@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.userservice.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import jakarta.servlet.http.HttpServletRequest;
 import me.sridharpatil.ecom.userservice.controllers.dtos.*;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
@@ -10,8 +11,10 @@ import me.sridharpatil.ecom.userservice.models.ShippingAddress;
 import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.services.UserService;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
@@ -26,9 +29,12 @@ import java.util.stream.Collectors;
 public class UserController {
 
     UserService userService;
+    HttpServletRequest httpServletRequest;
 
-    public UserController(UserService userService) {
+
+    public UserController(UserService userService, HttpServletRequest httpServletRequest) {
         this.userService = userService;
+        this.httpServletRequest = httpServletRequest;
     }
 
     // 1. POST /
@@ -102,21 +108,4 @@ public class UserController {
         return ResponseEntity.ok("Shipping address added successfully");
     }
 
-    // 5. GET /users/{id}/shipping-addresses
-    @GetMapping("/{id}/shipping-addresses")
-    ResponseEntity<List<GetShippingAddressesResDto>> getShippingAddresses(@PathVariable("id") Long id) throws ShippingAddressNotFoundException {
-        return ResponseEntity.ok(
-                userService.getShippingAddresses(id)
-                        .stream()
-                        .map(GetShippingAddressesResDto::of)
-                        .collect(Collectors.toList())
-        );
-    }
-
-
-    // 6. GET /users/{id}
-    @GetMapping("/{id}")
-    ResponseEntity<GetUserResDto> getUser(@PathVariable("id") Long id) throws UserNotFoundException {
-        return ResponseEntity.ok(GetUserResDto.of(userService.getUser(id)));
-    }
 }

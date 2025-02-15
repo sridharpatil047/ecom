@@ -88,7 +88,7 @@ public class PaymentLinkRequest {
         public JSONObject build() {
 
             JSONObject paymentLinkRequest = new JSONObject();
-            paymentLinkRequest.put("amount", this.amount + 1.0);
+            paymentLinkRequest.put("amount", this.amount + 1000.0);
             paymentLinkRequest.put("currency", this.currency);
             paymentLinkRequest.put("expire_by", this.expire_by);
             paymentLinkRequest.put("reference_id", this.reference_id);

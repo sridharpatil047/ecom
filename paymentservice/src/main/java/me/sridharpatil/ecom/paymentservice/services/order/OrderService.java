@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.paymentservice.services.order;
 
+import me.sridharpatil.ecom.paymentservice.utils.URLBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,7 +14,11 @@ public class OrderService {
     }
 
     public Long getUserIdByOrderId(Long orderId) {
-        return restTemplate.getForObject("http://localhost:8085/orders/" + orderId + "/users", Long.class);
+        String url = URLBuilder.getBuilder()
+                .setBaseUrl("lb://orderservice")
+                .setPath("/private/orders/" + orderId + "/users")
+                .build();
+        return restTemplate.getForObject(url, Long.class);
     }
 
 }

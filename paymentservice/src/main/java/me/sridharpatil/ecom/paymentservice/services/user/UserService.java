@@ -1,5 +1,6 @@
 package me.sridharpatil.ecom.paymentservice.services.user;
 
+import me.sridharpatil.ecom.paymentservice.utils.URLBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,7 +14,12 @@ public class UserService {
     }
 
     public UserDto getUser(Long userId) {
-        return restTemplate.getForObject("http://localhost:8082/users/" + userId, UserDto.class);
+        String url = URLBuilder.getBuilder()
+                .setBaseUrl("lb://userservice")
+                .setPath("/private/users")
+                .setPathParam(userId.toString())
+                .build();
+        return restTemplate.getForObject(url, UserDto.class);
     }
     public String getUserName(Long userId) { return getUser(userId).getName(); }
     public String getUserEmail(Long userId) { return getUser(userId).getEmail(); }

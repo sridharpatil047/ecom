@@ -77,17 +77,17 @@ public class GlobalExceptionHandler {
 
 
     // Generic exception handlers
-    @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<ExceptionDto> handleNoResourceFoundException(NoResourceFoundException ex) {
-        ExceptionDto exceptionDto = new ExceptionDto(
-                ErrorCode.NO_RESOURCE_FOUND,
-                ex.getMessage()
-        );
-
-        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
-
-        return ResponseEntity.status(406).body(exceptionDto);
-    }
+//    @ExceptionHandler(NoResourceFoundException.class)
+//    public ResponseEntity<ExceptionDto> handleNoResourceFoundException(NoResourceFoundException ex) {
+//        ExceptionDto exceptionDto = new ExceptionDto(
+//                ErrorCode.NO_RESOURCE_FOUND,
+//                ex.getMessage()
+//        );
+//
+//        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+//
+//        return ResponseEntity.status(406).body(exceptionDto);
+//    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ExceptionDto> handleMethodNotAllowedException(HttpRequestMethodNotSupportedException ex) {
@@ -158,15 +158,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(401).body(exceptionDto);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ExceptionDto> handleException(Exception ex) {
-        ExceptionDto exceptionDto = new ExceptionDto(
-                ErrorCode.UNKNOWN_ERROR,
-                ex.getMessage()
-        );
-
-        log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
-
-        return ResponseEntity.status(500).body(exceptionDto);
-    }
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<ExceptionDto> handleException(Exception ex) {
+//        ExceptionDto exceptionDto = new ExceptionDto(
+//                ErrorCode.UNKNOWN_ERROR,
+//                ex.getMessage()
+//        );
+//
+//        log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+//
+//        return ResponseEntity.status(500).body(exceptionDto);
+//    }
 }

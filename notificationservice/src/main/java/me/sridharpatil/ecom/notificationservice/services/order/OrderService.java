@@ -17,11 +17,10 @@ public class OrderService {
 
     public Order getOrderById(Long orderId) {
 
-        Map<String, String> queryParams = Map.of("orderId", orderId.toString());
         String url = URLBuilder.getBuilder()
                 .setBaseUrl("http://orderservice")
-                .setPath("/orders")
-                .setQueryParams(queryParams)
+                .setPath("/private/orders")
+                .setPathParam(orderId.toString())
                 .build();
 
         return restTemplate.getForObject(url, Order.class);

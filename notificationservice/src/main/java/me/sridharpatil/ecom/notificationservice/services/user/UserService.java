@@ -17,7 +17,7 @@ public class UserService {
 
         String url = URLBuilder.getBuilder()
                 .setBaseUrl("http://userservice")
-                .setPath("/users")
+                .setPath("/private/users")
                 .setPathParam(userId.toString())
                 .build();
 
