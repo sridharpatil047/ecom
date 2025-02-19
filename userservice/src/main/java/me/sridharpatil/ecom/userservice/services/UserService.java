@@ -18,4 +18,6 @@ public interface UserService {
     List<ShippingAddress> getShippingAddresses(Long userId) throws ShippingAddressNotFoundException;
     User getUser(Long userId) throws UserNotFoundException;
     void addShippingAddress(Long id, ShippingAddress shippingAddress);
+    void createOTP(Long userId);
+    void resetPassword(Long userId) throws UserNotFoundException, JsonProcessingException;
 }

@@ -9,4 +9,5 @@ import java.util.List;
 public class UserDto {
     private List<String> roles;
     private String newPassword;
+    private String oldPassword;
 }

@@ -6,17 +6,24 @@ import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.UserAlreadyExistsException;
 import me.sridharpatil.ecom.userservice.exceptions.UserNotFoundException;
+import me.sridharpatil.ecom.userservice.models.OneTimePassword;
 import me.sridharpatil.ecom.userservice.models.Role;
 import me.sridharpatil.ecom.userservice.models.ShippingAddress;
 import me.sridharpatil.ecom.userservice.models.User;
+import me.sridharpatil.ecom.userservice.repositories.OneTimePasswordRepository;
 import me.sridharpatil.ecom.userservice.repositories.ShippingAddressRepository;
 import me.sridharpatil.ecom.userservice.repositories.UserRepository;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
-import me.sridharpatil.ecom.userservice.services.notifications.NotificationSenderContext;
+import me.sridharpatil.ecom.userservice.services.notification.NotificationService;
+import me.sridharpatil.ecom.userservice.services.notification.PasswordResetNotification;
+import me.sridharpatil.ecom.userservice.services.notification.UserCreatedNotification;
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -27,14 +34,16 @@ public class UserServiceImpl implements UserService{
     ShippingAddressRepository shippingAddressRepository;
     RoleService roleService;
     BCryptPasswordEncoder bCryptPasswordEncoder;
-    NotificationSenderContext notificationSenderContext;
+    NotificationService notificationService;
+    OneTimePasswordRepository oneTimePasswordRepository;
 
-    public UserServiceImpl(UserRepository userRepository, ShippingAddressRepository shippingAddressRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationSenderContext notificationSenderContext) {
+    public UserServiceImpl(UserRepository userRepository, ShippingAddressRepository shippingAddressRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationService notificationService, OneTimePasswordRepository oneTimePasswordRepository) {
         this.userRepository = userRepository;
         this.shippingAddressRepository = shippingAddressRepository;
         this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.notificationSenderContext = notificationSenderContext;
+        this.notificationService = notificationService;
+        this.oneTimePasswordRepository = oneTimePasswordRepository;
     }
 
     @Override
@@ -56,9 +65,16 @@ public class UserServiceImpl implements UserService{
         User savedUser = userRepository.save(user);
         log.info("User saved successfully");
 
+        // Create a Cart
+        // TODO
+
         // Send notification
         log.info("Sending notification");
-        notificationSenderContext.sendNotification(savedUser, Event.USER_CREATED);
+        UserCreatedNotification userCreatedNotification = UserCreatedNotification.getBuilder()
+                .setUserId(savedUser.getId())
+                .build();
+        notificationService.send(userCreatedNotification);
+//        notificationSenderContext.sendNotification(savedUser, Event.USER_CREATED);
 
 
         log.info("User signed up successfully");
@@ -87,7 +103,11 @@ public class UserServiceImpl implements UserService{
         }
 
         // update the user with new password
-        if (userDto.getNewPassword() != null) {
+        if (userDto.getNewPassword() != null && userDto.getOldPassword() != null) {
+            if (!bCryptPasswordEncoder.matches(userDto.getOldPassword(), user.getHashedPassword())){
+                log.error("Old password does not match");
+                throw new RuntimeException("Old password does not match");
+            }
             user.setHashedPassword(bCryptPasswordEncoder.encode(userDto.getNewPassword()));
         }
 
@@ -117,5 +137,42 @@ public class UserServiceImpl implements UserService{
         shippingAddress.setUser(userRepository.findById(id).get());
         shippingAddress.setActive(true);
         shippingAddressRepository.save(shippingAddress);
+    }
+
+    @Override
+    public void createOTP(Long userID) {
+
+    }
+
+    @Override
+    public void resetPassword(Long userId) throws UserNotFoundException, JsonProcessingException {
+        // 1. Check if user exists
+        log.debug("Checking if user exists");
+        Optional<User> optionalUser = userRepository.findById(userId);
+        if (optionalUser.isEmpty()) {
+            throw new UserNotFoundException("User not found");
+        }
+
+        // 2. If user exists, generate 4 digit Random Integer
+        log.debug("Generating OTP for user: {}", userId);
+        User user = optionalUser.get();
+        Integer otp = RandomUtils.nextInt(9999);
+
+        // 3. Save to DB
+        log.debug("Saving otp to DB");
+        OneTimePassword oneTimePassword = OneTimePassword.builder()
+                .value(otp)
+                .expiryDateTime(LocalDateTime.now().plusMinutes(5)) // OTP expires in 5 min
+                .user(user)
+                .build();
+        oneTimePasswordRepository.save(oneTimePassword);
+
+        // 4. Send to Kafka
+        log.debug("Sending notification");
+        PasswordResetNotification notification = PasswordResetNotification.getBuilder()
+                .setUserId(user.getId())
+                .setOtp(otp)
+                .build();
+        notificationService.send(notification);
     }
 }

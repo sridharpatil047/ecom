@@ -2,6 +2,7 @@ package me.sridharpatil.ecom.userservice.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.userservice.controllers.dtos.*;
 import me.sridharpatil.ecom.userservice.exceptions.RoleNotFoundException;
 import me.sridharpatil.ecom.userservice.exceptions.ShippingAddressNotFoundException;
@@ -24,6 +25,7 @@ import java.security.Principal;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Log4j2
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -37,7 +39,7 @@ public class UserController {
         this.httpServletRequest = httpServletRequest;
     }
 
-    // 1. POST /
+    // 1. POST /users
     @PostMapping()
     ResponseEntity<CreateUserResponseDto> createUser(@RequestBody CreateUserRequestDto createUserRequestDto) throws UserAlreadyExistsException, JsonProcessingException {
         User user = userService.signUp(
@@ -74,24 +76,29 @@ public class UserController {
         return ResponseEntity.ok("User roles updated successfully");
     }
 
-    // 3. POST /users/{id}/password-reset/request
-    @PostMapping("/{id}/password-reset/request")
-    ResponseEntity<String> requestPasswordReset(@PathVariable("id") Long id) {
-        // Request password reset
-        // TODO : Implement this
-//        userService.requestPasswordReset(Long id);
+    // 3. POST /users/{id}/password-resets
+    @PostMapping("/{id}/password-resets")
+    ResponseEntity<String> requestPasswordReset(@PathVariable("id") Long id) throws UserNotFoundException, JsonProcessingException {
+        log.debug("Request to request password reset for user with id {}", id);
+        userService.resetPassword(id);
         return ResponseEntity.ok("A password reset link sent to your email ");
     }
 
-    // 4. POST /users/{id}/password-reset/confirm
-    @PostMapping("/{id}/password-reset/confirm")
-    ResponseEntity<String> confirmPasswordReset(@PathVariable("id") Long id) {
+    // 4. PUT /users/{id}/password-resets/{token}
+    @PostMapping("/{id}/password-resets/{token}")
+    ResponseEntity<String> confirmPasswordReset(@PathVariable("id") Long id, @PathVariable String token) {
         // Confirm password reset
         // TODO : Implement this
 //        userService.confirmPasswordReset(reqDto.getEmail(), reqDto.getOtp(), reqDto.getNewPassword());
         return ResponseEntity.ok("Password reset successfully");
     }
 
+    // 5. PUT /users/{id}/password
+    @PutMapping("/{id}/password")
+    ResponseEntity<String> changePassword(@PathVariable("id") Long id, @RequestBody UserDto userDto) throws UserNotFoundException, RoleNotFoundException {
+        userService.updateUser(id, userDto);
+        return ResponseEntity.ok("Password updated successfully");
+    }
 
     // POST /users/{id}/shipping-addresses
     @PostMapping("/{id}/shipping-addresses")
