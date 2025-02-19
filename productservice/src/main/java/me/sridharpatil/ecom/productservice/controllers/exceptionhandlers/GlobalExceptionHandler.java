@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
                 ex.getMessage()
         );
 
-        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+        log.error(ex);
 
         return ResponseEntity.status(406).body(exceptionDto);
     }
@@ -125,6 +125,7 @@ public class GlobalExceptionHandler {
         );
 
         log.error("Unknown error : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+        log.error(ex);
 
         return ResponseEntity.status(500).body(exceptionDto);
     }
