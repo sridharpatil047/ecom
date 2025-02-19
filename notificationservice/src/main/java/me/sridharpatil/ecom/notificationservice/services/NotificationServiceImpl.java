@@ -2,11 +2,13 @@ package me.sridharpatil.ecom.notificationservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.mail.MessagingException;
+import lombok.extern.java.Log;
+import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
 import me.sridharpatil.ecom.notificationservice.factories.RecipientFactory;
-import me.sridharpatil.ecom.notificationservice.models.EventType;
 import me.sridharpatil.ecom.notificationservice.properties.NotificationProperties;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.Notifier;
+import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.*;
 import me.sridharpatil.ecom.notificationservice.services.order.Order;
 import me.sridharpatil.ecom.notificationservice.services.order.OrderService;
 import me.sridharpatil.ecom.notificationservice.services.user.User;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
+@Log4j2
 @Service
 public class NotificationServiceImpl implements NotificationService{
 
@@ -33,8 +36,8 @@ public class NotificationServiceImpl implements NotificationService{
 
 
     @Override
-    public void send(Recipient recipient, EventType eventType, Map<String, String> variables) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
-        notifier.send(recipient, eventType, variables);
+    public void send(Recipient recipient, Message message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
+        notifier.send(recipient, message);
     }
 
     @Override
@@ -43,10 +46,8 @@ public class NotificationServiceImpl implements NotificationService{
         User user = userService.getUserById(userId);
 
         Recipient recipient = RecipientFactory.getRecipient(user, notificationProperties.getNotifier());
-        EventType eventType = EventType.ORDER_CANCELLED;
-        Map<String, String> variables = Map.of("orderId", orderId.toString());
-
-        this.send(recipient, eventType, variables);
+        Message message = OrderCancelledMessage.builder().build();
+        this.send(recipient, message);
     }
 
     @Override
@@ -56,9 +57,39 @@ public class NotificationServiceImpl implements NotificationService{
         Order order = orderService.getOrderById(orderId);
 
         Recipient recipient = RecipientFactory.getRecipient(user, notificationProperties.getNotifier());
-        EventType eventType = EventType.ORDER_CONFIRMED;
-        Map<String, String> variables = Map.of("orderId", orderId.toString(), "totalPrice", order.getTotal().toString());
+        OrderConfirmedMessage message = OrderConfirmedMessage.builder()
+                .orderId(orderId)
+                .totalPrice(order.getTotal())
+                .build();
+        this.send(recipient, message);
+    }
 
-        this.send(recipient, eventType, variables);
+    @Override
+    public void handleUserCreatedEvent(Long userId) throws MessagingException, UnsupportedEncodingException, JsonProcessingException {
+
+        log.debug("Received user created event");
+
+        User user = userService.getUserById(userId);
+
+        Recipient recipient = RecipientFactory.getRecipient(user, notificationProperties.getNotifier());
+        UserCreatedMessage message = UserCreatedMessage.builder()
+                .userId(user.getUserId())
+                .name(user.getName())
+                .build();
+
+        this.send(recipient, message);
+    }
+
+    @Override
+    public void handlePasswordResetEvent(Long userId, Integer otp) throws MessagingException, UnsupportedEncodingException, JsonProcessingException {
+
+        log.debug("Received password reset event");
+        User user = userService.getUserById(userId);
+        Recipient recipient = RecipientFactory.getRecipient(user, notificationProperties.getNotifier());
+
+        PasswordResetMessage message = PasswordResetMessage.builder()
+                .otp(otp)
+                .build();
+        this.send(recipient, message);
     }
 }

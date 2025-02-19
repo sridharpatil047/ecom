@@ -5,10 +5,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.mail.MessagingException;
 import lombok.extern.log4j.Log4j2;
-import me.sridharpatil.ecom.notificationservice.consumers.dtos.ConsumeOrderCancelledEventDto;
-import me.sridharpatil.ecom.notificationservice.consumers.dtos.ConsumeOrderConfirmedEventDto;
-import me.sridharpatil.ecom.notificationservice.consumers.dtos.SendEmailNotificationMessage;
-import me.sridharpatil.ecom.notificationservice.consumers.dtos.SendSmsNotificationMessage;
+import me.sridharpatil.ecom.notificationservice.consumers.dtos.*;
 import me.sridharpatil.ecom.notificationservice.services.NotificationService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -29,40 +26,18 @@ public class EventConsumer {
         this.notificationService = notificationService;
     }
 
-//    @KafkaListener(
-//            topics = "user-service.send-notification",
-//            groupId = "notification-service.consumers"
-//    )
-//    public void sendNotificationHandler(
-//            @Header(KafkaHeaders.RECEIVED_KEY) String key,
-//            @Payload String message
-//    ) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
-//
-//        if (key.equals("email")){
-//            SendEmailNotificationMessage sendEmailNotificationMessage
-//                    = objectMapper.readValue(message, SendEmailNotificationMessage.class);
-//            notificationService.send(
-//                    sendEmailNotificationMessage.getRecipient(),
-//                    sendEmailNotificationMessage.getEventType()
-//            );
-//        } else if (key.equals("sms")){
-//            SendSmsNotificationMessage sendSmsNotificationMessage
-//                    = objectMapper.readValue(message, SendSmsNotificationMessage.class);
-//
-//            notificationService.send(
-//                    sendSmsNotificationMessage.getRecipient(),
-//                    sendSmsNotificationMessage.getEventType()
-//            );
-//        } else {
-//            log.error("Invalid notification type");
-//        }
-//    }
+    @KafkaListener(topics = "user-service.user-created",
+            groupId = "notification-service.consumers")
+    public void consumeUserCreatedEvent(@Payload String message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
+        log.debug("Entered consumeUserCreatedEvent");
 
+        Long userId = objectMapper.readValue(message, Long.class);
+        notificationService.handleUserCreatedEvent(userId);
 
-    @KafkaListener(
-            topics = "order-service.order-confirmed",
-            groupId = "notification-service.consumers"
-    )
+    }
+
+    @KafkaListener(topics = "order-service.order-confirmed",
+            groupId = "notification-service.consumers")
     public void consumeOrderConfirmedEvent(@Payload String message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
 
         log.info("Order confirmed event received: " + message);
@@ -75,10 +50,8 @@ public class EventConsumer {
         );
     }
 
-    @KafkaListener(
-            topics = "order-service.order-cancelled",
-            groupId = "notification-service.consumers"
-    )
+    @KafkaListener(topics = "order-service.order-cancelled",
+            groupId = "notification-service.consumers")
     public void consumeOrderCancelledEvent(@Payload String message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
 
         log.info("Order cancelled event received: " + message);
@@ -92,4 +65,14 @@ public class EventConsumer {
 
     }
 
+    @KafkaListener(topics = "user-service.password-resets",
+            groupId = "notification-service.consumers")
+    public void consumePasswordResetEvent(@Payload String message) throws JsonProcessingException, MessagingException, UnsupportedEncodingException {
+        log.info("Password reset event received: {}", message);
+
+        ConsumePasswordResetEventDto dto = objectMapper.readValue(message, ConsumePasswordResetEventDto.class);
+
+        notificationService.handlePasswordResetEvent(dto.getUserId(),
+                dto.getOtp());
+    }
 }

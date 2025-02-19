@@ -9,30 +9,25 @@ import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.notificationservice.dtos.EmailRecipient;
 import me.sridharpatil.ecom.notificationservice.dtos.Recipient;
 import me.sridharpatil.ecom.notificationservice.properties.EmailProperties;
-import me.sridharpatil.ecom.notificationservice.models.EventType;
 import me.sridharpatil.ecom.notificationservice.services.notifiers.*;
-import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.EventBasedTemplate;
-import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.EventBasedTemplateFactory;
+import me.sridharpatil.ecom.notificationservice.services.notifiers.templates.Message;
 import me.sridharpatil.ecom.notificationservice.utils.EmailUtil;
 import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Map;
 import java.util.Properties;
 
 @Log4j2
 @Service("email")
 public class EmailNotifier implements Notifier {
     EmailProperties emailProperties;
-    EventBasedTemplateFactory eventBasedTemplateFactory;
 
-    public EmailNotifier(EmailProperties emailProperties, EventBasedTemplateFactory eventBasedTemplateFactory) {
+    public EmailNotifier(EmailProperties emailProperties) {
         this.emailProperties = emailProperties;
-        this.eventBasedTemplateFactory = eventBasedTemplateFactory;
     }
 
     @Override
-    public void send(Recipient recipient, EventType eventType, Map<String, String> variables) throws MessagingException, UnsupportedEncodingException {
+    public void send(Recipient recipient, Message message) throws MessagingException, UnsupportedEncodingException {
         log.debug("Email notification service called");
 
         EmailRecipient emailRecipient;
@@ -44,7 +39,6 @@ public class EmailNotifier implements Notifier {
             return;
         }
 
-        EventBasedTemplate emailTemplate = eventBasedTemplateFactory.getTemplate(eventType, variables);
 
         log.debug("Creating SMTP session");
         Session session = createSmtpSession();
@@ -55,8 +49,8 @@ public class EmailNotifier implements Notifier {
                 emailProperties.getUsername(),
                 emailProperties.getEmailId(), // from email
                 emailRecipient.getEmail(), // to email
-                emailTemplate.getSubject(),
-                emailTemplate.getBody()
+                message.getSubject(),
+                message.getBody()
         );
         log.info("Email sent successfully!!");
     }
