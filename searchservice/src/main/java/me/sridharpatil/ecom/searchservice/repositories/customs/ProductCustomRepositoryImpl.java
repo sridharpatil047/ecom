@@ -10,6 +10,7 @@ import me.sridharpatil.ecom.searchservice.documents.Product;
 import me.sridharpatil.ecom.searchservice.search.Field;
 import me.sridharpatil.ecom.searchservice.search.filters.Filter;
 import me.sridharpatil.ecom.searchservice.search.filters.Operator;
+import me.sridharpatil.ecom.searchservice.search.pagination.Pagination;
 import me.sridharpatil.ecom.searchservice.search.searches.AdvancedSearch;
 import me.sridharpatil.ecom.searchservice.search.sorting.SortBy;
 import me.sridharpatil.ecom.searchservice.search.sorting.SortingOrder;
@@ -45,6 +46,11 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
             );
         }
 
+        // Default Pagination applied if pagination is null
+        if (advancedSearch.getPagination() == null) {
+            advancedSearch.setPagination(new Pagination(0, 5));
+        }
+
         // Applying filters
         if (advancedSearch.getFilters() != null && !advancedSearch.getFilters().isEmpty()){
             for (Filter filter : advancedSearch.getFilters()){
@@ -70,7 +76,6 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
                         .build());
             }
         }
-
 
         // Build the search request
         SearchRequest searchRequest = SearchRequest.of(s -> s

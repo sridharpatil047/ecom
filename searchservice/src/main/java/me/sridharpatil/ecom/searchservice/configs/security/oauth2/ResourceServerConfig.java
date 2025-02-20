@@ -19,6 +19,7 @@ public class ResourceServerConfig {
         http
                 .authorizeHttpRequests(authorizeRequests ->authorizeRequests
                         .requestMatchers("/private/**").permitAll()
+                        .requestMatchers("/products/search/**").permitAll()
                 )
 
                 .oauth2ResourceServer(oauth2 -> oauth2
