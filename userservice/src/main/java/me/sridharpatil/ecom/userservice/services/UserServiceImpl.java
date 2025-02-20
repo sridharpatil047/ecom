@@ -175,4 +175,61 @@ public class UserServiceImpl implements UserService{
                 .build();
         notificationService.send(notification);
     }
+
+    @Override
+    public User confirmPasswordReset(Integer token, String password) throws UserNotFoundException, JsonProcessingException {
+
+        // 1. Check if Token exists and is not expired yet
+        log.debug("Checking if token is valid");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.toString());
+        Optional<OneTimePassword> optionalOTP = oneTimePasswordRepository.findByValueAndExpiryDateTimeAfter(token, now);
+        if (optionalOTP.isEmpty()) {throw new RuntimeException("Invalid token");}
+        OneTimePassword oneTimePassword = optionalOTP.get();
+
+        // 2. If Token is valid, get the user for that token
+        log.debug("Get user for token: {}", oneTimePassword.getUser().getId());
+        User user = oneTimePassword.getUser();
+
+        // 3. Update to new password and save user to db
+        log.debug("Save new password for user: {}", user.getId());
+        user.setHashedPassword(bCryptPasswordEncoder.encode(password));
+        return userRepository.save(user);
+    }
+
+    @Override
+    public void requestPasswordReset(String email) throws UserNotFoundException, JsonProcessingException {
+        // 1. Check if user exists
+        Optional<User> optionalUser = userRepository.findUserByEmail(email);
+        if (optionalUser.isEmpty()) {
+            throw new UserNotFoundException("User with email " + email + " not found");
+        }
+        User user = optionalUser.get();
+
+        // 2. Check if OTP already exists for that email
+        Optional<OneTimePassword> optionalOTP = oneTimePasswordRepository.findOneTimePasswordByUser(user);
+        log.debug("Deleting otp from DB");
+        optionalOTP.ifPresent(oneTimePassword -> oneTimePasswordRepository.delete(oneTimePassword));
+
+        // 3. If user exists, generate 4 digit Random Integer
+        log.debug("Generating OTP for user: {}", email);
+        Integer otp = RandomUtils.nextInt(9999);
+
+        // 4. Save to DB
+        log.debug("Saving otp to DB");
+        OneTimePassword oneTimePassword = OneTimePassword.builder()
+                .value(otp)
+                .expiryDateTime(LocalDateTime.now().plusMinutes(5)) // OTP expires in 5 min
+                .user(user)
+                .build();
+        oneTimePasswordRepository.save(oneTimePassword);
+
+        // 5. Send to Kafka
+        log.debug("Sending notification");
+        PasswordResetNotification notification = PasswordResetNotification.getBuilder()
+                .setUserId(user.getId())
+                .setOtp(otp)
+                .build();
+        notificationService.send(notification);
+    }
 }

@@ -20,4 +20,6 @@ public interface UserService {
     void addShippingAddress(Long id, ShippingAddress shippingAddress);
     void createOTP(Long userId);
     void resetPassword(Long userId) throws UserNotFoundException, JsonProcessingException;
+    User confirmPasswordReset(Integer token, String password) throws UserNotFoundException, JsonProcessingException;
+    void requestPasswordReset(String email) throws UserNotFoundException, JsonProcessingException;
 }

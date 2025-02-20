@@ -22,7 +22,7 @@ public class ResourceServerConfig {
                         // permit all
                         .requestMatchers("/private/**").permitAll() // Private endpoints for inter-service communication
                         .requestMatchers(HttpMethod.POST,"/users").permitAll() // Create User
-                        .requestMatchers("/users/{id}/password-resets/**").permitAll()
+                        .requestMatchers("/password-resets/**").permitAll()
 
                         // /users
                         .requestMatchers(HttpMethod.PATCH, "/users/{id}/roles").hasRole("ADMIN")

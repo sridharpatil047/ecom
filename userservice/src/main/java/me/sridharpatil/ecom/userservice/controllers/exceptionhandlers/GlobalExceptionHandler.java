@@ -76,17 +76,17 @@ public class GlobalExceptionHandler {
 
 
     // Generic exception handlers
-//    @ExceptionHandler(NoResourceFoundException.class)
-//    public ResponseEntity<ExceptionDto> handleNoResourceFoundException(NoResourceFoundException ex) {
-//        ExceptionDto exceptionDto = new ExceptionDto(
-//                ErrorCode.NO_RESOURCE_FOUND,
-//                ex.getMessage()
-//        );
-//
-//        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
-//
-//        return ResponseEntity.status(406).body(exceptionDto);
-//    }
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ExceptionDto> handleNoResourceFoundException(NoResourceFoundException ex) {
+        ExceptionDto exceptionDto = new ExceptionDto(
+                ErrorCode.NO_RESOURCE_FOUND,
+                ex.getMessage()
+        );
+
+        log.error("No resource found : {} - {}", exceptionDto.getErrorCode(), exceptionDto.getMessage());
+
+        return ResponseEntity.status(406).body(exceptionDto);
+    }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public ResponseEntity<ExceptionDto> handleMethodNotAllowedException(HttpRequestMethodNotSupportedException ex) {

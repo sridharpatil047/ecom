@@ -76,22 +76,7 @@ public class UserController {
         return ResponseEntity.ok("User roles updated successfully");
     }
 
-    // 3. POST /users/{id}/password-resets
-    @PostMapping("/{id}/password-resets")
-    ResponseEntity<String> requestPasswordReset(@PathVariable("id") Long id) throws UserNotFoundException, JsonProcessingException {
-        log.debug("Request to request password reset for user with id {}", id);
-        userService.resetPassword(id);
-        return ResponseEntity.ok("A password reset link sent to your email ");
-    }
 
-    // 4. PUT /users/{id}/password-resets/{token}
-    @PostMapping("/{id}/password-resets/{token}")
-    ResponseEntity<String> confirmPasswordReset(@PathVariable("id") Long id, @PathVariable String token) {
-        // Confirm password reset
-        // TODO : Implement this
-//        userService.confirmPasswordReset(reqDto.getEmail(), reqDto.getOtp(), reqDto.getNewPassword());
-        return ResponseEntity.ok("Password reset successfully");
-    }
 
     // 5. PUT /users/{id}/password
     @PutMapping("/{id}/password")
