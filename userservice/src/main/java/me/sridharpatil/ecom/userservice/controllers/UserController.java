@@ -41,7 +41,7 @@ public class UserController {
 
     // 1. POST /users
     @PostMapping()
-    ResponseEntity<CreateUserResponseDto> createUser(@RequestBody CreateUserRequestDto createUserRequestDto) throws UserAlreadyExistsException, JsonProcessingException {
+    ResponseEntity<CreateUserResponseDto> createUser(@RequestBody CreateUserRequestDto createUserRequestDto) throws UserAlreadyExistsException, JsonProcessingException, UserNotFoundException, RoleNotFoundException {
         User user = userService.signUp(
                 createUserRequestDto.getName(),
                 createUserRequestDto.getEmail(),

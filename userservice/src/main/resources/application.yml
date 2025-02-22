@@ -12,7 +12,7 @@ spring:
     # jpa properties
     jpa:
         hibernate.ddl-auto: update
-        show-sql: true
+#        show-sql: true
 
     # kafka properties
     kafka.bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}

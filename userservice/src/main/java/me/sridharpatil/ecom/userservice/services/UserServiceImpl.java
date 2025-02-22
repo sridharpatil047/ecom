@@ -13,6 +13,7 @@ import me.sridharpatil.ecom.userservice.models.User;
 import me.sridharpatil.ecom.userservice.repositories.OneTimePasswordRepository;
 import me.sridharpatil.ecom.userservice.repositories.ShippingAddressRepository;
 import me.sridharpatil.ecom.userservice.repositories.UserRepository;
+import me.sridharpatil.ecom.userservice.services.cart.CartService;
 import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import me.sridharpatil.ecom.userservice.services.notification.NotificationService;
 import me.sridharpatil.ecom.userservice.services.notification.PasswordResetNotification;
@@ -22,6 +23,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -30,6 +32,7 @@ import java.util.Set;
 @Log4j2
 public class UserServiceImpl implements UserService{
 
+    private final CartService cartService;
     UserRepository userRepository;
     ShippingAddressRepository shippingAddressRepository;
     RoleService roleService;
@@ -37,17 +40,18 @@ public class UserServiceImpl implements UserService{
     NotificationService notificationService;
     OneTimePasswordRepository oneTimePasswordRepository;
 
-    public UserServiceImpl(UserRepository userRepository, ShippingAddressRepository shippingAddressRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationService notificationService, OneTimePasswordRepository oneTimePasswordRepository) {
+    public UserServiceImpl(UserRepository userRepository, ShippingAddressRepository shippingAddressRepository, RoleService roleService, BCryptPasswordEncoder bCryptPasswordEncoder, NotificationService notificationService, OneTimePasswordRepository oneTimePasswordRepository, CartService cartService) {
         this.userRepository = userRepository;
         this.shippingAddressRepository = shippingAddressRepository;
         this.roleService = roleService;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.notificationService = notificationService;
         this.oneTimePasswordRepository = oneTimePasswordRepository;
+        this.cartService = cartService;
     }
 
     @Override
-    public User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException {
+    public User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException, RoleNotFoundException, UserNotFoundException {
 
         // Check if user already exists
         if (userRepository.findUserByEmail(email).isPresent()) {
@@ -65,8 +69,16 @@ public class UserServiceImpl implements UserService{
         User savedUser = userRepository.save(user);
         log.info("User saved successfully");
 
+        // Assign USER role by default
+        log.debug("Assigning USER role by default");
+        updateUser(savedUser.getId(),
+                UserDto.builder()
+                        .roles(List.of("USER"))
+                        .build());
+
         // Create a Cart
-        // TODO
+        log.debug("Creating a cart to the user");
+        cartService.createCart(savedUser.getId());
 
         // Send notification
         log.info("Sending notification");
@@ -74,8 +86,6 @@ public class UserServiceImpl implements UserService{
                 .setUserId(savedUser.getId())
                 .build();
         notificationService.send(userCreatedNotification);
-//        notificationSenderContext.sendNotification(savedUser, Event.USER_CREATED);
-
 
         log.info("User signed up successfully");
         return savedUser;
@@ -96,6 +106,7 @@ public class UserServiceImpl implements UserService{
         // update the user with new roles
         if (userDto.getRoles() != null) {
             Set<Role> roleList = user.getRoles();
+            if (roleList == null) { roleList = new HashSet<>(); }
             for (String role : userDto.getRoles()) {
                 roleList.add(roleService.getRoleByName(role));
             }
@@ -133,47 +144,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public User getUserByEmail(String email) throws UserNotFoundException {
+        Optional<User> user = userRepository.findUserByEmail(email);
+        return user.orElseThrow(() -> new UserNotFoundException("User with email " + email + " not found"));
+    }
+
+    @Override
     public void addShippingAddress(Long id, ShippingAddress shippingAddress) {
         shippingAddress.setUser(userRepository.findById(id).get());
         shippingAddress.setActive(true);
         shippingAddressRepository.save(shippingAddress);
-    }
-
-    @Override
-    public void createOTP(Long userID) {
-
-    }
-
-    @Override
-    public void resetPassword(Long userId) throws UserNotFoundException, JsonProcessingException {
-        // 1. Check if user exists
-        log.debug("Checking if user exists");
-        Optional<User> optionalUser = userRepository.findById(userId);
-        if (optionalUser.isEmpty()) {
-            throw new UserNotFoundException("User not found");
-        }
-
-        // 2. If user exists, generate 4 digit Random Integer
-        log.debug("Generating OTP for user: {}", userId);
-        User user = optionalUser.get();
-        Integer otp = RandomUtils.nextInt(9999);
-
-        // 3. Save to DB
-        log.debug("Saving otp to DB");
-        OneTimePassword oneTimePassword = OneTimePassword.builder()
-                .value(otp)
-                .expiryDateTime(LocalDateTime.now().plusMinutes(5)) // OTP expires in 5 min
-                .user(user)
-                .build();
-        oneTimePasswordRepository.save(oneTimePassword);
-
-        // 4. Send to Kafka
-        log.debug("Sending notification");
-        PasswordResetNotification notification = PasswordResetNotification.getBuilder()
-                .setUserId(user.getId())
-                .setOtp(otp)
-                .build();
-        notificationService.send(notification);
     }
 
     @Override

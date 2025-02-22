@@ -13,13 +13,12 @@ import me.sridharpatil.ecom.userservice.services.dtos.UserDto;
 import java.util.List;
 
 public interface UserService {
-    User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException;
+    User signUp(String name, String email, String password) throws UserAlreadyExistsException, JsonProcessingException, RoleNotFoundException, UserNotFoundException;
     void updateUser(Long userId, UserDto userDto) throws RoleNotFoundException, UserNotFoundException;
     List<ShippingAddress> getShippingAddresses(Long userId) throws ShippingAddressNotFoundException;
     User getUser(Long userId) throws UserNotFoundException;
+    User getUserByEmail(String email) throws UserNotFoundException;
     void addShippingAddress(Long id, ShippingAddress shippingAddress);
-    void createOTP(Long userId);
-    void resetPassword(Long userId) throws UserNotFoundException, JsonProcessingException;
     User confirmPasswordReset(Integer token, String password) throws UserNotFoundException, JsonProcessingException;
     void requestPasswordReset(String email) throws UserNotFoundException, JsonProcessingException;
 }
