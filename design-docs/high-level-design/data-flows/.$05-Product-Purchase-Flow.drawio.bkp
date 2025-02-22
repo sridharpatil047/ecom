@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
   <diagram name="Page-1" id="LeogPjHDwshi4Pkynk18">
-    <mxGraphModel dx="1026" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="550" math="0" shadow="0" adaptiveColors="none">
+    <mxGraphModel dx="641" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="550" math="0" shadow="0" adaptiveColors="none">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -718,7 +718,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="F0eAt9E_PcnFtQLU6JHx-10" value="SearchService" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=8;container=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="101" width="140" height="13" as="geometry" />
+          <mxGeometry x="250" y="110" width="140" height="13" as="geometry" />
         </mxCell>
         <mxCell id="F0eAt9E_PcnFtQLU6JHx-11" value="&lt;font&gt;GET /products/search?query={search-query}&lt;/font&gt;&lt;div&gt;&lt;font&gt;or&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;POST /products/search&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="1">
           <mxGeometry x="250" y="147" width="140" height="67.5" as="geometry" />
