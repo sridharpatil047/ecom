@@ -2,6 +2,7 @@ package me.sridharpatil.ecom.paymentservice.configs.security.oauth2;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,8 +21,7 @@ public class ResourceServerConfig {
                 .authorizeHttpRequests(authorizeRequests ->authorizeRequests
                         .requestMatchers("/private/**").permitAll()
                         .requestMatchers("/payments/razorpay/callback").permitAll()
-                        .requestMatchers("/payments/link").hasRole("ADMIN")
-
+                        .requestMatchers(HttpMethod.GET,"/payments/link").hasRole("USER")
                 )
 
                 .oauth2ResourceServer(oauth2 -> oauth2

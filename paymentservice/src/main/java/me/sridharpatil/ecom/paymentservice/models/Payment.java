@@ -1,8 +1,6 @@
 package me.sridharpatil.ecom.paymentservice.models;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +12,11 @@ public class Payment extends BaseModel{
     private String identifier;
     private Long orderId;
     private double amount;
+
+    @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
+
+    @Enumerated(EnumType.STRING)
     private PaymentMode paymentMode;
 
     @OneToMany(mappedBy = "payment", cascade = CascadeType.PERSIST)

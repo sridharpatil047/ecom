@@ -40,10 +40,8 @@ public class EventConsumer {
         );
         log.info("Payment created for order: " + consumeOrderCreatedEventDto.getOrderId());
 
-
         paymentService.createPaymentLink(payment);
         log.info("Payment link created for order: " + consumeOrderCreatedEventDto.getOrderId());
-
 
     }
 }
