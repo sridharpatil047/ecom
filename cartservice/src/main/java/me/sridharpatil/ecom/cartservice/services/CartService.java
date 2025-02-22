@@ -10,7 +10,7 @@ import me.sridharpatil.ecom.cartservice.models.CartItem;
 public interface CartService {
     Cart createCart(Long userId);
     Cart getCart(Long userId) throws CartNotFoundException;
-    CartItem addItemToCart(Long userId, Long productId, double price, int quantity) throws CartNotFoundException, ProductAlreadyExistsException;
+    CartItem addItemToCart(Long userId, Long productId, int quantity) throws Exception;
     CartItem updateItemQuantity(Long userId, Long itemId, int quantity) throws CartNotFoundException, CartItemNotFoundException;
     void checkout(Long userId) throws JsonProcessingException, CartNotFoundException;
     void clearCart(Long userId) throws CartNotFoundException;

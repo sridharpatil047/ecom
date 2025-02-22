@@ -11,6 +11,8 @@ import me.sridharpatil.ecom.cartservice.models.CartItem;
 import me.sridharpatil.ecom.cartservice.repositories.CartItemRepository;
 import me.sridharpatil.ecom.cartservice.repositories.CartRepository;
 import me.sridharpatil.ecom.cartservice.services.producers.CartProducer;
+import me.sridharpatil.ecom.cartservice.services.product.Product;
+import me.sridharpatil.ecom.cartservice.services.product.ProductService;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -26,15 +28,17 @@ public class CartServiceImpl implements CartService{
     KafkaTemplate<String, String> kafkaTemplate;
     RedisTemplate<String, Object> redisTemplate;
     CartProducer cartProducer;
+    ProductService productService;
 
 
-    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate, RedisTemplate<String, Object> redisTemplate, CartProducer cartProducer) {
+    public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ObjectMapper objectMapper, KafkaTemplate<String, String> kafkaTemplate, RedisTemplate<String, Object> redisTemplate, CartProducer cartProducer, ProductService productService) {
         this.cartRepository = cartRepository;
         this.cartItemRepository = cartItemRepository;
         this.objectMapper = objectMapper;
         this.kafkaTemplate = kafkaTemplate;
         this.redisTemplate = redisTemplate;
         this.cartProducer = cartProducer;
+        this.productService = productService;
     }
 
     @Override
@@ -87,7 +91,7 @@ public class CartServiceImpl implements CartService{
     }
 
     @Override
-    public CartItem addItemToCart(Long userId, Long productId, double price, int quantity) throws ProductAlreadyExistsException, CartNotFoundException {
+    public CartItem addItemToCart(Long userId, Long productId, int quantity) throws Exception {
 
         // Check if product already exists in cart
         log.debug("Checking if product already exists in cart for user: {}, product: {}", userId, productId);
@@ -106,12 +110,18 @@ public class CartServiceImpl implements CartService{
             throw new ProductAlreadyExistsException("Product " + productId + " already exists in cart");
         }
 
-        log.debug("Adding item to cart for user: {}, product: {}, price: {}, quantity: {}", userId, productId, price, quantity);
+        // TODO: Verify if the product with the productId exists via productservice and also get Product details
+        Product product = productService.getProductById(productId);
+        if (product == null){
+            throw new RuntimeException("Product " + productId + " not found");
+        }
+
+        log.debug("Adding item to cart for user: {}, product: {}, price: {}, quantity: {}", userId, product.getId(), product.getPrice(), quantity);
         CartItem cartItem = new CartItem();
-        cartItem.setProductId(productId);
+        cartItem.setProductId(product.getId());
         cartItem.setQuantity(quantity);
-        cartItem.setPrice(price);
-        cartItem.setSubTotal(price * quantity);
+        cartItem.setPrice(product.getPrice());
+        cartItem.setSubTotal(product.getPrice() * quantity);
         cartItem.setCart(cart);
 
         cartItemRepository.save(cartItem);
@@ -181,12 +191,15 @@ public class CartServiceImpl implements CartService{
         double totalPrice = cart.getItems().stream().mapToDouble(CartItem::getSubTotal).sum();
         cart.setTotalPrice(totalPrice);
 
+        if (cart.getTotalPrice() < 10){
+            throw new RuntimeException("Unable to checkout cart as price is less than 10. Price is " + cart.getTotalPrice());
+        }
+
         cartRepository.save(cart);
 
         log.info("Producing message to kafka topic: cart-service.checkout");
         cartProducer.checkedOutEvent(cart);
 
-        log.debug("Clearing cart for user: {}", userId);
         clearCart(userId);
     }
 
@@ -200,11 +213,13 @@ public class CartServiceImpl implements CartService{
             throw new CartNotFoundException("Cart not found for user: " + userId);
         }
 
-        log.info("Clearing cart for user: {}", userId);
         Cart cart = optionalCart.get();
-        cartItemRepository.deleteAll(cart.getItems());
-        cart.getItems().clear();
+        log.info("Clearing cart for user: {}", userId);
+
+        cartItemRepository.deleteByCartId(cart.getId());
+
         cart.setTotalPrice(0.0);
+
         cartRepository.save(cart);
         log.debug("Cart cleared for user: {}", userId);
     }

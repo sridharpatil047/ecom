@@ -1,6 +1,7 @@
 package me.sridharpatil.ecom.cartservice.controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import me.sridharpatil.ecom.cartservice.contexts.authentication.JwtUserAuthentication;
 import me.sridharpatil.ecom.cartservice.controllers.dtos.*;
 import me.sridharpatil.ecom.cartservice.exceptions.CartItemNotFoundException;
 import me.sridharpatil.ecom.cartservice.exceptions.CartNotFoundException;
@@ -14,62 +15,51 @@ import org.springframework.web.bind.annotation.*;
 public class CartController {
 
     CartService cartService;
+    JwtUserAuthentication userAuthentication;
 
-    public CartController(CartService cartService) {
+    public CartController(CartService cartService, JwtUserAuthentication userAuthentication) {
         this.cartService = cartService;
+        this.userAuthentication = userAuthentication;
     }
 
-    // 1. Create a new cart
-    // POST /cart?userId={userId}
-    @PostMapping()
-    public ResponseEntity<CartResDto> createCart(@RequestParam(value = "userId") Long userId) {
-        return ResponseEntity.ok(CartResDto.of(cartService.createCart(userId)));
-    }
-
-    // 2. Get cart details
-    // GET /cart?userId={userId}
+    // 2. GET /cart
     @GetMapping()
-    public ResponseEntity<CartResDto> getCart(@RequestParam(value = "userId") Long userId) throws CartNotFoundException {
-        return ResponseEntity.ok(CartResDto.of(cartService.getCart(userId)));
+    public ResponseEntity<CartResDto> getCart() throws CartNotFoundException {
+        return ResponseEntity.ok(CartResDto.of(cartService.getCart(userAuthentication.getUserId())));
     }
 
-    // 3. Add item to cart
-    // POST /cart/items?userId={userId}
+    // 3. POST /cart/items
     @PostMapping("/items")
-    public ResponseEntity<CartItemResDto> addItemToCart(@RequestParam(value = "userId") Long userId, @RequestBody AddItemToCartReqDto reqDto) throws ProductAlreadyExistsException, CartNotFoundException {
+    public ResponseEntity<CartItemResDto> addItemToCart(@RequestBody AddItemToCartReqDto reqDto) throws Exception {
         return ResponseEntity.ok(CartItemResDto.of(cartService.addItemToCart(
-                userId,
+                userAuthentication.getUserId(),
                 reqDto.getProductId(),
-                reqDto.getPrice(),
                 reqDto.getQuantity()
         )));
     }
 
-    // 4. Update cart item
-    // PUT /cart/items?userId={userId}
+    // 4. PUT /cart/items
     @PutMapping("/items")
-    public ResponseEntity<CartItemResDto> updateItemQuantity(@RequestParam(value = "userId") Long userId, @RequestBody UpdateItemQuantityReqDto reqDto) throws CartItemNotFoundException, CartNotFoundException {
+    public ResponseEntity<CartItemResDto> updateItemQuantity(@RequestBody UpdateItemQuantityReqDto reqDto) throws CartItemNotFoundException, CartNotFoundException {
+
         return ResponseEntity.ok(CartItemResDto.of(cartService.updateItemQuantity(
-                userId,
+                userAuthentication.getUserId(),
                 reqDto.getItemId(),
                 reqDto.getQuantity()
         )));
     }
 
-    // 5. Checkout cart
-    // POST /cart/checkout?userId={userId}
+    // 5. POST /cart/checkout
     @PostMapping("/checkout")
-    public ResponseEntity<ResponseMessage> checkout(@RequestParam(value = "userId") Long userId) throws JsonProcessingException, CartNotFoundException {
-        cartService.checkout(userId);
+    public ResponseEntity<ResponseMessage> checkout() throws JsonProcessingException, CartNotFoundException {
+        cartService.checkout(userAuthentication.getUserId());
         return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Checkout successful"));
     }
 
-    // 6. Clear cart
-    // DELETE /cart?userId={userId}
+    // 6. DELETE /cart
     @DeleteMapping()
-    public ResponseEntity<ResponseMessage> clearCart(@RequestParam(value = "userId") Long userId) throws CartNotFoundException {
-        cartService.clearCart(userId);
+    public ResponseEntity<ResponseMessage> clearCart() throws CartNotFoundException {
+        cartService.clearCart(userAuthentication.getUserId());
         return ResponseEntity.ok(new ResponseMessage(ResponseMessageType.SUCCESS, "Cart cleared successfully"));
     }
-
 }
