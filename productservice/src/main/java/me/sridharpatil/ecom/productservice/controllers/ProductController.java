@@ -44,23 +44,6 @@ public class ProductController {
         return ResponseEntity.ok(resDtoList);
     }
 
-    // 2. GET /products/{id}
-    @GetMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
-
-        log.debug("Received request to get product by id : {}", id);
-
-        // Get product by id
-        ControllerProductResDto responseDto =
-                ControllerProductResDto.of(
-                        productService.getProductById(id)
-                );
-
-        // Return response
-        log.info("Returning product with id : {}", responseDto.getId());
-        return ResponseEntity.ok(responseDto);
-    }
-
     // 3. POST /products
     @PostMapping()
     public ResponseEntity<ControllerProductResDto> createProduct(
