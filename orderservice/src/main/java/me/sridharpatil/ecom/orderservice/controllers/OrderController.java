@@ -25,16 +25,10 @@ public class OrderController {
     }
 
     @GetMapping()
-    public ResponseEntity<GetOrderResDto> getOrder(
-            @RequestParam(value = "orderId", required = false) Long orderId,
-            @RequestParam(value = "userId", required = false) Long userId,
-            @RequestParam(value = "status", required = false) String status
-    ) {
+    public ResponseEntity<GetOrderResDto> getOrder(@RequestParam(value = "userId", required = false) Long userId,
+                                                   @RequestParam(value = "status", required = false) String status) {
 
-        if (orderId != null) {
-            Order order =  orderService.getOrderById(orderId);
-            return ResponseEntity.ok().body(GetOrderResDto.of(order));
-        } else if (userId != null && status != null) {
+        if (userId != null && status != null) {
             Order order = orderService.getOrderByUserIdAndStatus(
                     userId,
                     OrderStatus.valueOf(status.toUpperCase())
@@ -44,4 +38,9 @@ public class OrderController {
         return ResponseEntity.badRequest().build();
     }
 
+    @GetMapping("/{orderId}")
+    public ResponseEntity<GetOrderResDto> getOrderById(@PathVariable("orderId") long orderId) {
+        Order order = orderService.getOrderById(orderId);
+        return ResponseEntity.ok().body(GetOrderResDto.of(order));
+    }
 }
