@@ -8,9 +8,7 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 @Getter @Setter
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder @AllArgsConstructor @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Document(indexName = "products")
 public class Product {

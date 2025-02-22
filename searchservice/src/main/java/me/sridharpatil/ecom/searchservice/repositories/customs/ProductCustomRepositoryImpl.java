@@ -36,12 +36,12 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
         // Build the query
         BoolQuery.Builder boolQueryBuilder = QueryBuilders.bool();
 
-        // Full text search for title and description
+        // Full text search for title, description and category
         if (advancedSearch.getQuery() != null && !advancedSearch.getQuery().isEmpty()){
             boolQueryBuilder.must(
                     QueryBuilders.multiMatch(mm -> mm
                             .query(advancedSearch.getQuery())
-                            .fields(Field.TITLE.getValue(), Field.DESCRIPTION.getValue())
+                            .fields(Field.TITLE.getValue(), Field.DESCRIPTION.getValue(), Field.CATEGORY_TITLE.getValue())
                     )
             );
         }
@@ -62,11 +62,6 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
 
         // Applying sorting
         List<SortOptions> sortOptions = new ArrayList<>();
-        // Default sort by ID
-        sortOptions.add(new SortOptions.Builder()
-                        .field(f -> f.field(Field.ID.getValue()).order(SortOrder.Asc))
-                .build()
-        );
         // Add additional sort options if any provided
         if (advancedSearch.getSortBys() != null && !advancedSearch.getSortBys().isEmpty()){
             for (SortBy sortBy : advancedSearch.getSortBys()){
@@ -76,6 +71,11 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository{
                         .build());
             }
         }
+        // Default sort by ID
+        sortOptions.add(new SortOptions.Builder()
+                        .field(f -> f.field(Field.ID.getValue()).order(SortOrder.Asc))
+                .build()
+        );
 
         // Build the search request
         SearchRequest searchRequest = SearchRequest.of(s -> s
