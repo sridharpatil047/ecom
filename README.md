@@ -1,6 +1,6 @@
 
 
-# Project eCom
+# Scalable E-Commerce Backend with Spring Boot & Microservices
 
 ### 📢 Check out the demo video!
 ##### A clear walkthrough of the backend API flows for key use cases. 🚀
@@ -66,11 +66,22 @@ This isn't just another backend—it’s a **battle-tested, production-ready fou
 ## 🔍 Low Level Design
 
 ### 👤 **User Service**
+![UserService](./design-docs/low-level-design/class-diagram/UserService.svg.drawio.svg)
+
 ### 📦 **Product Service**
+![ProductService](./design-docs/low-level-design/class-diagram/ProductService.drawio.svg)
+
 ### 🛒 **Cart Service**
+![CartService](./design-docs/low-level-design/class-diagram/CartService.drawio.svg)
+
 ### 📑 **Order Service**
+![OrderService](./design-docs/low-level-design/class-diagram/OrderService.drawio.svg)
+
 ### 💳 **Payment Service**
+![PaymentService](./design-docs/low-level-design/class-diagram/PaymentService.drawio.svg)
+
 ### 📩 **Notification Service**
+![NotificationService](./design-docs/low-level-design/class-diagram/NotificationService.drawio.svg)
 
 ---
 
@@ -241,13 +252,3 @@ This architecture is designed for **high availability, scalability, and fault to
 ### 🛒 **Product Purchase Flow**
 ![product-purchase-flow](./design-docs/high-level-design/data-flows/05-product-purchase-flow.drawio.svg)
 
-
-
-
-
-
-
-
-[//]: # (![logo]&#40;./design-docs/HLD.svg&#41;)
-[//]: # (![logo]&#40;./design-docs/LLD/UserService.drawio.svg&#41;)
-[//]: # (![logo]&#40;./design-docs/LLD/UserService.svg&#41;)

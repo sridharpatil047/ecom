@@ -3,7 +3,6 @@ package me.sridharpatil.ecom.paymentservice.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.services.payment.PaymentService;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.RazorpayPaymentGatewayAdapter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

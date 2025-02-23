@@ -9,7 +9,7 @@ import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
 import me.sridharpatil.ecom.paymentservice.properties.ConfigProperty;
 import me.sridharpatil.ecom.paymentservice.repositories.PaymentLinkRepository;
 import me.sridharpatil.ecom.paymentservice.repositories.PaymentRepository;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.PaymentGatewayAdapter;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.PaymentGatewayAdapter;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
