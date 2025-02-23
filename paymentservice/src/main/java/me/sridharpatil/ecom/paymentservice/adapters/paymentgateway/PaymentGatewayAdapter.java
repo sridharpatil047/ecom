@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.paymentgwadapters;
+package me.sridharpatil.ecom.paymentservice.adapters.paymentgateway;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayException;

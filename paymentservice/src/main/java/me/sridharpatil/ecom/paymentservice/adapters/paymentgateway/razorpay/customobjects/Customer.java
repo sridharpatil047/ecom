@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.customobjects;
+package me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay.customobjects;
 
 import lombok.Getter;
 import lombok.Setter;

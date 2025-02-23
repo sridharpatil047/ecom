@@ -1,4 +1,4 @@
-package me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay;
+package me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.razorpay.RazorpayClient;
@@ -7,16 +7,14 @@ import lombok.extern.log4j.Log4j2;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
 import me.sridharpatil.ecom.paymentservice.models.PaymentStatus;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.PaymentGatewayAdapter;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.customobjects.Customer;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.customobjects.Notes;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.customobjects.Notify;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.razorpay.customobjects.PaymentLinkRequest;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.PaymentGatewayAdapter;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay.customobjects.Customer;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay.customobjects.Notes;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay.customobjects.Notify;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.razorpay.customobjects.PaymentLinkRequest;
 import me.sridharpatil.ecom.paymentservice.properties.ConfigProperty;
-import me.sridharpatil.ecom.paymentservice.repositories.PaymentRepository;
 import me.sridharpatil.ecom.paymentservice.services.order.OrderService;
 import me.sridharpatil.ecom.paymentservice.services.payment.PaymentHelper;
-import me.sridharpatil.ecom.paymentservice.services.payment.PaymentService;
 import me.sridharpatil.ecom.paymentservice.services.producers.PaymentProducer;
 import me.sridharpatil.ecom.paymentservice.services.user.UserService;
 import org.json.JSONObject;

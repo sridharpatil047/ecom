@@ -1,9 +1,9 @@
-package me.sridharpatil.ecom.paymentservice.paymentgwadapters.stripe;
+package me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.stripe;
 
 import com.razorpay.RazorpayException;
 import me.sridharpatil.ecom.paymentservice.models.Payment;
 import me.sridharpatil.ecom.paymentservice.models.PaymentLink;
-import me.sridharpatil.ecom.paymentservice.paymentgwadapters.PaymentGatewayAdapter;
+import me.sridharpatil.ecom.paymentservice.adapters.paymentgateway.PaymentGatewayAdapter;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
