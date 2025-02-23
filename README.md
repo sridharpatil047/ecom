@@ -252,3 +252,13 @@ This architecture is designed for **high availability, scalability, and fault to
 ### 🛒 **Product Purchase Flow**
 ![product-purchase-flow](./design-docs/high-level-design/data-flows/05-product-purchase-flow.drawio.svg)
 
+
+## 💼 Looking for a Skilled Backend Engineer?
+
+This project showcases my expertise in **Spring Boot**, **Microservices Architecture**, **Distributed Systems**, and **Scalable API Design**. I have designed this backend with **high availability, fault tolerance, and best security practices** in mind.
+
+🚀 I am actively looking for exciting opportunities in **backend development**, **microservices**, and **cloud-based architectures**. If you’re a recruiter or a hiring manager, let’s connect!
+
+📩 **Contact Me**: [sridharpatil047@gmail.com](mailto:sridharpatil047@gmail.com)  
+🔗 **LinkedIn**: [linkedin.com/in/sridhar-patil-047](https://www.linkedin.com/in/sridhar-patil-047)  
+🌟 If you liked my work, don’t forget to ⭐ **star** this repo!  
