@@ -2,6 +2,10 @@
 
 # Project eCom
 
+### 📢 Check out the demo video!
+##### A clear walkthrough of the backend API flows for key use cases. 🚀
+[![Watch the video](https://img.youtube.com/vi/K4xmBeqPs2I/0.jpg)](https://www.youtube.com/watch?v=K4xmBeqPs2I)
+
 --- 
 ## 🚀 Project Overview
 
@@ -220,10 +224,22 @@ This architecture is designed for **high availability, scalability, and fault to
 ## 🔄 Flow Diagrams
 
 ### 🔑 **Login Flow**
+![login-flow](./design-docs/high-level-design/data-flows/01-login-flow.drawio.svg)
+
 ### 🛠️ **Admin Flow**
+![admin-flow](./design-docs/high-level-design/data-flows/02-admin-flow.drawio.svg)
+
+
 ### 🆕 **User SignUp Flow**
+![user-sign-up-flow](./design-docs/high-level-design/data-flows/03-user-sign-up-flow.drawio.svg)
+
+
 ### 🏠 **User Profile Management Flow**
+![user-profile-management-flow](./design-docs/high-level-design/data-flows/04-user-profile-management-flow.drawio.svg)
+
+
 ### 🛒 **Product Purchase Flow**
+![product-purchase-flow](./design-docs/high-level-design/data-flows/05-product-purchase-flow.drawio.svg)
 
 
 
