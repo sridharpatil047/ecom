@@ -152,6 +152,9 @@ With **Spring Boot, Netflix Eureka, Kafka, and Redis**, this architecture guaran
 
 This architecture is designed for **high availability, scalability, and fault tolerance** using AWS services across two **Availability Zones (AZs)**.
 
+![aws-architecture-diagram](./design-docs/high-level-design/aws-architecture-diagram.drawio.svg)
+
+
 #### 🔄 User Request Handling
 - 🌎 Web or mobile clients send requests to **Route 53 (DNS)**, which resolves to the **Elastic Load Balancer (ELB)**.
 - ⚖️ The **ELB** distributes traffic across multiple **API Gateways** in different **Availability Zones**.
