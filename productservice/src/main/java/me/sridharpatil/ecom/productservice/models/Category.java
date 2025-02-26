@@ -1,9 +1,9 @@
 package me.sridharpatil.ecom.productservice.models;
 
 import jakarta.persistence.Entity;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@Builder @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
 @Entity
 public class Category extends BaseModel{

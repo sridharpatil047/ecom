@@ -1,8 +1,9 @@
 package me.sridharpatil.ecom.productservice.services.dtos;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
+@Builder
+@AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
 public class ProductRequestDto {
     private String productTitle;

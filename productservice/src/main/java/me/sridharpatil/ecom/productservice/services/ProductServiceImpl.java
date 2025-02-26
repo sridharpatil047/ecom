@@ -59,42 +59,41 @@ public class ProductServiceImpl implements ProductService{
         log.debug("Checking if product with id {} exists", productId);
         Optional<Product> optionalProduct = productRepository.findById(productId);
         if (optionalProduct.isEmpty() || optionalProduct.get().isDeleted()) {
-            log.error("Product with id {} not found", productId);
+//            log.error("Product with id {} not found", productId);
             throw new ProductNotFoundException("Product with id " + productId + " not found");
         }
 
         // Since product with given id exists, return the product
         log.info("Returning product with id : {}", productId);
-
         return optionalProduct.get();
     }
 
     @Override
     public List<Product> getAllProducts() {
-        log.debug("Getting all products");
+        // log.debug("Getting all products");
         return productRepository.findByDeletedFalse();
     }
 
     @Override
     public Product updateProduct(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
-        log.debug("Checking if product with id {} exists", productId);
+        // log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
         Category category = categoryService.getCategoryById(requestDto.getCategoryId());
 
         // Since product with given id exists, update the product
-        log.debug("Updating product with id : {}", productId);
+        // log.debug("Updating product with id : {}", productId);
         product.setTitle(requestDto.getProductTitle());
         product.setDescription(requestDto.getProductDescription());
         product.setPrice(requestDto.getPrice());
         product.setCategory(category);
 
         // Save and return the product
-        log.info("Saving product with id : {}", productId);
+        // log.info("Saving product with id : {}", productId);
         Product product1 = productRepository.save(product);
 
         // Produce message to Kafka
-        log.info("Producing message to Kafka");
+        // log.info("Producing message to Kafka");
         productProducer.productUpdated(ProductProducerDto.of(product1));
 
         return product1;
@@ -103,12 +102,12 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Product updateProductPartial(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
-        log.debug("Checking if product with id {} exists", productId);
+        // log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
 
 
         // Since product with given id exists, update the product partially
-        log.debug("Updating product with id : {}", productId);
+        // log.debug("Updating product with id : {}", productId);
         if (requestDto.getProductTitle() != null) product.setTitle(requestDto.getProductTitle());
         if (requestDto.getProductDescription() != null) product.setDescription(requestDto.getProductDescription());
         if (requestDto.getPrice() != null) product.setPrice(requestDto.getPrice());
@@ -118,11 +117,11 @@ public class ProductServiceImpl implements ProductService{
         }
 
         // Save and return the product
-        log.info("Saving product with id : {}", productId);
+        // log.info("Saving product with id : {}", productId);
         Product product1 = productRepository.save(product);
 
         // Produce message to Kafka
-        log.info("Producing message to Kafka");
+        // log.info("Producing message to Kafka");
         productProducer.productUpdated(ProductProducerDto.of(product1));
 
         return product1;
@@ -131,15 +130,15 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Product deleteProductById(Long productId) throws ProductNotFoundException {
         // Check if product with given id exists, if not throw exception
-        log.debug("Checking if product with id {} exists", productId);
+        // log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
 
         // Since product with given id exists, delete the product
-        log.debug("Deleting product with id : {}", productId);
+        // log.debug("Deleting product with id : {}", productId);
         product.setDeleted(true);
 
         // Save and return the product
-        log.info("Saving product with id : {}", productId);
+        // log.info("Saving product with id : {}", productId);
         return productRepository.save(product);
     }
 }

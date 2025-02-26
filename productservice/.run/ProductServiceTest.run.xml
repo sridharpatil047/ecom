@@ -1,0 +1,28 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ProductServiceTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="productservice" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="me.sridharpatil.ecom.productservice.services.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="me.sridharpatil.ecom.productservice.services" />
+    <option name="MAIN_CLASS_NAME" value="me.sridharpatil.ecom.productservice.services.ProductServiceTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <envs>
+      <env name="DB_PASSWORD" value="ecompassword" />
+      <env name="DB_URL" value="jdbc:mysql://localhost:3306/ecom" />
+      <env name="DB_USERNAME" value="ecomuser" />
+      <env name="EUREKA_SERVER_URL" value="http://localhost:8761/eureka" />
+      <env name="JWT_ISSUER_ENDPOINT" value="/oauth2/jwks" />
+      <env name="JWT_ISSUER_SERVICE" value="userservice" />
+      <env name="KAFKA_BOOTSTRAP_SERVERS" value="localhost:9092" />
+      <env name="SERVER_PORT" value="8081" />
+    </envs>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
