@@ -6,7 +6,7 @@ import lombok.*;
 
 @Builder @NoArgsConstructor @AllArgsConstructor
 @Getter @Setter
-public class ControllerProductReqDto {
+public class ProductRequestDto {
 
     @NotNull @NotBlank
     private String title;

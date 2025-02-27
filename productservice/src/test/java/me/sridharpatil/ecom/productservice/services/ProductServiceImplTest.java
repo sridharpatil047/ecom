@@ -2,13 +2,12 @@ package me.sridharpatil.ecom.productservice.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
-import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.producers.ProductProducer;
 import me.sridharpatil.ecom.productservice.producers.dtos.ProductProducerDto;
 import me.sridharpatil.ecom.productservice.repositories.ProductRepository;
-import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.ProductRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -28,13 +27,13 @@ class ProductServiceImplTest {
 
     @InjectMocks private ProductServiceImpl productService;
 
-    private ProductRequestDto requestDto;
+    private ProductRequest requestDto;
     private Category category;
     private Product product;
 
     @BeforeEach
     void setUp() {
-        requestDto = ProductRequestDto.builder()
+        requestDto = ProductRequest.builder()
                 .productTitle("title")
                 .productDescription("description")
                 .price(123.0)

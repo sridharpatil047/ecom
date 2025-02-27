@@ -5,7 +5,7 @@ import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsExcep
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.repositories.CategoryRepository;
-import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category createCategory(CategoryRequestDto requestDto) throws CategoryAlreadyExistsException {
+    public Category createCategory(CategoryRequest requestDto) throws CategoryAlreadyExistsException {
 
         log.debug("Checking if category with title {} exists", requestDto.getCategoryTitle());
         String categoryTitle = requestDto.getCategoryTitle().toLowerCase();
@@ -70,7 +70,7 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category updateCategory(Long categoryId, CategoryRequestDto requestDto) throws CategoryNotFoundException {
+    public Category updateCategory(Long categoryId, CategoryRequest requestDto) throws CategoryNotFoundException {
 
         // Check if category with given id exists, if not throw exception
         log.debug("Checking if category with id {} exists", categoryId);
@@ -85,7 +85,7 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     @Override
-    public Category updateCategoryPartial(Long categoryId, CategoryRequestDto requestDto) {
+    public Category updateCategoryPartial(Long categoryId, CategoryRequest requestDto) {
         return null;
     }
 

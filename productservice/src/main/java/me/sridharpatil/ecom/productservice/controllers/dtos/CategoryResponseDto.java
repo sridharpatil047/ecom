@@ -5,12 +5,12 @@ import lombok.Setter;
 import me.sridharpatil.ecom.productservice.models.Category;
 
 @Getter @Setter
-public class ControllerCategoryResDto {
+public class CategoryResponseDto {
     private Long id;
     private String title;
 
-    public static ControllerCategoryResDto of(Category category) {
-        ControllerCategoryResDto dto = new ControllerCategoryResDto();
+    public static CategoryResponseDto of(Category category) {
+        CategoryResponseDto dto = new CategoryResponseDto();
         dto.setId(category.getId());
         dto.setTitle(category.getTitle());
 

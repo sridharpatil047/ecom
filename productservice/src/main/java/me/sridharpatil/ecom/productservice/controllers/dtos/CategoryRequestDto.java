@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class ControllerCategoryReqDto {
+public class CategoryRequestDto {
     @NotNull @NotBlank
     private String title;
 }

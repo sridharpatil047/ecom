@@ -4,6 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CategoryRequestDto {
+public class CategoryRequest {
     String categoryTitle;
 }

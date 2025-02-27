@@ -9,7 +9,7 @@ import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.producers.ProductProducer;
 import me.sridharpatil.ecom.productservice.producers.dtos.ProductProducerDto;
 import me.sridharpatil.ecom.productservice.repositories.ProductRepository;
-import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.ProductRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product createProduct(ProductRequestDto requestDto) throws CategoryNotFoundException, JsonProcessingException {
+    public Product createProduct(ProductRequest requestDto) throws CategoryNotFoundException, JsonProcessingException {
         // Check if category for the product exists
         log.debug("Checking if category with id {} exists", requestDto.getCategoryId());
         Category category = categoryService.getCategoryById(requestDto.getCategoryId());
@@ -75,7 +75,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product updateProduct(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
+    public Product updateProduct(Long productId, ProductRequest requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
         // log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);
@@ -100,7 +100,7 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public Product updateProductPartial(Long productId, ProductRequestDto requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
+    public Product updateProductPartial(Long productId, ProductRequest requestDto) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
         // Check if product with given id exists, if not throw exception
         // log.debug("Checking if product with id {} exists", productId);
         Product product = getProductById(productId);

@@ -3,13 +3,14 @@ package me.sridharpatil.ecom.productservice.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReqDto;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductResDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.ProductRequestDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.ProductResponseDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
+import me.sridharpatil.ecom.productservice.mappers.ProductMapper;
 import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.services.ProductService;
-import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.ProductRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,21 +23,23 @@ import java.util.List;
 public class ProductController {
 
     ProductService productService;
+    ProductMapper productMapper;
 
-    public ProductController(ProductService productService) {
+    public ProductController(ProductService productService, ProductMapper productMapper) {
         this.productService = productService;
+        this.productMapper = productMapper;
     }
 
     // 1. GET /products
     @GetMapping()
-    public ResponseEntity<List<ControllerProductResDto>> getAllProducts() {
+    public ResponseEntity<List<ProductResponseDto>> getAllProducts() {
 
         log.debug("Received request to get all products");
-        List<ControllerProductResDto> resDtoList = new ArrayList<>();
+        List<ProductResponseDto> resDtoList = new ArrayList<>();
 
         List<Product> productList = productService.getAllProducts();
         for (Product product : productList) {
-            resDtoList.add(ControllerProductResDto.of(product));
+            resDtoList.add(ProductResponseDto.of(product));
         }
 
         log.info("Returning {} products", resDtoList.size());
@@ -46,25 +49,18 @@ public class ProductController {
 
     // 3. POST /products
     @PostMapping()
-    public ResponseEntity<ControllerProductResDto> createProduct(
-            @RequestBody @Valid ControllerProductReqDto requestDto
+    public ResponseEntity<ProductResponseDto> createProduct(
+            @RequestBody @Valid ProductRequestDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
 
         log.debug("Received request to create a new product : {}", requestDto.getTitle());
 
-        // Map request to service dto
-        ProductRequestDto serviceRequestDto = new ProductRequestDto();
-        serviceRequestDto.setProductTitle(requestDto.getTitle());
-        serviceRequestDto.setProductDescription(requestDto.getDescription());
-        serviceRequestDto.setPrice(requestDto.getPrice());
-        serviceRequestDto.setCategoryId(requestDto.getCategoryId());
 
-        // Save product to database
-        ControllerProductResDto responseDto =
-                ControllerProductResDto.of(
-                        productService.createProduct(serviceRequestDto)
-                );
-
+        // Map request to service dto and call product service
+        ProductResponseDto responseDto =
+                productMapper.mapToProductResponseDto(
+                        productService.createProduct(
+                                productMapper.mapToProductRequest(requestDto)));
 
         // Return response
         log.info("Product created with id : {}", responseDto.getId());
@@ -73,23 +69,23 @@ public class ProductController {
 
     // 4. PATCH /products/{id}
     @PatchMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> updateProductById(
+    public ResponseEntity<ProductResponseDto> updateProductById(
             @PathVariable("id") Long id,
-            @RequestBody @Valid ControllerProductReqDto requestDto
+            @RequestBody @Valid ProductRequestDto requestDto
     ) throws ProductNotFoundException, CategoryNotFoundException, JsonProcessingException {
 
         log.debug("Received request to update product by id : {}", id);
 
         // Map request to service dto
-        ProductRequestDto serviceRequestDto = new ProductRequestDto();
+        ProductRequest serviceRequestDto = new ProductRequest();
         serviceRequestDto.setProductTitle(requestDto.getTitle());
         serviceRequestDto.setProductDescription(requestDto.getDescription());
         serviceRequestDto.setPrice(requestDto.getPrice());
         serviceRequestDto.setCategoryId(requestDto.getCategoryId());
 
         // Update product by id
-        ControllerProductResDto responseDto =
-                ControllerProductResDto.of(
+        ProductResponseDto responseDto =
+                ProductResponseDto.of(
                         productService.updateProductPartial(id, serviceRequestDto)
                 );
 
@@ -100,13 +96,13 @@ public class ProductController {
 
     // 5. DELETE /products/{id}
     @DeleteMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> deleteProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+    public ResponseEntity<ProductResponseDto> deleteProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
         log.debug("Received request to delete product by id : {}", id);
 
         // Delete product by id
-        ControllerProductResDto responseDto =
-                ControllerProductResDto.of(
+        ProductResponseDto responseDto =
+                ProductResponseDto.of(
                         productService.deleteProductById(id)
                 );
 

@@ -1,7 +1,7 @@
 package me.sridharpatil.ecom.productservice.controllers;
 
 import lombok.extern.log4j.Log4j2;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductResDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.ProductResponseDto;
 import me.sridharpatil.ecom.productservice.exceptions.ProductNotFoundException;
 import me.sridharpatil.ecom.productservice.services.ProductService;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +23,13 @@ public class ProductInternalController {
 
     // 1. GET /products/{id}
     @GetMapping("/{id}")
-    public ResponseEntity<ControllerProductResDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
+    public ResponseEntity<ProductResponseDto> getProductById(@PathVariable("id") Long id) throws ProductNotFoundException {
 
         log.debug("Received request to get product by id : {}", id);
 
         // Get product by id
-        ControllerProductResDto responseDto =
-                ControllerProductResDto.of(
+        ProductResponseDto responseDto =
+                ProductResponseDto.of(
                         productService.getProductById(id)
                 );
 

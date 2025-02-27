@@ -2,13 +2,13 @@ package me.sridharpatil.ecom.productservice.controllers;
 
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryReqDto;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerCategoryResDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.CategoryRequestDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.CategoryResponseDto;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryAlreadyExistsException;
 import me.sridharpatil.ecom.productservice.exceptions.CategoryNotFoundException;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.services.CategoryService;
-import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.CategoryRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,19 +28,19 @@ public class CategoryController {
 
     // Create a new category
     @PostMapping()
-    public ResponseEntity<ControllerCategoryResDto> createCategory(
-            @RequestBody @Valid ControllerCategoryReqDto requestDto
+    public ResponseEntity<CategoryResponseDto> createCategory(
+            @RequestBody @Valid CategoryRequestDto requestDto
     ) throws CategoryAlreadyExistsException {
 
         log.debug("Received request to create a new category");
         // Map request to service dto
-        CategoryRequestDto serviceRequestDto = new CategoryRequestDto();
+        CategoryRequest serviceRequestDto = new CategoryRequest();
         serviceRequestDto.setCategoryTitle(requestDto.getTitle());
 
 
         // Save category to database
-        ControllerCategoryResDto responseDto =
-                ControllerCategoryResDto.of(
+        CategoryResponseDto responseDto =
+                CategoryResponseDto.of(
                         categoryService.createCategory(serviceRequestDto)
                 );
 
@@ -51,13 +51,13 @@ public class CategoryController {
 
     // Get category by id
     @GetMapping("/{id}")
-    public ResponseEntity<ControllerCategoryResDto> getCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
+    public ResponseEntity<CategoryResponseDto> getCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
 
         log.debug("Received request to get category by id : {}", id);
 
         // Get category by id
-        ControllerCategoryResDto responseDto =
-                ControllerCategoryResDto.of(
+        CategoryResponseDto responseDto =
+                CategoryResponseDto.of(
                         categoryService.getCategoryById(id)
                 );
 
@@ -68,15 +68,15 @@ public class CategoryController {
 
     // Get all categories
     @GetMapping()
-    public ResponseEntity<List<ControllerCategoryResDto>> getAllCategories() {
+    public ResponseEntity<List<CategoryResponseDto>> getAllCategories() {
 
         log.debug("Received request to get all categories");
 
-        List<ControllerCategoryResDto> resDtoList = new ArrayList<>();
+        List<CategoryResponseDto> resDtoList = new ArrayList<>();
 
         List<Category> categoryList = categoryService.getAllCategories();
         for (Category category : categoryList) {
-            resDtoList.add(ControllerCategoryResDto.of(category));
+            resDtoList.add(CategoryResponseDto.of(category));
         }
 
         log.info("Returning {} categories", resDtoList.size());
@@ -85,21 +85,21 @@ public class CategoryController {
 
     // Update category by id
     @PutMapping("/{id}")
-    public ResponseEntity<ControllerCategoryResDto> updateCategoryById(
+    public ResponseEntity<CategoryResponseDto> updateCategoryById(
             @PathVariable("id") Long id,
-            @RequestBody ControllerCategoryReqDto requestDto
+            @RequestBody CategoryRequestDto requestDto
     ) throws CategoryNotFoundException {
 
 
         log.debug("Received request to update category by id : {}", id);
 
         // Map request to service dto
-        CategoryRequestDto serviceRequestDto = new CategoryRequestDto();
+        CategoryRequest serviceRequestDto = new CategoryRequest();
         serviceRequestDto.setCategoryTitle(requestDto.getTitle());
 
         // Update category by id
-        ControllerCategoryResDto responseDto =
-                ControllerCategoryResDto.of(
+        CategoryResponseDto responseDto =
+                CategoryResponseDto.of(
                         categoryService.updateCategory(id, serviceRequestDto)
                 );
 
@@ -111,13 +111,13 @@ public class CategoryController {
 
     // Delete category by id
     @DeleteMapping("/{id}")
-    public ResponseEntity<ControllerCategoryResDto> deleteCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
+    public ResponseEntity<CategoryResponseDto> deleteCategoryById(@PathVariable("id") Long id) throws CategoryNotFoundException {
 
         log.debug("Received request to delete category by id : {}", id);
 
         // Delete category by id
-        ControllerCategoryResDto responseDto =
-                ControllerCategoryResDto.of(
+        CategoryResponseDto responseDto =
+                CategoryResponseDto.of(
                         categoryService.deleteCategory(id)
                 );
 

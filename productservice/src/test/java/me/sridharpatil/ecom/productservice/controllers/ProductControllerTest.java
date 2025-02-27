@@ -3,11 +3,11 @@ package me.sridharpatil.ecom.productservice.controllers;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.sridharpatil.ecom.productservice.configs.TestSecurityConfig;
-import me.sridharpatil.ecom.productservice.controllers.dtos.ControllerProductReqDto;
+import me.sridharpatil.ecom.productservice.controllers.dtos.ProductRequestDto;
 import me.sridharpatil.ecom.productservice.models.Category;
 import me.sridharpatil.ecom.productservice.models.Product;
 import me.sridharpatil.ecom.productservice.services.ProductService;
-import me.sridharpatil.ecom.productservice.services.dtos.ProductRequestDto;
+import me.sridharpatil.ecom.productservice.services.dtos.ProductRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,6 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,7 +38,7 @@ class ProductControllerTest {
 
     private Product product;
     private Category category;
-    private ControllerProductReqDto controllerProductReqDto;
+    private ProductRequestDto productRequestDto;
 
     @BeforeEach
     void setUp() throws JsonProcessingException {
@@ -53,7 +52,7 @@ class ProductControllerTest {
         product.setPrice(123.0);
         product.setCategory(category);
 
-        controllerProductReqDto = ControllerProductReqDto.builder()
+        productRequestDto = ProductRequestDto.builder()
                 .title("Product Title")
                 .description("Product Description")
                 .price(123.0)
@@ -75,10 +74,10 @@ class ProductControllerTest {
     public void whenValidRequestThenReturnProduct() throws Exception {
 
         // Mock
-        when(productService.createProduct(any(ProductRequestDto.class))).thenReturn(product);
+        when(productService.createProduct(any(ProductRequest.class))).thenReturn(product);
 
         // Act
-        String requestBody = objectMapper.writeValueAsString(controllerProductReqDto);
+        String requestBody = objectMapper.writeValueAsString(productRequestDto);
         mockMvc.perform(post("/products")
                         .content(requestBody)
                         .contentType(MediaType.APPLICATION_JSON)
