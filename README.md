@@ -4,7 +4,7 @@
 
 ### 📢 Check out the demo video!
 ##### A clear walkthrough of the backend API flows for key use cases. 🚀
-[![Watch the video](https://img.youtube.com/vi/K4xmBeqPs2I/0.jpg)](https://www.youtube.com/watch?v=K4xmBeqPs2I)
+[![Watch the video](https://img.youtube.com/vi/uUhbUfUKLZI/0.jpg)](https://www.youtube.com/watch?v=uUhbUfUKLZI)
 
 --- 
 ## 🚀 Overview
